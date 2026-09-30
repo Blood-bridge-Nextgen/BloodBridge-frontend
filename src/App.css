@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Outfit:wght@100..900&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 * {
   margin: 0;
   padding: 0;
@@ -14,7 +13,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 80px;
+  padding: 0 40px;
 }
 
 .logo {
@@ -99,7 +98,47 @@
   background: #991B1B;
 }
 
-.button button:focus-visible {
+/* .button button:focus-visible {
   outline: 2px solid #B91C1C;
   outline-offset: 3px;
+} */
+
+.hero-section {
+  display: flex;
+  padding: 0 40px;
+  margin: 80px 0;
+}
+
+.hero-text-block{
+  max-width: 540px;
+  font-family: montserrat;
+}
+
+.section-badge{
+  width: 190px;
+  color: #15803D;
+  border: 1px solid #15803D;
+  border-radius: 12px;
+  padding: 3px 7px;
+  margin-bottom: 5px;
+  font-family: outfit;
+  font-size: 10px;
+  font-weight: 700;
+
+}
+
+.hero-headlines h1{
+  max-width: 540px;
+  font-size: 33px;
+  font-weight: 800;
+  letter-spacing: 2;
+  line-height: 1.4;
+  margin-bottom: 12px;
+}
+
+
+.hero-imagery img{
+  width: 560px;
+  height: 400px;
+  border-radius: 15px;
 }

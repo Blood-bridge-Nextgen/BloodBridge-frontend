@@ -1,9 +1,12 @@
 import React from "react"
 import Header from './Components/Header'
+import HeroSection from './Pages/HeroSection'
 
-function App () {
+function App() {
   return (
-    <Header />
+    <>
+      <HeroSection />
+    </>
   )
 }
 

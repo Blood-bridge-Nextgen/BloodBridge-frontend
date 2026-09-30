@@ -1,16 +1,34 @@
-# React + Vite
+# BloodBridge
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+BloodBridge is a digital platform that connects blood donors, hospitals, blood banks, and patients in real time.
 
-Currently, two official plugins are available:
+## The Problem
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+During emergencies, patients can struggle to find compatible blood quickly. At the same time, willing donors may not know when or where their donations are needed.
 
-## React Compiler
+## The Solution
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+BloodBridge bridges the gap between people who need blood and those who can provide it. The platform is designed to:
 
-## Expanding the ESLint configuration
+- Match donors with recipients based on blood type and location.
+- Send emergency donation alerts to nearby eligible donors.
+- Track blood bank inventory in real time.
+- Let hospitals request blood units through a centralized system.
+- Maintain donor profiles, donation history, and eligibility status.
+- Schedule appointments for blood donations.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Getting Started
+
+BloodBridge is built with React and Vite. To run the app locally:
+
+```sh
+npm install
+npm run dev
+```
+
+## Available Scripts
+
+- `npm run dev` starts the local development server.
+- `npm run build` creates a production build.
+- `npm run preview` serves the production build locally.
+- `npm run lint` runs ESLint.
