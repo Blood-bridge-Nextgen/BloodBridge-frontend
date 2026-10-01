@@ -12,7 +12,12 @@ const HeroSection = () => {
             <h1>Connecting Blood Donors with Life-Saving Requests</h1>
             <p>BloodBridge helps verified donors, hospitals, and blood banks respond to critical blood needs quickly, safely, and efficiently. Our direct coordination pipeline reduces delays in medical emergencies.</p>
           </div>
-          <div className="hero-ctas"></div>
+          {/* <div className="button" style={{
+            "gap" : '10px',
+          }}>
+            <button>Become a Donor</button>
+            <button>Request Blood</button>
+          </div> */}
           <div className="hero-footnote">
             <p>Fully compliant with national healthcare coordination security standards.</p>
           </div>
