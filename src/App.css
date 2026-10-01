@@ -8,12 +8,13 @@
 
 .navigation-bar {
   width: 100%;
-  height: 80px;
+  min-height: 80px;
   margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 80px;
+  gap: 24px;
+  padding: 0 clamp(20px, 5.5vw, 80px);
 }
 
 .logo {
@@ -62,6 +63,10 @@
   gap: 28px;
 }
 
+.nav-toggle {
+  display: none;
+}
+
 .nav-links a {
   color: #1E293B;
   font-family: Montserrat, sans-serif;
@@ -98,6 +103,86 @@
   background: #991B1B;
 }
 
+@media (max-width: 900px) {
+  .navigation-bar {
+    min-height: 72px;
+    flex-wrap: wrap;
+    column-gap: 12px;
+    padding: 14px 24px;
+  }
+
+  .logo {
+    width: auto;
+    max-width: calc(100% - 52px);
+    gap: 5px;
+  }
+
+  .logo-symbol {
+    width: 30px;
+    height: 30px;
+  }
+
+  .logo-text {
+    width: auto;
+    font-size: 18px;
+    white-space: nowrap;
+  }
+
+  .status-badge {
+    margin: 0 0 0 4px;
+  }
+
+  .nav-toggle {
+    display: grid;
+    order: 2;
+    flex: none;
+    width: 40px;
+    height: 40px;
+    place-items: center;
+    margin-left: auto;
+    color: #0F172A;
+    background: transparent;
+    border: 1px solid #E2E8F0;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .nav-toggle svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .navigation-bar > .nav-links,
+  .navigation-bar > .navigation-cta {
+    display: none;
+  }
+
+  .navigation-bar > .nav-links.is-open {
+    display: flex;
+    order: 3;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    width: 100%;
+    padding: 8px 0;
+    border-top: 1px solid #E2E8F0;
+  }
+
+  .nav-links a {
+    padding: 11px 0;
+  }
+
+  .navigation-bar > .navigation-cta.is-open {
+    display: block;
+    order: 4;
+    width: 100%;
+  }
+
+  .navigation-cta button {
+    width: 100%;
+  }
+}
+
 /* .button button:focus-visible {
   outline: 2px solid #B91C1C;
   outline-offset: 3px;
@@ -107,7 +192,7 @@
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   align-items: center;
-  gap: clamp(32px, 5vw, 64px);
+  gap: clamp(32px, 5vw, 60px);
   width: min(100%, 1440px);
   margin: 64px auto 80px;
   padding: 0 clamp(24px, 5.5vw, 40px);
@@ -156,7 +241,9 @@
 
 .hero-headlines>p:not(.section-badge) {
   color: #64748B;
-  font-size: 18px;
+  font-size: 15px;
+  max-width:590px;
+  font-weight: 500;
   line-height: 1.7;
 }
 
@@ -226,6 +313,130 @@
   }
 
   .hero-headlines h1 {
-    font-size: 32px;
+    font-size: 28px;
+  }
+}
+
+.statistics-section {
+  width: 100%;
+  padding: 40px clamp(20px, 5.5vw, 80px);
+  background: #F4F7FA;
+}
+
+.statistics-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-auto-rows: 1fr;
+  gap: 20px;
+  width: min(100%, 1280px);
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+}
+
+.statistic-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  min-width: 0;
+  min-height: 132px;
+  padding: 22px;
+  background: #fff;
+  border: 1px solid #E5EAF0;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.035);
+  font-family: Montserrat, sans-serif;
+}
+
+.statistic-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+.statistic-value {
+  color: #0F172A;
+  font-size: 30px;
+  font-weight: 800;
+  line-height: 1.1;
+  white-space: nowrap;
+}
+
+.statistic-label {
+  color: #64748B;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.statistic-icon {
+  display: grid;
+  flex: none;
+  width: 40px;
+  height: 40px;
+  place-items: center;
+  align-self: flex-start;
+  color: #C2413B;
+  background: #F8FAFC;
+  border: 1px solid #F1F3F5;
+  border-radius: 5px;
+}
+
+.statistic-icon svg {
+  width: 20px;
+  height: 20px;
+  stroke-width: 1.8;
+}
+
+@media (max-width: 900px) {
+  .statistics-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 560px) {
+  .statistics-section {
+    padding: 28px 14px;
+  }
+
+  .statistics-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+
+  .statistic-card {
+    min-height: 104px;
+    gap: 8px;
+    padding: 14px 12px;
+  }
+
+  .statistic-value {
+    font-size: 20px;
+  }
+
+  .statistic-icon {
+    width: 32px;
+    height: 32px;
+  }
+
+  .statistic-icon svg {
+    width: 17px;
+    height: 17px;
+  }
+}
+
+@media (max-width: 360px) {
+  .statistic-card {
+    padding: 12px 10px;
+  }
+
+  .statistic-value {
+    font-size: 18px;
+  }
+
+  .statistic-label {
+    font-size: 11px;
   }
 }
