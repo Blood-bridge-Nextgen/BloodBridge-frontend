@@ -8,7 +8,7 @@ const Header = () => {
   const closeMenu = () => setMenuOpen(false)
 
   return (
-  <header className='navigation-bar'>
+  <header className='navigation-bar alignment-container'>
         <div className="logo">
             <img className='logo-symbol' src="src\assets\logo-symbol.png" alt="" />
             <h1 className='logo-text'>Blood<span>Bridge</span></h1>

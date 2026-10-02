@@ -6,7 +6,7 @@ const HeroSection = () => {
   return (
     <>
       <Header />
-      <div className="hero-section">
+      <div className="hero-section alignment-container">
         <div className="hero-text-block">
           <div className="hero-headlines">
             <p className='section-badge'>
