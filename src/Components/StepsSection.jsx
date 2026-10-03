@@ -29,7 +29,7 @@ const workflowSteps = [
 
 const StepsSection = () => {
   return (
-    <section className="workflow-section" aria-labelledby="workflow-title">
+    <section id='StepsSection' className="workflow-section" aria-labelledby="workflow-title">
       <div className="workflow-container">
         <header className="workflow-heading">
           <p className="workflow-badge">

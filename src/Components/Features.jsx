@@ -83,7 +83,7 @@ const features = [
 
 function Features() {
   return (
-    <section className="feature-section" aria-labelledby="feature-section__title">
+    <section id="Features" className="feature-section" aria-labelledby="feature-section__title">
       <div className="alignment-container">
         <header className="feature-section__header">
           <p className="feature-section__badge">

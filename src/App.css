@@ -8,7 +8,7 @@
 
 body {
   font-family: 'Outfit', sans-serif;
-  font-size: 16px;
+  font-size: 18px;
   line-height: 1.5;
   color: #0F172A;
   background-color: #fff;
@@ -99,21 +99,27 @@ body {
   flex-shrink: 0;
 }
 
-.button button {
+.button button,
+.button a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   border: 0;
   border-radius: 4px;
   padding: 11px 18px;
   background: #B91C1C;
-  color: #fff;
+  color: #FFFFFF;
   font-family: Montserrat, sans-serif;
   font-size: 14px;
   font-weight: 600;
+  text-decoration: none;
   white-space: nowrap;
   cursor: pointer;
   transition: background-color 160ms ease;
 }
 
-.button button:hover {
+.button button:hover,
+.button a:hover {
   background: #991B1B;
 }
 
@@ -1267,7 +1273,7 @@ body {
   }
 
   .hero-headlines h1 {
-    font-size: 48px;
+    font-size: 43px;
   }
 }
 
@@ -1282,5 +1288,38 @@ body {
 
   .statistic-label {
     font-size: 11px;
+  }
+}
+
+
+@media (prefers-reduced-motion: no-preference) {
+
+  /* Starting state: transparent and slightly low.
+     will-change is only set here, so it is released once revealed. */
+  [data-reveal="hidden"] {
+    opacity: 0;
+    transform: translateY(20px);
+    will-change: opacity, transform;
+  }
+
+  /* End state: the transition is declared here, on the destination state.
+     --reveal-delay is set per element by the script (stagger / fixed delay). */
+  [data-reveal="visible"] {
+    opacity: 1;
+    transform: translateY(0);
+    transition:
+      opacity 650ms cubic-bezier(0.22, 0.61, 0.36, 1) var(--reveal-delay, 0ms),
+      transform 650ms cubic-bezier(0.22, 0.61, 0.36, 1) var(--reveal-delay, 0ms);
+  }
+
+  /* Navigation: fade only, no movement. A transform on the nav would also
+     create a containing block for the mobile menu. Plays once on load. */
+  .navigation-bar {
+    animation: nav-fade-in 500ms ease-out both;
+  }
+
+  @keyframes nav-fade-in {
+    from { opacity: 0; }
+    to   { opacity: 1; }
   }
 }

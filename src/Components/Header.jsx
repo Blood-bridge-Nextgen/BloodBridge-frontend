@@ -15,13 +15,13 @@ const Header = () => {
             <p className='status-badge'>SECURED</p>
         </div>
     <nav className={`nav-links${menuOpen ? ' is-open' : ''}`} aria-label="Main navigation">
-      <a href="#" onClick={closeMenu}>How It Works</a>
-      <a href="#" onClick={closeMenu}>Features</a>
-      <a href="#" onClick={closeMenu}>About</a>
-      <a href="#" onClick={closeMenu}>Contact</a>
+      <a href="#StepsSection" onClick={closeMenu}>How It Works</a>
+      <a href="#Features" onClick={closeMenu}>Features</a>
+      <a href="#StepsSection" onClick={closeMenu}>About</a>
+      <a href="#Contact" onClick={closeMenu}>Contact</a>
     </nav>
     <div className={`button navigation-cta${menuOpen ? ' is-open' : ''}`}>
-            <button>Become a Donor</button>
+            <a className="button-link" href="#register">Create Account</a>
         </div>
     <button
       className="nav-toggle"
