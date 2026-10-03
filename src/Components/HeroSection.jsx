@@ -1,6 +1,6 @@
 import { LuActivity } from "react-icons/lu";
 import { LuShieldCheck } from "react-icons/lu";
-import Header from '../Components/Header'
+import Header from './Header'
 
 const HeroSection = () => {
   return (

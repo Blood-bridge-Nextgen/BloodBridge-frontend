@@ -1,8 +1,8 @@
-import HeroSection from './Pages/HeroSection'
+import HeroSection from './Components/HeroSection'
 import StatisticSection from './Components/Statistic-section'
 import Features from './Components/Features'
 import Trust from './Components/Trust'
-import StepsSection from './Pages/StepsSection';
+import StepsSection from './Components/StepsSection';
 import Footer from './Components/Footer'
 
 function App() {
