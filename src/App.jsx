@@ -9,7 +9,7 @@ import Trust from './Components/Trust'
 import Footer from './Components/Footer'
 import CreateDonorAccount from './Components/Auth/CreateDonorAccount'
 import CreateHospitalAccount from './Components/Auth/CreatHospitalAccount'
-import OnBoard from './Components/Auth/OnBoard' 
+import OnboardingScreen from './Components/Auth/OnboardingScreen' 
 import Contact from './Components/Contact'
 
 function App() {
@@ -32,7 +32,7 @@ function App() {
       />
       <Route path="/CreateDonorAccount" element={<CreateDonorAccount />} />
       <Route path="/CreateHospitalAccount" element={<CreateHospitalAccount />} />
-      <Route path="/Onboard" element={<OnBoard />} />
+      <Route path="/OnboardingScreen" element={<OnboardingScreen />} />
       <Route path="/Contact" element={<Contact />} />
     </Routes>
   )

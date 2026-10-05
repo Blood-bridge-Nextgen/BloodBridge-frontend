@@ -23,7 +23,7 @@ const Header = () => {
       <Link to='Contact' href="#Contact" onClick={closeMenu}>Contact</Link>
     </nav>
     <div className={`button navigation-cta${menuOpen ? ' is-open' : ''}`}>
-            <Link className="button-link" to="/Onboard">Create Account</Link>
+            <Link className="button-link" to="/OnboardingScreen">Create Account</Link>
         </div>
     <button
       className="nav-toggle"

@@ -1,0 +1,222 @@
+.onboarding-screen {
+	min-height: 100dvh;
+	background: #FFFFFF;
+	color: #0F172A;
+	text-align: center;
+	font-family: 'Outfit', sans-serif;
+}
+
+.onboarding-screen__content {
+	width: 100%;
+	max-width: 420px;
+	margin: 0 auto;
+	padding: 32px 24px;
+}
+
+.onboarding-screen__brand-row {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 8px;
+}
+
+.onboarding-screen__logo-mark {
+	display: grid;
+	flex: 0 0 32px;
+	width: 32px;
+	height: 32px;
+	place-items: center;
+	border-radius: 8px;
+	background: #B91C1C;
+	color: #FFFFFF;
+}
+
+.onboarding-screen__logo-mark svg {
+	width: 21px;
+	height: 21px;
+}
+
+.onboarding-screen__wordmark {
+	white-space: nowrap;
+	font-size: 22px;
+	line-height: 1;
+}
+
+.onboarding-screen__wordmark-blood {
+	color: #0F172A;
+	font-weight: 700;
+}
+
+.onboarding-screen__wordmark-bridge {
+	color: #B91C1C;
+	font-weight: 500;
+}
+
+.onboarding-screen__secured {
+	align-self: center;
+	margin-top: -8px;
+	padding: 1px 5px;
+	border: 1px solid #15803D;
+	border-radius: 3px;
+	color: #15803D;
+	font-size: 8px;
+	font-weight: 800;
+	line-height: 1.2;
+}
+
+.onboarding-screen__tagline {
+	margin-top: 8px;
+	color: #15803D;
+	font-family: 'JetBrains Mono', monospace;
+	font-size: 11px;
+	font-weight: 600;
+	letter-spacing: 1.5px;
+	text-transform: uppercase;
+}
+
+.onboarding-screen__prompt {
+	margin-top: 24px;
+	color: #64748B;
+	font-size: 14px;
+	font-weight: 500;
+}
+
+.onboarding-screen__roles {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	margin-top: 16px;
+}
+
+.onboarding-screen__role-card {
+	display: flex;
+	width: 100%;
+	align-items: center;
+	gap: 14px;
+	padding: 16px;
+	border: 2px solid transparent;
+	border-radius: 10px;
+	background: #F1F5F9;
+	color: inherit;
+	text-align: left;
+	font-family: 'Outfit', sans-serif;
+	cursor: pointer;
+	transition: border-color 200ms ease, background-color 200ms ease;
+}
+
+.onboarding-screen__role-card:hover:not(.onboarding-screen__role-card--selected) {
+	border-color: #FECACA;
+}
+
+.onboarding-screen__role-card--selected {
+	border-color: #DC2626;
+}
+
+.onboarding-screen__role-card:focus-visible {
+	outline: 2px solid #B91C1C;
+	outline-offset: 2px;
+}
+
+.onboarding-screen__role-icon {
+	display: grid;
+	flex: 0 0 40px;
+	width: 40px;
+	height: 40px;
+	place-items: center;
+	border-radius: 50%;
+	background: #E2E8F0;
+	color: #475569;
+}
+
+.onboarding-screen__role-icon--selected {
+	background: #FCA5A5;
+	color: #B91C1C;
+}
+
+.onboarding-screen__role-icon svg {
+	width: 20px;
+	height: 20px;
+}
+
+.onboarding-screen__role-copy {
+	display: flex;
+	min-width: 0;
+	flex-direction: column;
+}
+
+.onboarding-screen__role-title {
+	color: #0F172A;
+	font-size: 15px;
+	font-weight: 700;
+}
+
+.onboarding-screen__role-description {
+	margin-top: 2px;
+	color: #64748B;
+	font-size: 12.5px;
+	font-weight: 400;
+	line-height: 1.4;
+}
+
+.onboarding-screen__actions {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	margin-top: 40px;
+}
+
+.onboarding-screen__action-button {
+	width: 100%;
+	height: 48px;
+	border-radius: 6px;
+	font-family: 'Outfit', sans-serif;
+	font-size: 15px;
+	font-weight: 600;
+	cursor: pointer;
+	transition: background-color 160ms ease;
+}
+
+.onboarding-screen__action-button:focus-visible {
+	outline: 2px solid #B91C1C;
+	outline-offset: 2px;
+}
+
+.onboarding-screen__action-button--primary {
+	border: 0;
+	background: #B91C1C;
+	color: #FFFFFF;
+}
+
+.onboarding-screen__action-button--primary:hover {
+	background: #991B1B;
+}
+
+.onboarding-screen__action-button--secondary {
+	border: 1.5px solid #B91C1C;
+	background: #FFFFFF;
+	color: #B91C1C;
+}
+
+.onboarding-screen__action-button--secondary:hover {
+	background: #FEF2F2;
+}
+
+@media (max-width: 360px) {
+	.onboarding-screen__content {
+		padding: 24px 16px;
+	}
+
+	.onboarding-screen__wordmark {
+		font-size: 20px;
+	}
+
+	.onboarding-screen__role-card {
+		padding: 14px;
+	}
+}
+
+@media (min-width: 768px) {
+	.onboarding-screen__content {
+		padding-top: 64px;
+	}
+}
