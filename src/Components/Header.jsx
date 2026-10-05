@@ -1,10 +1,12 @@
 import { useState } from 'react'
 import { LuMenu, LuX } from 'react-icons/lu'
 import '../App.css'
+import { Link } from 'react-router-dom'
+
+
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false)
-
   const closeMenu = () => setMenuOpen(false)
 
   return (
@@ -18,10 +20,10 @@ const Header = () => {
       <a href="#StepsSection" onClick={closeMenu}>How It Works</a>
       <a href="#Features" onClick={closeMenu}>Features</a>
       <a href="#StepsSection" onClick={closeMenu}>About</a>
-      <a href="#Contact" onClick={closeMenu}>Contact</a>
+      <Link to='Contact' href="#Contact" onClick={closeMenu}>Contact</Link>
     </nav>
     <div className={`button navigation-cta${menuOpen ? ' is-open' : ''}`}>
-            <a className="button-link" href="#register">Create Account</a>
+            <Link className="button-link" to="/Onboard">Create Account</Link>
         </div>
     <button
       className="nav-toggle"

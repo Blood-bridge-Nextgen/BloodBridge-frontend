@@ -1,5 +1,6 @@
 import { LuActivity } from "react-icons/lu";
 import { LuShieldCheck } from "react-icons/lu";
+import { Link } from "react-router-dom";
 import Header from './Header'
 
 const HeroSection = () => {
@@ -15,8 +16,8 @@ const HeroSection = () => {
             <p>BloodBridge helps verified donors, hospitals, and blood banks respond to critical blood needs quickly, safely, and efficiently. Our direct coordination pipeline reduces delays in medical emergencies.</p>
           </div>
           <div className="button">
-            <button className="primary">Become a Donor</button>
-            <button className="secondary">Request Blood</button>
+            <Link className="primary" to="/CreateDonorAccount">Become a Donor</Link>
+            <Link className="secondary" to="/CreateHospitalAccount">Request Blood</Link>
           </div>
           <div className="hero-footnote">
             <p><LuShieldCheck className="section-badge-icon" aria-hidden="true" /> Fully compliant with national healthcare coordination security standards.</p>

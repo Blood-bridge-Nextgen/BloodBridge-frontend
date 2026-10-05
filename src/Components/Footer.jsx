@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom'
+
 const companyLinks = ['How It Works', 'Hospital Portal', 'Donor Safety', 'Support']
 
 function Footer() {
@@ -12,12 +14,12 @@ function Footer() {
               Join BloodBridge today and be part of a secure network that makes blood donation and hospital emergency matching faster, safer, and fully traceable.
             </p>
             <div className="footer-cta-actions">
-              <a className="footer-cta-button footer-cta-button-primary" href="#register">
+              <Link to="/Onboard" className="footer-cta-button footer-cta-button-primary">
                 Register as a Donor
-              </a>
-              <a className="footer-cta-button footer-cta-button-secondary" href="#contact">
+              </Link>
+              <Link to='/Contact' className="footer-cta-button footer-cta-button-secondary">
                 Partner With Us
-              </a>
+              </Link>
             </div>
           </div>
         </div>

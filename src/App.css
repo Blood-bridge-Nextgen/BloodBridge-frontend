@@ -23,11 +23,15 @@ body {
 }
 
 .navigation-bar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
   min-height: 80px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 24px;
+  background-color: #fff;
   padding-top: 0;
   padding-bottom: 0;
 }
@@ -194,6 +198,11 @@ body {
   background: #fff;
   color: #B91C1C;
   border: 2px solid #B91C1C;
+}
+
+.button .secondary:hover {
+  background: #B91C1C;
+  color: #fff;
 }
 
 .hero-footnote {
