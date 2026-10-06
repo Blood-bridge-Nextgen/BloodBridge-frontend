@@ -1,5 +1,6 @@
 import { useRef, useState } from 'react'
 import './AuthStyle.css'
+import { useNavigate } from 'react-router-dom'
 
 const roles = [
   {
@@ -17,6 +18,7 @@ const roles = [
 const OnboardingScreen = ({ onRegister = () => {}, onSignIn = () => {} }) => {
   const [selectedRole, setSelectedRole] = useState('donor')
   const radioRefs = useRef([])
+  const navigate = useNavigate()
 
   const handleRoleKeyDown = (event, currentIndex) => {
     let nextIndex
@@ -32,6 +34,19 @@ const OnboardingScreen = ({ onRegister = () => {}, onSignIn = () => {} }) => {
     event.preventDefault()
     setSelectedRole(roles[nextIndex].value)
     radioRefs.current[nextIndex]?.focus()
+  }
+
+  const handleRegister = () => {
+    onRegister(selectedRole)
+    navigate(selectedRole === 'donor'
+      ? '/CreateDonorAccount'
+      : '/CreateHospitalAccount'
+    )
+  }
+
+  const handleSignIn = () => {
+    onSignIn(selectedRole)
+    navigate('/SignIn')
   }
 
   return (
@@ -97,14 +112,14 @@ const OnboardingScreen = ({ onRegister = () => {}, onSignIn = () => {} }) => {
           <button
             className="onboarding-screen__action-button onboarding-screen__action-button--primary"
             type="button"
-            onClick={() => onRegister(selectedRole)}
+            onClick={handleRegister}
           >
             Register as {selectedRole === 'donor' ? 'Donor' : 'Hospital'}
           </button>
           <button
             className="onboarding-screen__action-button onboarding-screen__action-button--secondary"
             type="button"
-            onClick={onSignIn}
+            onClick={handleSignIn}
           >
             Sign In
           </button>
