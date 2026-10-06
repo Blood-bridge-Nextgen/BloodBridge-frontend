@@ -221,6 +221,658 @@
 	}
 }
 
+.donor-signup {
+	min-height: 100dvh;
+	padding: 16px 20px 32px;
+	background: #FFFFFF;
+	color: #0F172A;
+	font-family: 'Outfit', sans-serif;
+}
+
+.donor-signup__card {
+	width: 100%;
+	max-width: 440px;
+	margin: 0 auto;
+}
+
+.donor-signup__header {
+	display: flex;
+	height: 56px;
+	align-items: center;
+	gap: 12px;
+}
+
+.donor-signup__back-button {
+	display: grid;
+	flex: 0 0 36px;
+	width: 36px;
+	height: 36px;
+	place-items: center;
+	border: 0;
+	border-radius: 8px;
+	background: transparent;
+	color: #0F172A;
+	cursor: pointer;
+	transition: background-color 160ms ease;
+}
+
+.donor-signup__back-button:hover {
+	background: #F1F5F9;
+}
+
+.donor-signup__back-button svg {
+	width: 19px;
+	height: 19px;
+}
+
+.donor-signup__header h1 {
+	color: #0F172A;
+	font-size: 18px;
+	font-weight: 700;
+}
+
+.donor-signup__form {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+	margin-top: 16px;
+}
+
+.donor-signup__field {
+	min-width: 0;
+}
+
+.donor-signup__label {
+	display: block;
+	margin-bottom: 6px;
+	color: #0F172A;
+	font-size: 12px;
+	font-weight: 600;
+}
+
+.donor-signup__control {
+	position: relative;
+	display: flex;
+	width: 100%;
+	height: 44px;
+	align-items: center;
+	border: 1px solid #E2E8F0;
+	border-radius: 6px;
+	background: #F1F5F9;
+	transition: border-color 160ms ease, background-color 160ms ease, box-shadow 160ms ease;
+}
+
+.donor-signup__control:focus-within {
+	border-color: #B91C1C;
+	background: #FFFFFF;
+	box-shadow: 0 0 0 3px rgba(185, 28, 28, 0.12);
+}
+
+.donor-signup__control--error {
+	border-color: #DC2626;
+}
+
+.donor-signup__control--error:focus-within {
+	border-color: #DC2626;
+}
+
+.donor-signup__control input,
+.donor-signup__control select {
+	width: 100%;
+	height: 100%;
+	min-width: 0;
+	padding: 0 12px;
+	border: 0;
+	border-radius: 6px;
+	outline: 0;
+	background: transparent;
+	color: #0F172A;
+	font-family: 'Outfit', sans-serif;
+	font-size: 14px;
+}
+
+.donor-signup__control input::placeholder {
+	color: #94A3B8;
+	opacity: 1;
+}
+
+.donor-signup__control select {
+	appearance: none;
+	padding-right: 34px;
+	text-overflow: ellipsis;
+	cursor: pointer;
+}
+
+.donor-signup__control select:invalid {
+	color: #94A3B8;
+}
+
+.donor-signup__select-icon {
+	position: absolute;
+	right: 10px;
+	width: 16px;
+	height: 16px;
+	color: #64748B;
+	pointer-events: none;
+}
+
+.donor-signup__visibility-toggle {
+	position: absolute;
+	right: 8px;
+	display: grid;
+	width: 32px;
+	height: 32px;
+	place-items: center;
+	border: 0;
+	border-radius: 5px;
+	background: transparent;
+	color: #64748B;
+	cursor: pointer;
+}
+
+.donor-signup__visibility-toggle:hover {
+	background: #E2E8F0;
+	color: #0F172A;
+}
+
+.donor-signup__visibility-toggle svg {
+	width: 17px;
+	height: 17px;
+}
+
+.donor-signup__control:has(.donor-signup__visibility-toggle) input {
+	padding-right: 44px;
+}
+
+.donor-signup__error {
+	margin-top: 4px;
+	color: #B91C1C;
+	font-size: 11px;
+	line-height: 1.4;
+}
+
+.donor-signup__field-row {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 12px;
+}
+
+.donor-signup__availability-row {
+	display: flex;
+	min-height: 32px;
+	align-items: center;
+	justify-content: space-between;
+	gap: 12px;
+	padding: 4px 0;
+	color: #0F172A;
+	font-size: 13px;
+	font-weight: 600;
+}
+
+.donor-signup__switch {
+	position: relative;
+	flex: 0 0 44px;
+	width: 44px;
+	height: 24px;
+	padding: 0;
+	border: 0;
+	border-radius: 999px;
+	background: #CBD5E1;
+	cursor: pointer;
+	transition: background-color 160ms ease;
+}
+
+.donor-signup__switch--on {
+	background: #16A34A;
+}
+
+.donor-signup__switch span {
+	position: absolute;
+	top: 3px;
+	left: 3px;
+	width: 18px;
+	height: 18px;
+	border-radius: 50%;
+	background: #FFFFFF;
+	transition: transform 160ms ease;
+}
+
+.donor-signup__switch--on span {
+	transform: translateX(20px);
+}
+
+.donor-signup__terms-field {
+	margin-top: 2px;
+}
+
+.donor-signup__terms-row {
+	display: flex;
+	align-items: flex-start;
+	gap: 10px;
+	color: #64748B;
+	font-size: 12px;
+	line-height: 1.5;
+	cursor: pointer;
+}
+
+.donor-signup__terms-row input {
+	flex: 0 0 18px;
+	width: 18px;
+	height: 18px;
+	margin: 1px 0 0;
+	accent-color: #B91C1C;
+}
+
+.donor-signup__terms-row a,
+.donor-signup__signin button {
+	color: #B91C1C;
+	font-weight: 700;
+	text-decoration: none;
+}
+
+.donor-signup__terms-row a:hover,
+.donor-signup__signin button:hover {
+	text-decoration: underline;
+}
+
+.donor-signup__submit {
+	display: flex;
+	width: 100%;
+	min-height: 48px;
+	align-items: center;
+	justify-content: center;
+	gap: 9px;
+	margin-top: 8px;
+	border: 0;
+	border-radius: 6px;
+	background: #B91C1C;
+	color: #FFFFFF;
+	font-family: 'Outfit', sans-serif;
+	font-size: 15px;
+	font-weight: 600;
+	cursor: pointer;
+	transition: background-color 160ms ease;
+}
+
+.donor-signup__submit:hover:not(:disabled) {
+	background: #991B1B;
+}
+
+.donor-signup__submit:disabled {
+	background: #FCA5A5;
+	cursor: wait;
+}
+
+.donor-signup__submit:focus-visible,
+.donor-signup__back-button:focus-visible,
+.donor-signup__visibility-toggle:focus-visible,
+.donor-signup__switch:focus-visible,
+.donor-signup__signin button:focus-visible,
+.donor-signup__terms-row a:focus-visible {
+	outline: 2px solid #B91C1C;
+	outline-offset: 2px;
+}
+
+.donor-signup__spinner {
+	width: 16px;
+	height: 16px;
+	border: 2px solid rgba(255, 255, 255, 0.45);
+	border-top-color: #FFFFFF;
+	border-radius: 50%;
+	animation: donor-signup__spin 700ms linear infinite;
+}
+
+@keyframes donor-signup__spin {
+	to { transform: rotate(360deg); }
+}
+
+.donor-signup__signin {
+	margin-top: 16px;
+	color: #64748B;
+	font-size: 12px;
+	text-align: center;
+}
+
+.donor-signup__signin button {
+	padding: 0;
+	border: 0;
+	background: transparent;
+	font-family: 'Outfit', sans-serif;
+	font-size: inherit;
+	cursor: pointer;
+}
+
+@media (min-width: 768px) {
+	.donor-signup {
+		padding-top: 48px;
+		background: #F1F5F9;
+	}
+
+	.donor-signup__card {
+		padding: 32px;
+		border: 1px solid #E2E8F0;
+		border-radius: 12px;
+		background: #FFFFFF;
+		box-shadow: 0 4px 24px rgba(15, 23, 42, 0.05);
+	}
+}
+
+@media (max-width: 360px) {
+	.donor-signup {
+		padding-right: 16px;
+		padding-left: 16px;
+	}
+
+	.donor-signup__field-row {
+		gap: 8px;
+	}
+}
+
+/* Hospital signup screen */
+.hospital-signup {
+	min-height: 100dvh;
+	padding: 16px 20px 32px;
+	background: #FFFFFF;
+	color: #0F172A;
+	font-family: 'Outfit', sans-serif;
+}
+
+.hospital-signup__card {
+	width: 100%;
+	max-width: 440px;
+	margin: 0 auto;
+}
+
+/* Hospital signup header */
+.hospital-signup__header {
+	display: flex;
+	height: 56px;
+	align-items: center;
+	gap: 12px;
+}
+
+.hospital-signup__back-button {
+	display: grid;
+	flex: 0 0 36px;
+	width: 36px;
+	height: 36px;
+	place-items: center;
+	border: 0;
+	border-radius: 8px;
+	background: transparent;
+	color: #0F172A;
+	cursor: pointer;
+	transition: background-color 160ms ease;
+}
+
+.hospital-signup__back-button:hover {
+	background: #F1F5F9;
+}
+
+.hospital-signup__back-button svg {
+	width: 19px;
+	height: 19px;
+}
+
+.hospital-signup__header h1 {
+	color: #0F172A;
+	font-size: 18px;
+	font-weight: 700;
+}
+
+/* Hospital signup fields */
+.hospital-signup__form {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+	margin-top: 16px;
+}
+
+.hospital-signup__field {
+	min-width: 0;
+}
+
+.hospital-signup__label {
+	display: block;
+	margin-bottom: 6px;
+	color: #0F172A;
+	font-size: 12px;
+	font-weight: 600;
+}
+
+.hospital-signup__control {
+	position: relative;
+	display: flex;
+	width: 100%;
+	height: 44px;
+	align-items: center;
+	border: 1px solid #E2E8F0;
+	border-radius: 6px;
+	background: #F1F5F9;
+	transition: border-color 160ms ease, background-color 160ms ease, box-shadow 160ms ease;
+}
+
+.hospital-signup__control:focus-within {
+	border-color: #B91C1C;
+	background: #FFFFFF;
+	box-shadow: 0 0 0 3px rgba(185, 28, 28, 0.12);
+}
+
+.hospital-signup__control--error {
+	border-color: #DC2626;
+}
+
+.hospital-signup__control--error:focus-within {
+	border-color: #DC2626;
+}
+
+.hospital-signup__control input,
+.hospital-signup__control select {
+	width: 100%;
+	height: 100%;
+	min-width: 0;
+	padding: 0 12px;
+	border: 0;
+	border-radius: 6px;
+	outline: 0;
+	background: transparent;
+	color: #0F172A;
+	font-family: 'Outfit', sans-serif;
+	font-size: 14px;
+}
+
+.hospital-signup__control input::placeholder {
+	color: #94A3B8;
+	opacity: 1;
+}
+
+.hospital-signup__control select {
+	appearance: none;
+	padding-right: 36px;
+	cursor: pointer;
+}
+
+.hospital-signup__select-icon {
+	position: absolute;
+	right: 10px;
+	width: 16px;
+	height: 16px;
+	color: #64748B;
+	pointer-events: none;
+}
+
+.hospital-signup__visibility-toggle {
+	position: absolute;
+	right: 7px;
+	display: grid;
+	width: 32px;
+	height: 32px;
+	place-items: center;
+	border: 0;
+	border-radius: 5px;
+	background: transparent;
+	color: #64748B;
+	cursor: pointer;
+}
+
+.hospital-signup__visibility-toggle:hover {
+	background: #E2E8F0;
+	color: #0F172A;
+}
+
+.hospital-signup__visibility-toggle svg {
+	width: 17px;
+	height: 17px;
+}
+
+.hospital-signup__control:has(.hospital-signup__visibility-toggle) input {
+	padding-right: 44px;
+}
+
+.hospital-signup__error {
+	margin-top: 4px;
+	color: #B91C1C;
+	font-size: 11px;
+	line-height: 1.4;
+}
+
+.hospital-signup__password-row {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 12px;
+}
+
+/* Organization verification notice */
+.hospital-signup__notice {
+	display: flex;
+	align-items: flex-start;
+	gap: 12px;
+	margin-top: 0;
+	padding: 12px;
+	border: 1px solid #E2E8F0;
+	border-radius: 8px;
+	background: #F8FAFC;
+}
+
+.hospital-signup__notice-icon {
+	display: grid;
+	flex: 0 0 28px;
+	width: 28px;
+	height: 28px;
+	place-items: center;
+	border-radius: 50%;
+	background: #E2E8F0;
+	color: #64748B;
+}
+
+.hospital-signup__notice-icon svg {
+	width: 16px;
+	height: 16px;
+}
+
+.hospital-signup__notice p {
+	padding-top: 1px;
+	color: #64748B;
+	font-size: 12px;
+	line-height: 1.5;
+}
+
+/* Hospital signup button and account link */
+.hospital-signup__submit {
+	display: flex;
+	width: 100%;
+	min-height: 48px;
+	align-items: center;
+	justify-content: center;
+	gap: 9px;
+	margin-top: 0;
+	border: 0;
+	border-radius: 6px;
+	background: #B91C1C;
+	color: #FFFFFF;
+	font-family: 'Outfit', sans-serif;
+	font-size: 15px;
+	font-weight: 600;
+	cursor: pointer;
+	transition: background-color 160ms ease;
+}
+
+.hospital-signup__submit:hover:not(:disabled) {
+	background: #991B1B;
+}
+
+.hospital-signup__submit:disabled {
+	background: #FCA5A5;
+	cursor: wait;
+}
+
+.hospital-signup__spinner {
+	width: 16px;
+	height: 16px;
+	border: 2px solid rgba(255, 255, 255, 0.45);
+	border-top-color: #FFFFFF;
+	border-radius: 50%;
+	animation: hospital-signup__spin 700ms linear infinite;
+}
+
+@keyframes hospital-signup__spin {
+	to { transform: rotate(360deg); }
+}
+
+.hospital-signup__signin {
+	margin-top: 16px;
+	color: #64748B;
+	font-size: 12px;
+	text-align: center;
+}
+
+.hospital-signup__signin button {
+	padding: 0;
+	border: 0;
+	background: transparent;
+	color: #B91C1C;
+	font-family: 'Outfit', sans-serif;
+	font-size: inherit;
+	font-weight: 700;
+	cursor: pointer;
+}
+
+.hospital-signup__signin button:hover {
+	text-decoration: underline;
+}
+
+.hospital-signup button:focus-visible {
+	outline: 2px solid #B91C1C;
+	outline-offset: 2px;
+}
+
+/* Hospital signup responsive layout */
+@media (min-width: 768px) {
+	.hospital-signup {
+		padding-top: 48px;
+		background: #F1F5F9;
+	}
+
+	.hospital-signup__card {
+		padding: 32px;
+		border: 1px solid #E2E8F0;
+		border-radius: 12px;
+		background: #FFFFFF;
+		box-shadow: 0 4px 24px rgba(15, 23, 42, 0.05);
+	}
+}
+
+@media (max-width: 340px) {
+	.hospital-signup {
+		padding-right: 16px;
+		padding-left: 16px;
+	}
+
+	.hospital-signup__password-row {
+		grid-template-columns: minmax(0, 1fr);
+	}
+}
+
 .donor-registration {
 	min-height: 100vh;
 	display: flex;

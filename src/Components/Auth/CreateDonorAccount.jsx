@@ -48,7 +48,7 @@ const donationPeriods = [
   'Over 12 months ago',
 ]
 
-const FormField = ({
+export const FormField = ({
   name,
   label,
   icon: Icon,
