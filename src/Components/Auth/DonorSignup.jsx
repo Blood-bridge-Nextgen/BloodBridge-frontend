@@ -6,7 +6,6 @@ import { useNavigate } from 'react-router-dom'
 const bloodGroups = ['A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-', "I don't know yet"]
 const noop = () => {}
 const donorSignupUrl = import.meta.env.VITE_DONOR_SIGNUP_API
-const navigate = useNavigate();
 
 const createDonorAccount = async (payload) => {
 	if (!donorSignupUrl) throw new Error('Donor signup endpoint is not configured.')
@@ -101,7 +100,8 @@ const Field = ({
 }
 
 const DonorSignup = ({ onBack = () => window.history.back(), onSignIn = noop, onCreateAccount = createDonorAccount }) => {
-	const [formData, setFormData] = useState({
+	const navigate = useNavigate()
+    const [formData, setFormData] = useState({
 		fullName: '',
 		email: '',
 		phone: '',
@@ -190,7 +190,7 @@ const DonorSignup = ({ onBack = () => window.history.back(), onSignIn = noop, on
 				bloodGroup: formData.bloodGroup,
 				status: formData.available ? 'available' : 'unavailable',
 			}
-            await onCreateAccount(payload)
+             await onCreateAccount(payload)
             navigate('/CreateDonorProfile')
 		} catch (error) {
 			setFeedback({ type: 'error', message: error.message || 'Unable to create your account. Please try again.' })

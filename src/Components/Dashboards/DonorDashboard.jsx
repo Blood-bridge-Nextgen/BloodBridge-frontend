@@ -285,7 +285,7 @@ const BadgesCard = () => (
   </section>
 )
 
-const WelcomeStrip = ({ donorName, onUpdateAvailability, onFindRequests, onScheduleDonation }) => {
+const WelcomeStrip = ({ donorName, available, onUpdateAvailability, onFindRequests, onScheduleDonation }) => {
   const hour = new Date().getHours()
   const greeting = hour < 12 ? 'Morning' : hour < 16 ? 'Afternoon' : 'Evening'
 
@@ -304,7 +304,12 @@ const WelcomeStrip = ({ donorName, onUpdateAvailability, onFindRequests, onSched
         <div className="donor-dashboard__status-chips">
           <span className="donor-dashboard__status-chip"><Droplet aria-hidden="true" /> Blood Group O+</span>
           <span className="donor-dashboard__status-chip"><MapPin aria-hidden="true" /> Lagos, Nigeria</span>
-          <span className="donor-dashboard__status-chip donor-dashboard__status-chip--available"><i aria-hidden="true" /> Available</span>
+          <span
+            className={`donor-dashboard__status-chip donor-dashboard__status-chip--${available ? 'available' : 'unavailable'}`}
+            aria-label={`Availability: ${available ? 'available' : 'unavailable'}`}
+          >
+            <i aria-hidden="true" /> {available ? 'Available' : 'Unavailable'}
+          </span>
         </div>
         <p className="donor-dashboard__live-status"><span className="donor-dashboard__live-dot" /> <strong>Live</strong> Requests updated just now</p>
       </div>
@@ -325,10 +330,16 @@ const DonorDashboard = ({
   onNotifications = () => {},
 }) => {
   const [acceptedRequests, setAcceptedRequests] = useState([])
+  const [available, setAvailable] = useState(true)
 
   const handleAcceptRequest = (request) => {
     setAcceptedRequests((current) => current.includes(request.id) ? current : [...current, request.id])
     onAcceptRequest(request)
+  }
+
+  const handleUpdateAvailability = () => {
+    setAvailable((current) => !current)
+    onUpdateAvailability()
   }
 
   return (
@@ -354,7 +365,8 @@ const DonorDashboard = ({
           </div>
           <WelcomeStrip
             donorName={donorName}
-            onUpdateAvailability={onUpdateAvailability}
+            available={available}
+            onUpdateAvailability={handleUpdateAvailability}
             onFindRequests={onFindRequests}
             onScheduleDonation={onScheduleDonation}
           />

@@ -1995,3 +1995,445 @@
 		flex-wrap: wrap;
 	}
 }
+
+.donor-registration__field-full {
+	grid-column: 1 / -1;
+}
+
+.donor-registration__field-helper {
+	margin-top: 5px;
+	color: #64748B;
+	font-size: 11px;
+	line-height: 1.45;
+}
+
+.donor-registration__control-prefix {
+	position: absolute;
+	left: 12px;
+	color: #64748B;
+	font-size: 14px;
+	font-weight: 600;
+}
+
+.donor-registration__control:has(.donor-registration__control-prefix) input {
+	padding-left: 52px;
+}
+
+.donor-registration__control:has(.donor-registration__password-toggle) input {
+	padding-right: 48px;
+}
+
+.donor-registration__password-toggle {
+	position: absolute;
+	right: 4px;
+	display: grid;
+	width: 34px;
+	height: 34px;
+	place-items: center;
+	border: 0;
+	border-radius: 5px;
+	background: transparent;
+	color: #64748B;
+	cursor: pointer;
+}
+
+.donor-registration__password-toggle:hover {
+	color: #0F172A;
+}
+
+.donor-registration__password-toggle svg {
+	width: 17px;
+	height: 17px;
+}
+
+.donor-registration__dob-notice {
+	margin-top: 5px;
+	color: #C2410C;
+	font-size: 11px;
+	line-height: 1.4;
+}
+
+.donor-registration__location-button {
+	display: inline-flex;
+	min-height: 36px;
+	align-items: center;
+	gap: 6px;
+	margin-top: 4px;
+	padding: 0;
+	border: 0;
+	background: transparent;
+	color: #B91C1C;
+	font-family: 'Outfit', sans-serif;
+	font-size: 12px;
+	font-weight: 600;
+	cursor: pointer;
+}
+
+.donor-registration__location-button svg {
+	width: 14px;
+	height: 14px;
+}
+
+.donor-registration__location-feedback {
+	display: flex;
+	align-items: center;
+	gap: 5px;
+	margin-top: 2px;
+	font-size: 11px;
+}
+
+.donor-registration__location-feedback svg {
+	width: 13px;
+	height: 13px;
+}
+
+.donor-registration__location-feedback--success {
+	color: #15803D;
+}
+
+.donor-registration__location-feedback--neutral {
+	color: #64748B;
+}
+
+.donor-registration__health-row--error {
+	border-color: #DC2626;
+}
+
+.donor-registration__health-note {
+	margin-top: 10px;
+	padding: 10px 12px;
+	border: 1px solid #FED7AA;
+	border-radius: 8px;
+	background: #FFF7ED;
+	color: #9A3412;
+	font-size: 12px;
+	line-height: 1.5;
+}
+
+.donor-registration__optional-field {
+	margin-top: 16px;
+}
+
+.donor-registration__collapsible-heading {
+	display: flex;
+	width: 100%;
+	align-items: center;
+	gap: 10px;
+	padding: 0;
+	border: 0;
+	background: transparent;
+	color: inherit;
+	text-align: left;
+	font-family: 'Outfit', sans-serif;
+	cursor: pointer;
+}
+
+.donor-registration__collapsible-copy {
+	display: flex;
+	min-width: 0;
+	flex: 1;
+	flex-direction: column;
+}
+
+.donor-registration__collapsible-title-row {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+}
+
+.donor-registration__collapsible-title-row strong {
+	font-size: 14px;
+	font-weight: 700;
+}
+
+.donor-registration__optional-pill {
+	padding: 2px 7px;
+	border-radius: 999px;
+	background: #F1F5F9;
+	color: #64748B;
+	font-size: 10px;
+	font-weight: 500;
+}
+
+.donor-registration__section-subtitle {
+	margin-top: 2px;
+	color: #64748B;
+	font-size: 12px;
+	line-height: 1.4;
+}
+
+.donor-registration__collapse-chevron {
+	flex: 0 0 18px;
+	width: 18px;
+	height: 18px;
+	color: #64748B;
+	transition: transform 200ms ease;
+}
+
+.donor-registration__collapse-chevron--open {
+	transform: rotate(180deg);
+}
+
+.donor-registration__collapsible-body {
+	display: grid;
+	grid-template-rows: 0fr;
+	margin-top: 0;
+	opacity: 0;
+	transition: grid-template-rows 200ms ease, opacity 200ms ease, margin-top 200ms ease;
+}
+
+.donor-registration__collapsible-body--open {
+	grid-template-rows: 1fr;
+	margin-top: 16px;
+	opacity: 1;
+}
+
+.donor-registration__collapsible-inner {
+	min-height: 0;
+	overflow: hidden;
+}
+
+.donor-registration__preference-field + .donor-registration__preference-field {
+	margin-top: 16px;
+}
+
+.donor-registration__preference-label {
+	display: block;
+	margin-bottom: 8px;
+	color: #0F172A;
+	font-size: 12px;
+	font-weight: 600;
+}
+
+.donor-registration__chip-row {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+}
+
+.donor-registration__choice-chip {
+	min-height: 32px;
+	padding: 0 12px;
+	border: 1px solid #D1D5DB;
+	border-radius: 999px;
+	background: #FFFFFF;
+	color: #334155;
+	font-family: 'Outfit', sans-serif;
+	font-size: 13px;
+	cursor: pointer;
+	transition: background-color 160ms ease, border-color 160ms ease, color 160ms ease;
+}
+
+.donor-registration__choice-chip--selected {
+	border-color: #B91C1C;
+	background: #FEF2F2;
+	color: #B91C1C;
+}
+
+.donor-registration__radio-fieldset {
+	min-width: 0;
+	padding: 0;
+	border: 0;
+}
+
+.donor-registration__request-levels {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 10px;
+}
+
+.donor-registration__request-level {
+	position: relative;
+	display: flex;
+	min-height: 60px;
+	flex-direction: column;
+	justify-content: center;
+	gap: 3px;
+	padding: 10px 12px 10px 36px;
+	border: 1px solid #D1D5DB;
+	border-radius: 8px;
+	background: #FFFFFF;
+	color: #334155;
+	cursor: pointer;
+}
+
+.donor-registration__request-level input {
+	position: absolute;
+	left: 12px;
+	width: 15px;
+	height: 15px;
+	accent-color: #B91C1C;
+}
+
+.donor-registration__request-level span {
+	font-size: 12px;
+	font-weight: 600;
+}
+
+.donor-registration__request-level small {
+	color: #64748B;
+	font-size: 10px;
+}
+
+.donor-registration__request-level--selected {
+	border-color: #B91C1C;
+	background: #FEF2F2;
+	color: #B91C1C;
+}
+
+.donor-registration__request-level:has(input:focus-visible) {
+	outline: 2px solid #B91C1C;
+	outline-offset: 2px;
+}
+
+.donor-registration__quiet-hours {
+	display: grid;
+	grid-template-columns: 1fr auto;
+	align-items: center;
+	gap: 10px 16px;
+	margin-top: 16px;
+	padding-top: 14px;
+	border-top: 1px solid #F1F5F9;
+}
+
+.donor-registration__quiet-toggle-label {
+	color: #0F172A;
+	font-size: 12px;
+	font-weight: 600;
+}
+
+.donor-registration__switch {
+	position: relative;
+	width: 40px;
+	height: 22px;
+	padding: 0;
+	border: 0;
+	border-radius: 999px;
+	background: #CBD5E1;
+	cursor: pointer;
+	transition: background-color 160ms ease;
+}
+
+.donor-registration__switch--on {
+	background: #16A34A;
+}
+
+.donor-registration__switch span {
+	position: absolute;
+	top: 3px;
+	left: 3px;
+	width: 16px;
+	height: 16px;
+	border-radius: 50%;
+	background: #FFFFFF;
+	transition: transform 160ms ease;
+}
+
+.donor-registration__switch--on span {
+	transform: translateX(18px);
+}
+
+.donor-registration__quiet-details {
+	display: grid;
+	grid-column: 1 / -1;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 12px;
+}
+
+.donor-registration__quiet-details > label:not(.donor-registration__critical-checkbox) {
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+	color: #64748B;
+	font-size: 11px;
+}
+
+.donor-registration__quiet-details input[type='time'] {
+	min-height: 40px;
+	padding: 0 10px;
+	border: 1px solid #D1D5DB;
+	border-radius: 6px;
+	background: #FFFFFF;
+	color: #0F172A;
+	font: 13px 'Outfit', sans-serif;
+}
+
+.donor-registration__critical-checkbox {
+	display: flex;
+	grid-column: 1 / -1;
+	align-items: flex-start;
+	gap: 8px;
+	color: #64748B;
+	font-size: 11px;
+	line-height: 1.45;
+}
+
+.donor-registration__critical-checkbox input {
+	flex: 0 0 16px;
+	width: 16px;
+	height: 16px;
+	margin: 1px 0 0;
+	accent-color: #B91C1C;
+}
+
+.donor-registration__consent-list {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	margin-top: 16px;
+}
+
+.donor-registration__consent-item {
+	min-width: 0;
+}
+
+.donor-registration__consent-label input {
+	flex: 0 0 16px;
+	width: 16px;
+	height: 16px;
+	margin-top: 2px;
+}
+
+.donor-registration__consent-label a {
+	font-weight: 700;
+}
+
+.donor-registration__collapsible-heading:focus-visible,
+.donor-registration__location-button:focus-visible,
+.donor-registration__choice-chip:focus-visible,
+.donor-registration__password-toggle:focus-visible,
+.donor-registration__switch:focus-visible {
+	outline: 2px solid #B91C1C;
+	outline-offset: 2px;
+}
+
+@media (max-width: 560px) {
+	.donor-registration__chip-row {
+		row-gap: 8px;
+	}
+
+	.donor-registration__request-levels {
+		grid-template-columns: minmax(0, 1fr);
+	}
+
+	.donor-registration__quiet-details {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+
+	.donor-registration__location-button {
+		justify-content: center;
+		width: 100%;
+		min-height: 40px;
+		border: 1px solid #FECACA;
+		border-radius: 6px;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.donor-registration__collapsible-body,
+	.donor-registration__collapse-chevron,
+	.donor-registration__switch,
+	.donor-registration__switch span {
+		transition: none;
+	}
+}

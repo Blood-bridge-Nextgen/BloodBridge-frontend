@@ -872,12 +872,27 @@
   color: #15803D;
 }
 
+.donor-dashboard__status-chip--unavailable {
+  border-color: #FECACA;
+  background: #FEE2E2;
+  color: #B91C1C;
+}
+
 .donor-dashboard__status-chip--available i,
+.donor-dashboard__status-chip--unavailable i,
 .donor-dashboard__live-dot {
   width: 6px;
   height: 6px;
   border-radius: 50%;
+}
+
+.donor-dashboard__status-chip--available i,
+.donor-dashboard__live-dot {
   background: #22C55E;
+}
+
+.donor-dashboard__status-chip--unavailable i {
+  background: #EF4444;
 }
 
 .donor-dashboard__live-status {
