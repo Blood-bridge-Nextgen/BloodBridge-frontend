@@ -5,7 +5,10 @@ import './AuthStyle.css'
 const facilityTypes = ['Hospital', 'Blood Bank', 'Clinic', 'Diagnostic Center', 'Other']
 const noop = () => {}
 const facilitySignupUrl = import.meta.env.VITE_HOSPITAL_SIGNUP_API
+
 const registerFacility = async (payload) => {
+	if (!facilitySignupUrl) throw new Error('Facility signup endpoint is not configured.')
+
 	const response = await fetch(facilitySignupUrl, {
 		method: 'POST',
 		headers: {

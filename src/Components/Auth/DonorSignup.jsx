@@ -1,12 +1,16 @@
 import { useRef, useState } from 'react'
 import { ArrowLeft, ChevronDown, Eye, EyeOff } from 'lucide-react'
 import './AuthStyle.css'
+import { useNavigate } from 'react-router-dom'
 
 const bloodGroups = ['A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-', "I don't know yet"]
 const noop = () => {}
-const donorSignupUrl = import.meta.env.VITE_DONOR_SIGNUP_API;
+const donorSignupUrl = import.meta.env.VITE_DONOR_SIGNUP_API
+const navigate = useNavigate();
 
 const createDonorAccount = async (payload) => {
+	if (!donorSignupUrl) throw new Error('Donor signup endpoint is not configured.')
+
 	const response = await fetch(donorSignupUrl, {
 		method: 'POST',
 		headers: {
@@ -186,8 +190,8 @@ const DonorSignup = ({ onBack = () => window.history.back(), onSignIn = noop, on
 				bloodGroup: formData.bloodGroup,
 				status: formData.available ? 'available' : 'unavailable',
 			}
-			const result = await onCreateAccount(payload)
-			setFeedback({ type: 'success', message: result?.message || 'Your donor account was created successfully.' })
+            await onCreateAccount(payload)
+            navigate('/CreateDonorProfile')
 		} catch (error) {
 			setFeedback({ type: 'error', message: error.message || 'Unable to create your account. Please try again.' })
 		} finally {

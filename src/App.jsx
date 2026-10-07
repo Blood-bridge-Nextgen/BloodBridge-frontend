@@ -6,7 +6,7 @@ import StepsSection from './Components/StepsSection'
 import Features from './Components/Features'
 import Trust from './Components/Trust'
 import Footer from './Components/Footer'
-import CreateDonorAccount from './Components/Auth/CreateDonorAccount'
+import CreateDonorAccount from './Components/Auth/CreateDonorProfile'
 import CreateHospitalAccount from './Components/Auth/CreatHospitalAccount'
 import OnboardingScreen from './Components/Auth/OnboardingScreen' 
 import DonorDashboard from './Components/Dashboards/DonorDashboard'
@@ -40,7 +40,7 @@ function App() {
           </>
         }
       />
-      <Route path="/CreateDonorAccount" element={<CreateDonorAccount />} />
+      <Route path="/CreateDonorProfile" element={<CreateDonorAccount />} />
       <Route path="/CreateHospitalAccount" element={<CreateHospitalAccount />} />
       <Route path="/OnboardingScreen" element={<OnboardingScreen />} />
       <Route path="/DonorDashboard" element={<DonorDashboard />} />

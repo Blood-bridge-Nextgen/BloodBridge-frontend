@@ -8,7 +8,7 @@ import {
   ShieldCheck,
   User,
 } from 'lucide-react'
-import { FormField } from '../Auth/CreateDonorAccount'
+import { FormField } from '../Auth/CreateDonorProfile'
 import DonorNavbar from './DonorNavbar'
 import './Dashboard.css'
 
