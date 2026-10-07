@@ -4,6 +4,26 @@ import './AuthStyle.css'
 
 const bloodGroups = ['A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-', "I don't know yet"]
 const noop = () => {}
+const donorSignupUrl = import.meta.env.VITE_DONOR_SIGNUP_API;
+
+const createDonorAccount = async (payload) => {
+	const response = await fetch(donorSignupUrl, {
+		method: 'POST',
+		headers: {
+			accept: '*/*',
+			'Content-Type': 'application/json',
+		},
+		body: JSON.stringify(payload),
+	})
+
+	const responseData = await response.json().catch(() => ({}))
+	if (!response.ok) {
+		const message = responseData.message || responseData.error || 'Unable to create your account. Please try again.'
+		throw new Error(Array.isArray(message) ? message.join(' ') : message)
+	}
+
+	return responseData
+}
 
 const Field = ({
 	id,
@@ -76,11 +96,12 @@ const Field = ({
 	)
 }
 
-const DonorSignup = ({ onBack = () => window.history.back(), onSignIn = noop, onCreateAccount = noop }) => {
+const DonorSignup = ({ onBack = () => window.history.back(), onSignIn = noop, onCreateAccount = createDonorAccount }) => {
 	const [formData, setFormData] = useState({
 		fullName: '',
 		email: '',
 		phone: '',
+		dateOfBirth: '',
 		password: '',
 		confirmPassword: '',
 		bloodGroup: '',
@@ -90,6 +111,7 @@ const DonorSignup = ({ onBack = () => window.history.back(), onSignIn = noop, on
 	})
 	const [errors, setErrors] = useState({})
 	const [isSubmitting, setIsSubmitting] = useState(false)
+	const [feedback, setFeedback] = useState(null)
 	const fieldRefs = useRef({})
 
 	const updateField = (name, value) => {
@@ -100,6 +122,7 @@ const DonorSignup = ({ onBack = () => window.history.back(), onSignIn = noop, on
 			delete nextErrors[name]
 			return nextErrors
 		})
+		setFeedback(null)
 	}
 
 	const renderField = (name, label, props = {}) => (
@@ -121,9 +144,15 @@ const DonorSignup = ({ onBack = () => window.history.back(), onSignIn = noop, on
 		if (isSubmitting) return
 
 		const nextErrors = {}
-		if (formData.fullName.trim().length < 2) nextErrors.fullName = 'Enter your full name.'
+		const nameParts = formData.fullName.trim().split(/\s+/).filter(Boolean)
+		if (nameParts.length < 2 || formData.fullName.trim().length < 2) {
+			nextErrors.fullName = 'Enter your first and last name.'
+		}
 		if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email.trim())) nextErrors.email = 'Enter a valid email address.'
 		if (formData.phone.replace(/\D/g, '').length < 10) nextErrors.phone = 'Enter a phone number with at least 10 digits.'
+		if (!formData.dateOfBirth || Number.isNaN(Date.parse(formData.dateOfBirth)) || formData.dateOfBirth > new Date().toISOString().slice(0, 10)) {
+			nextErrors.dateOfBirth = 'Enter a valid date of birth.'
+		}
 		if (formData.password.length < 8) nextErrors.password = 'Password must be at least 8 characters.'
 		if (!formData.confirmPassword || formData.confirmPassword !== formData.password) {
 			nextErrors.confirmPassword = 'Passwords must match.'
@@ -140,8 +169,27 @@ const DonorSignup = ({ onBack = () => window.history.back(), onSignIn = noop, on
 		}
 
 		setIsSubmitting(true)
+		setFeedback(null)
 		try {
-			await onCreateAccount({ ...formData })
+			const firstName = nameParts[0]
+			const lastName = nameParts[nameParts.length - 1]
+			const payload = {
+				firstName,
+				lastName,
+				otherNames: nameParts.slice(1, -1).join(' '),
+				email: formData.email.trim(),
+				phone: formData.phone.trim(),
+				address: formData.location.trim(),
+				dob: formData.dateOfBirth,
+				password: formData.password,
+				confirmPassword: formData.confirmPassword,
+				bloodGroup: formData.bloodGroup,
+				status: formData.available ? 'available' : 'unavailable',
+			}
+			const result = await onCreateAccount(payload)
+			setFeedback({ type: 'success', message: result?.message || 'Your donor account was created successfully.' })
+		} catch (error) {
+			setFeedback({ type: 'error', message: error.message || 'Unable to create your account. Please try again.' })
 		} finally {
 			setIsSubmitting(false)
 		}
@@ -161,6 +209,7 @@ const DonorSignup = ({ onBack = () => window.history.back(), onSignIn = noop, on
 					{renderField('fullName', 'Full Name', { placeholder: 'John Doe', autoComplete: 'name' })}
 					{renderField('email', 'Email Address', { type: 'email', placeholder: 'john@example.com', autoComplete: 'email' })}
 					{renderField('phone', 'Phone Number', { type: 'tel', placeholder: '+1 (555) 019-9234', autoComplete: 'tel', inputMode: 'tel' })}
+					{renderField('dateOfBirth', 'Date of Birth', { type: 'date', autoComplete: 'bday' })}
 					{renderField('password', 'Password', { type: 'password', placeholder: '••••••••', autoComplete: 'new-password' })}
 					{renderField('confirmPassword', 'Confirm Password', { type: 'password', placeholder: '••••••••', autoComplete: 'new-password' })}
 
@@ -200,6 +249,12 @@ const DonorSignup = ({ onBack = () => window.history.back(), onSignIn = noop, on
 						</label>
 						{errors.termsAccepted && <p className="donor-signup__error" id="donor-signup-termsAccepted-error" role="alert">{errors.termsAccepted}</p>}
 					</div>
+
+					{feedback && (
+						<p className={`donor-signup__feedback donor-signup__feedback--${feedback.type}`} role={feedback.type === 'error' ? 'alert' : 'status'}>
+							{feedback.message}
+						</p>
+					)}
 
 					<button className="donor-signup__submit" type="submit" disabled={isSubmitting}>
 						{isSubmitting && <span className="donor-signup__spinner" aria-hidden="true" />}

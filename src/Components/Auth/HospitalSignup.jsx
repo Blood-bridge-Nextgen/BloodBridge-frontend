@@ -4,6 +4,25 @@ import './AuthStyle.css'
 
 const facilityTypes = ['Hospital', 'Blood Bank', 'Clinic', 'Diagnostic Center', 'Other']
 const noop = () => {}
+const facilitySignupUrl = import.meta.env.VITE_HOSPITAL_SIGNUP_API
+const registerFacility = async (payload) => {
+	const response = await fetch(facilitySignupUrl, {
+		method: 'POST',
+		headers: {
+			accept: '*/*',
+			'Content-Type': 'application/json',
+		},
+		body: JSON.stringify(payload),
+	})
+
+	const responseData = await response.json().catch(() => ({}))
+	if (!response.ok) {
+		const message = responseData.message || responseData.error || 'Unable to register your organization. Please try again.'
+		throw new Error(Array.isArray(message) ? message.join(' ') : message)
+	}
+
+	return responseData
+}
 
 const Field = ({
 	id,
@@ -78,7 +97,7 @@ const Field = ({
 	)
 }
 
-const HospitalSignup = ({ onBack = () => window.history.back(), onSignIn = noop, onSubmit = noop }) => {
+const HospitalSignup = ({ onBack = () => window.history.back(), onSignIn = noop, onSubmit = registerFacility }) => {
 	const [formData, setFormData] = useState({
 		organizationName: '',
 		facilityType: 'Hospital',
@@ -91,6 +110,7 @@ const HospitalSignup = ({ onBack = () => window.history.back(), onSignIn = noop,
 	})
 	const [errors, setErrors] = useState({})
 	const [isSubmitting, setIsSubmitting] = useState(false)
+	const [feedback, setFeedback] = useState(null)
 	const fieldRefs = useRef({})
 
 	const updateField = (name, value) => {
@@ -101,6 +121,7 @@ const HospitalSignup = ({ onBack = () => window.history.back(), onSignIn = noop,
 			delete nextErrors[name]
 			return nextErrors
 		})
+		setFeedback(null)
 	}
 
 	const renderField = (name, label, props = {}) => (
@@ -145,8 +166,21 @@ const HospitalSignup = ({ onBack = () => window.history.back(), onSignIn = noop,
 		}
 
 		setIsSubmitting(true)
+		setFeedback(null)
 		try {
-			await onSubmit({ ...formData, licenseNumber: formData.licenseNumber.toUpperCase() })
+			const payload = {
+				organizationName: formData.organizationName.trim(),
+				registrationNumber: formData.licenseNumber.trim().toUpperCase(),
+				email: formData.email.trim(),
+				phone: formData.phone.trim(),
+				address: formData.address.trim(),
+				password: formData.password,
+				confirmPassword: formData.confirmPassword,
+			}
+			const result = await onSubmit(payload)
+			setFeedback({ type: 'success', message: result?.message || 'Organization registration submitted successfully.' })
+		} catch (error) {
+			setFeedback({ type: 'error', message: error.message || 'Unable to register your organization. Please try again.' })
 		} finally {
 			setIsSubmitting(false)
 		}
@@ -179,6 +213,12 @@ const HospitalSignup = ({ onBack = () => window.history.back(), onSignIn = noop,
 						<span className="hospital-signup__notice-icon"><ShieldCheck aria-hidden="true" /></span>
 						<p>Your organization will be verified before you can create blood requests. Verification typically takes 1-2 business days.</p>
 					</aside>
+
+					{feedback && (
+						<p className={`hospital-signup__feedback hospital-signup__feedback--${feedback.type}`} role={feedback.type === 'error' ? 'alert' : 'status'}>
+							{feedback.message}
+						</p>
+					)}
 
 					<button className="hospital-signup__submit" type="submit" disabled={isSubmitting}>
 						{isSubmitting && <span className="hospital-signup__spinner" aria-hidden="true" />}

@@ -39,8 +39,8 @@ const OnboardingScreen = ({ onRegister = () => {}, onSignIn = () => {} }) => {
   const handleRegister = () => {
     onRegister(selectedRole)
     navigate(selectedRole === 'donor'
-      ? '/CreateDonorAccount'
-      : '/CreateHospitalAccount'
+      ? '/DonorSignup'
+      : '/HospitalSignup'
     )
   }
 

@@ -475,6 +475,27 @@
 	text-decoration: underline;
 }
 
+.donor-signup__feedback {
+	margin-top: -4px;
+	padding: 10px 12px;
+	border: 1px solid;
+	border-radius: 6px;
+	font-size: 12px;
+	line-height: 1.45;
+}
+
+.donor-signup__feedback--success {
+	border-color: #BBF7D0;
+	background: #F0FDF4;
+	color: #15803D;
+}
+
+.donor-signup__feedback--error {
+	border-color: #FECACA;
+	background: #FEF2F2;
+	color: #B91C1C;
+}
+
 .donor-signup__submit {
 	display: flex;
 	width: 100%;
@@ -777,6 +798,27 @@
 	line-height: 1.5;
 }
 
+.hospital-signup__feedback {
+	margin-top: -4px;
+	padding: 10px 12px;
+	border: 1px solid;
+	border-radius: 6px;
+	font-size: 12px;
+	line-height: 1.45;
+}
+
+.hospital-signup__feedback--success {
+	border-color: #BBF7D0;
+	background: #F0FDF4;
+	color: #15803D;
+}
+
+.hospital-signup__feedback--error {
+	border-color: #FECACA;
+	background: #FEF2F2;
+	color: #B91C1C;
+}
+
 /* Hospital signup button and account link */
 .hospital-signup__submit {
 	display: flex;
@@ -870,6 +912,339 @@
 
 	.hospital-signup__password-row {
 		grid-template-columns: minmax(0, 1fr);
+	}
+}
+
+.sign-in {
+	min-height: 100dvh;
+	padding: 32px 20px;
+	background: #FFFFFF;
+	color: #0F172A;
+	font-family: 'Outfit', sans-serif;
+}
+
+.sign-in__card {
+	width: 100%;
+	max-width: 440px;
+	margin: 0 auto;
+}
+
+.sign-in__brand {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 8px;
+	margin-bottom: 32px;
+}
+
+.sign-in__logo-mark {
+	display: grid;
+	flex: 0 0 32px;
+	width: 32px;
+	height: 32px;
+	place-items: center;
+	border-radius: 8px;
+	background: #B91C1C;
+	color: #FFFFFF;
+}
+
+.sign-in__logo-mark svg {
+	width: 21px;
+	height: 21px;
+}
+
+.sign-in__wordmark {
+	white-space: nowrap;
+	font-size: 22px;
+	line-height: 1;
+}
+
+.sign-in__wordmark span:first-child {
+	color: #0F172A;
+	font-weight: 700;
+}
+
+.sign-in__wordmark span:last-child {
+	color: #B91C1C;
+	font-weight: 500;
+}
+
+.sign-in__secured {
+	align-self: center;
+	margin-top: -8px;
+	padding: 1px 5px;
+	border: 1px solid #15803D;
+	border-radius: 3px;
+	color: #15803D;
+	font-size: 8px;
+	font-weight: 800;
+	line-height: 1.2;
+}
+
+.sign-in__title {
+	margin-bottom: 20px;
+	color: #0F172A;
+	font-size: 24px;
+	font-weight: 700;
+	text-align: left;
+}
+
+.sign-in__form {
+	width: 100%;
+}
+
+.sign-in__fields {
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+}
+
+.sign-in__field {
+	min-width: 0;
+}
+
+.sign-in__label {
+	display: block;
+	margin-bottom: 6px;
+	color: #0F172A;
+	font-size: 12px;
+	font-weight: 600;
+}
+
+.sign-in__control {
+	position: relative;
+	display: flex;
+	width: 100%;
+	height: 44px;
+	align-items: center;
+	border: 1px solid #E2E8F0;
+	border-radius: 6px;
+	background: #F1F5F9;
+	transition: border-color 160ms ease, background-color 160ms ease, box-shadow 160ms ease;
+}
+
+.sign-in__control:focus-within {
+	border-color: #B91C1C;
+	background: #FFFFFF;
+	box-shadow: 0 0 0 3px rgba(185, 28, 28, 0.12);
+}
+
+.sign-in__control--error {
+	border-color: #DC2626;
+}
+
+.sign-in__control--error:focus-within {
+	border-color: #DC2626;
+}
+
+.sign-in__control input {
+	width: 100%;
+	height: 100%;
+	min-width: 0;
+	padding: 0 12px;
+	border: 0;
+	border-radius: 6px;
+	outline: 0;
+	background: transparent;
+	color: #0F172A;
+	font-family: 'Outfit', sans-serif;
+	font-size: 14px;
+}
+
+.sign-in__control input::placeholder {
+	color: #94A3B8;
+	opacity: 1;
+}
+
+.sign-in__control:has(.sign-in__password-toggle) input {
+	padding-right: 48px;
+}
+
+.sign-in__field-error {
+	margin-top: 4px;
+	color: #B91C1C;
+	font-size: 11px;
+	line-height: 1.4;
+}
+
+.sign-in__password-toggle {
+	position: absolute;
+	top: 0;
+	right: 0;
+	display: grid;
+	width: 44px;
+	height: 42px;
+	place-items: center;
+	border: 0;
+	border-radius: 5px;
+	background: transparent;
+	color: #64748B;
+	cursor: pointer;
+	transition: color 160ms ease;
+}
+
+.sign-in__password-toggle:hover {
+	color: #0F172A;
+}
+
+.sign-in__password-toggle svg {
+	width: 18px;
+	height: 18px;
+}
+
+.sign-in__auth-error {
+	display: flex;
+	align-items: flex-start;
+	gap: 8px;
+	margin-bottom: 16px;
+	padding: 10px 12px;
+	border: 1px solid #FECACA;
+	border-radius: 8px;
+	background: #FEF2F2;
+	color: #B91C1C;
+	font-size: 12px;
+	line-height: 1.45;
+}
+
+.sign-in__auth-error svg {
+	flex: 0 0 16px;
+	width: 16px;
+	height: 16px;
+	margin-top: 1px;
+}
+
+.sign-in__options-row {
+	display: flex;
+	min-height: 44px;
+	align-items: center;
+	justify-content: space-between;
+	gap: 12px;
+	margin: 4px 0;
+}
+
+.sign-in__remember-label {
+	display: inline-flex;
+	min-height: 44px;
+	align-items: center;
+	gap: 8px;
+	color: #64748B;
+	font-size: 12px;
+	cursor: pointer;
+}
+
+.sign-in__remember-label input {
+	width: 18px;
+	height: 18px;
+	margin: 0;
+	accent-color: #B91C1C;
+}
+
+.sign-in__forgot-link {
+	min-height: 44px;
+	padding: 0;
+	border: 0;
+	background: transparent;
+	color: #B91C1C;
+	font-family: 'Outfit', sans-serif;
+	font-size: 12px;
+	font-weight: 600;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.sign-in__forgot-link:hover,
+.sign-in__create-account button:hover {
+	text-decoration: underline;
+}
+
+.sign-in__submit {
+	display: flex;
+	width: 100%;
+	min-height: 48px;
+	align-items: center;
+	justify-content: center;
+	gap: 8px;
+	margin-top: 8px;
+	border: 0;
+	border-radius: 6px;
+	background: #B91C1C;
+	color: #FFFFFF;
+	font-family: 'Outfit', sans-serif;
+	font-size: 15px;
+	font-weight: 600;
+	cursor: pointer;
+	transition: background-color 160ms ease;
+}
+
+.sign-in__submit:hover:not(:disabled) {
+	background: #991B1B;
+}
+
+.sign-in__submit:disabled {
+	background: #FCA5A5;
+	cursor: wait;
+}
+
+.sign-in__submit:focus-visible,
+.sign-in__password-toggle:focus-visible,
+.sign-in__forgot-link:focus-visible,
+.sign-in__create-account button:focus-visible {
+	outline: 2px solid #B91C1C;
+	outline-offset: 2px;
+}
+
+.sign-in__loader {
+	width: 18px;
+	height: 18px;
+	animation: sign-in__spin 700ms linear infinite;
+}
+
+@keyframes sign-in__spin {
+	to { transform: rotate(360deg); }
+}
+
+.sign-in__create-account {
+	margin-top: 24px;
+	color: #64748B;
+	font-size: 13px;
+	text-align: center;
+}
+
+.sign-in__create-account button {
+	padding: 0;
+	border: 0;
+	background: transparent;
+	color: #B91C1C;
+	font-family: 'Outfit', sans-serif;
+	font-size: inherit;
+	font-weight: 600;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+@media (min-width: 768px) {
+	.sign-in {
+		padding-top: 64px;
+		background: #F1F5F9;
+	}
+
+	.sign-in__card {
+		padding: 32px;
+		border: 1px solid #E2E8F0;
+		border-radius: 12px;
+		background: #FFFFFF;
+		box-shadow: 0 4px 24px rgba(15, 23, 42, 0.05);
+	}
+}
+
+@media (max-width: 340px) {
+	.sign-in {
+		padding-right: 16px;
+		padding-left: 16px;
+	}
+
+	.sign-in__options-row {
+		flex-wrap: wrap;
 	}
 }
 

@@ -1,5 +1,4 @@
-import React from 'react'
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, useNavigate } from 'react-router-dom'
 import useRevealOnScroll from './hooks/useRevealOnScroll'
 import HeroSection from './Components/HeroSection'
 import StatisticSection from './Components/Statistic-section'
@@ -14,7 +13,14 @@ import DonorDashboard from './Components/Dashboards/DonorDashboard'
 import DonorProfile from './Components/Dashboards/DonorProfile'
 import DonorSignup from './Components/Auth/DonorSignup'
 import HospitalSignup from './Components/Auth/HospitalSignup'
+import SignIn from './Components/Auth/SignIn'
 import Contact from './Components/Contact'
+
+const SignInRoute = () => {
+  const navigate = useNavigate()
+
+  return <SignIn onCreateAccount={() => navigate('/DonorDashboard')} />
+}
 
 function App() {
   useRevealOnScroll();
@@ -42,6 +48,7 @@ function App() {
       <Route path="/Contact" element={<Contact />} />
       <Route path="/DonorSignup" element={<DonorSignup />} />
       <Route path="/HospitalSignup" element={<HospitalSignup />} />
+      <Route path="/SignIn" element={<SignInRoute />} />
     </Routes>
   )
 }
