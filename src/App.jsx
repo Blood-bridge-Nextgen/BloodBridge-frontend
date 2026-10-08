@@ -68,7 +68,10 @@ function App() {
         }
       />
       <Route path="/CreateDonorProfile" element={<CreateDonorAccount />} />
-      <Route path="/CreateHospitalAccount" element={<CreateHospitalAccount />} />
+      <Route
+        path="/CreateHospitalAccount"
+        element={<CreateHospitalAccount />}
+      />
       <Route path="/OnboardingScreen" element={<OnboardingScreen />} />
       <Route path="/DonorDashboard" element={<DonorDashboard />} />
       <Route path="/DonorDashboard/profile" element={<DonorProfile />} />
@@ -80,7 +83,7 @@ function App() {
       <Route path="/VerifyResetOtp" element={<VerifyResetOtpRoute />} />
       <Route path="/HospitalDashboard" element={<HospitalDashboard />} />
     </Routes>
-  )
+  );
 }
 
-export default App
+export default App;

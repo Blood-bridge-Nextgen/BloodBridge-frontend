@@ -1,527 +1,534 @@
 .onboarding-screen {
-	min-height: 100dvh;
-	background: #FFFFFF;
-	color: #0F172A;
-	text-align: center;
-	font-family: 'Outfit', sans-serif;
+  min-height: 100dvh;
+  background: #ffffff;
+  color: #0f172a;
+  text-align: center;
+  font-family: "Outfit", sans-serif;
 }
 
 .onboarding-screen__content {
-	width: 100%;
-	max-width: 420px;
-	margin: 0 auto;
-	padding: 32px 24px;
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto;
+  padding: 32px 24px;
 }
 
 .onboarding-screen__brand-row {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	gap: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
 }
 
 .onboarding-screen__logo-mark {
-	display: grid;
-	flex: 0 0 32px;
-	width: 32px;
-	height: 32px;
-	place-items: center;
-	border-radius: 8px;
-	background: #B91C1C;
-	color: #FFFFFF;
+  display: grid;
+  flex: 0 0 32px;
+  width: 32px;
+  height: 32px;
+  place-items: center;
+  border-radius: 8px;
+  background: #b91c1c;
+  color: #ffffff;
 }
 
 .onboarding-screen__logo-mark svg {
-	width: 21px;
-	height: 21px;
+  width: 21px;
+  height: 21px;
 }
 
 .onboarding-screen__wordmark {
-	white-space: nowrap;
-	font-size: 22px;
-	line-height: 1;
+  white-space: nowrap;
+  font-size: 22px;
+  line-height: 1;
 }
 
 .onboarding-screen__wordmark-blood {
-	color: #0F172A;
-	font-weight: 700;
+  color: #0f172a;
+  font-weight: 700;
 }
 
 .onboarding-screen__wordmark-bridge {
-	color: #B91C1C;
-	font-weight: 500;
+  color: #b91c1c;
+  font-weight: 500;
 }
 
 .onboarding-screen__secured {
-	align-self: center;
-	margin-top: -8px;
-	padding: 1px 5px;
-	border: 1px solid #15803D;
-	border-radius: 3px;
-	color: #15803D;
-	font-size: 8px;
-	font-weight: 800;
-	line-height: 1.2;
+  align-self: center;
+  margin-top: -8px;
+  padding: 1px 5px;
+  border: 1px solid #15803d;
+  border-radius: 3px;
+  color: #15803d;
+  font-size: 8px;
+  font-weight: 800;
+  line-height: 1.2;
 }
 
 .onboarding-screen__tagline {
-	margin-top: 8px;
-	color: #15803D;
-	font-family: 'JetBrains Mono', monospace;
-	font-size: 11px;
-	font-weight: 600;
-	letter-spacing: 1.5px;
-	text-transform: uppercase;
+  margin-top: 8px;
+  color: #15803d;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
 }
 
 .onboarding-screen__prompt {
-	margin-top: 24px;
-	color: #64748B;
-	font-size: 14px;
-	font-weight: 500;
+  margin-top: 24px;
+  color: #64748b;
+  font-size: 14px;
+  font-weight: 500;
 }
 
 .onboarding-screen__roles {
-	display: flex;
-	flex-direction: column;
-	gap: 12px;
-	margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 16px;
 }
 
 .onboarding-screen__role-card {
-	display: flex;
-	width: 100%;
-	align-items: center;
-	gap: 14px;
-	padding: 16px;
-	border: 2px solid transparent;
-	border-radius: 10px;
-	background: #F1F5F9;
-	color: inherit;
-	text-align: left;
-	font-family: 'Outfit', sans-serif;
-	cursor: pointer;
-	transition: border-color 200ms ease, background-color 200ms ease;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  gap: 14px;
+  padding: 16px;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  background: #f1f5f9;
+  color: inherit;
+  text-align: left;
+  font-family: "Outfit", sans-serif;
+  cursor: pointer;
+  transition:
+    border-color 200ms ease,
+    background-color 200ms ease;
 }
 
-.onboarding-screen__role-card:hover:not(.onboarding-screen__role-card--selected) {
-	border-color: #FECACA;
+.onboarding-screen__role-card:hover:not(
+  .onboarding-screen__role-card--selected
+) {
+  border-color: #fecaca;
 }
 
 .onboarding-screen__role-card--selected {
-	border-color: #DC2626;
+  border-color: #dc2626;
 }
 
 .onboarding-screen__role-card:focus-visible {
-	outline: 2px solid #B91C1C;
-	outline-offset: 2px;
+  outline: 2px solid #b91c1c;
+  outline-offset: 2px;
 }
 
 .onboarding-screen__role-icon {
-	display: grid;
-	flex: 0 0 40px;
-	width: 40px;
-	height: 40px;
-	place-items: center;
-	border-radius: 50%;
-	background: #E2E8F0;
-	color: #475569;
+  display: grid;
+  flex: 0 0 40px;
+  width: 40px;
+  height: 40px;
+  place-items: center;
+  border-radius: 50%;
+  background: #e2e8f0;
+  color: #475569;
 }
 
 .onboarding-screen__role-icon--selected {
-	background: #FCA5A5;
-	color: #B91C1C;
+  background: #fca5a5;
+  color: #b91c1c;
 }
 
 .onboarding-screen__role-icon svg {
-	width: 20px;
-	height: 20px;
+  width: 20px;
+  height: 20px;
 }
 
 .onboarding-screen__role-copy {
-	display: flex;
-	min-width: 0;
-	flex-direction: column;
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
 }
 
 .onboarding-screen__role-title {
-	color: #0F172A;
-	font-size: 15px;
-	font-weight: 700;
+  color: #0f172a;
+  font-size: 15px;
+  font-weight: 700;
 }
 
 .onboarding-screen__role-description {
-	margin-top: 2px;
-	color: #64748B;
-	font-size: 12.5px;
-	font-weight: 400;
-	line-height: 1.4;
+  margin-top: 2px;
+  color: #64748b;
+  font-size: 12.5px;
+  font-weight: 400;
+  line-height: 1.4;
 }
 
 .onboarding-screen__actions {
-	display: flex;
-	flex-direction: column;
-	gap: 12px;
-	margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 40px;
 }
 
 .onboarding-screen__action-button {
-	width: 100%;
-	height: 48px;
-	border-radius: 6px;
-	font-family: 'Outfit', sans-serif;
-	font-size: 15px;
-	font-weight: 600;
-	cursor: pointer;
-	transition: background-color 160ms ease;
+  width: 100%;
+  height: 48px;
+  border-radius: 6px;
+  font-family: "Outfit", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 160ms ease;
 }
 
 .onboarding-screen__action-button:focus-visible {
-	outline: 2px solid #B91C1C;
-	outline-offset: 2px;
+  outline: 2px solid #b91c1c;
+  outline-offset: 2px;
 }
 
 .onboarding-screen__action-button--primary {
-	border: 0;
-	background: #B91C1C;
-	color: #FFFFFF;
+  border: 0;
+  background: #b91c1c;
+  color: #ffffff;
 }
 
 .onboarding-screen__action-button--primary:hover {
-	background: #991B1B;
+  background: #991b1b;
 }
 
 .onboarding-screen__action-button--secondary {
-	border: 1.5px solid #B91C1C;
-	background: #FFFFFF;
-	color: #B91C1C;
+  border: 1.5px solid #b91c1c;
+  background: #ffffff;
+  color: #b91c1c;
 }
 
 .onboarding-screen__action-button--secondary:hover {
-	background: #FEF2F2;
+  background: #fef2f2;
 }
 
 @media (max-width: 360px) {
-	.onboarding-screen__content {
-		padding: 24px 16px;
-	}
+  .onboarding-screen__content {
+    padding: 24px 16px;
+  }
 
-	.onboarding-screen__wordmark {
-		font-size: 20px;
-	}
+  .onboarding-screen__wordmark {
+    font-size: 20px;
+  }
 
-	.onboarding-screen__role-card {
-		padding: 14px;
-	}
+  .onboarding-screen__role-card {
+    padding: 14px;
+  }
 }
 
 @media (min-width: 768px) {
-	.onboarding-screen__content {
-		padding-top: 64px;
-	}
+  .onboarding-screen__content {
+    padding-top: 64px;
+  }
 }
 
 .donor-signup {
-	min-height: 100dvh;
-	padding: 16px 20px 32px;
-	background: #FFFFFF;
-	color: #0F172A;
-	font-family: 'Outfit', sans-serif;
+  min-height: 100dvh;
+  padding: 16px 20px 32px;
+  background: #ffffff;
+  color: #0f172a;
+  font-family: "Outfit", sans-serif;
 }
 
 .donor-signup__card {
-	width: 100%;
-	max-width: 440px;
-	margin: 0 auto;
+  width: 100%;
+  max-width: 440px;
+  margin: 0 auto;
 }
 
 .donor-signup__header {
-	display: flex;
-	height: 56px;
-	align-items: center;
-	gap: 12px;
+  display: flex;
+  height: 56px;
+  align-items: center;
+  gap: 12px;
 }
 
 .donor-signup__back-button {
-	display: grid;
-	flex: 0 0 36px;
-	width: 36px;
-	height: 36px;
-	place-items: center;
-	border: 0;
-	border-radius: 8px;
-	background: transparent;
-	color: #0F172A;
-	cursor: pointer;
-	transition: background-color 160ms ease;
+  display: grid;
+  flex: 0 0 36px;
+  width: 36px;
+  height: 36px;
+  place-items: center;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: #0f172a;
+  cursor: pointer;
+  transition: background-color 160ms ease;
 }
 
 .donor-signup__back-button:hover {
-	background: #F1F5F9;
+  background: #f1f5f9;
 }
 
 .donor-signup__back-button svg {
-	width: 19px;
-	height: 19px;
+  width: 19px;
+  height: 19px;
 }
 
 .donor-signup__header h1 {
-	color: #0F172A;
-	font-size: 18px;
-	font-weight: 700;
+  color: #0f172a;
+  font-size: 18px;
+  font-weight: 700;
 }
 
 .donor-signup__form {
-	display: flex;
-	flex-direction: column;
-	gap: 16px;
-	margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 16px;
 }
 
 .donor-signup__field {
-	min-width: 0;
+  min-width: 0;
 }
 
 .donor-signup__label {
-	display: block;
-	margin-bottom: 6px;
-	color: #0F172A;
-	font-size: 12px;
-	font-weight: 600;
+  display: block;
+  margin-bottom: 6px;
+  color: #0f172a;
+  font-size: 12px;
+  font-weight: 600;
 }
 
 .donor-signup__control {
-	position: relative;
-	display: flex;
-	width: 100%;
-	height: 44px;
-	align-items: center;
-	border: 1px solid #E2E8F0;
-	border-radius: 6px;
-	background: #F1F5F9;
-	transition: border-color 160ms ease, background-color 160ms ease, box-shadow 160ms ease;
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 44px;
+  align-items: center;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  background: #f1f5f9;
+  transition:
+    border-color 160ms ease,
+    background-color 160ms ease,
+    box-shadow 160ms ease;
 }
 
 .donor-signup__control:focus-within {
-	border-color: #B91C1C;
-	background: #FFFFFF;
-	box-shadow: 0 0 0 3px rgba(185, 28, 28, 0.12);
+  border-color: #b91c1c;
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(185, 28, 28, 0.12);
 }
 
 .donor-signup__control--error {
-	border-color: #DC2626;
+  border-color: #dc2626;
 }
 
 .donor-signup__control--error:focus-within {
-	border-color: #DC2626;
+  border-color: #dc2626;
 }
 
 .donor-signup__control input,
 .donor-signup__control select {
-	width: 100%;
-	height: 100%;
-	min-width: 0;
-	padding: 0 12px;
-	border: 0;
-	border-radius: 6px;
-	outline: 0;
-	background: transparent;
-	color: #0F172A;
-	font-family: 'Outfit', sans-serif;
-	font-size: 14px;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  padding: 0 12px;
+  border: 0;
+  border-radius: 6px;
+  outline: 0;
+  background: transparent;
+  color: #0f172a;
+  font-family: "Outfit", sans-serif;
+  font-size: 14px;
 }
 
 .donor-signup__control input::placeholder {
-	color: #94A3B8;
-	opacity: 1;
+  color: #94a3b8;
+  opacity: 1;
 }
 
 .donor-signup__control select {
-	appearance: none;
-	padding-right: 34px;
-	text-overflow: ellipsis;
-	cursor: pointer;
+  appearance: none;
+  padding-right: 34px;
+  text-overflow: ellipsis;
+  cursor: pointer;
 }
 
 .donor-signup__control select:invalid {
-	color: #94A3B8;
+  color: #94a3b8;
 }
 
 .donor-signup__select-icon {
-	position: absolute;
-	right: 10px;
-	width: 16px;
-	height: 16px;
-	color: #64748B;
-	pointer-events: none;
+  position: absolute;
+  right: 10px;
+  width: 16px;
+  height: 16px;
+  color: #64748b;
+  pointer-events: none;
 }
 
 .donor-signup__visibility-toggle {
-	position: absolute;
-	right: 8px;
-	display: grid;
-	width: 32px;
-	height: 32px;
-	place-items: center;
-	border: 0;
-	border-radius: 5px;
-	background: transparent;
-	color: #64748B;
-	cursor: pointer;
+  position: absolute;
+  right: 8px;
+  display: grid;
+  width: 32px;
+  height: 32px;
+  place-items: center;
+  border: 0;
+  border-radius: 5px;
+  background: transparent;
+  color: #64748b;
+  cursor: pointer;
 }
 
 .donor-signup__visibility-toggle:hover {
-	background: #E2E8F0;
-	color: #0F172A;
+  background: #e2e8f0;
+  color: #0f172a;
 }
 
 .donor-signup__visibility-toggle svg {
-	width: 17px;
-	height: 17px;
+  width: 17px;
+  height: 17px;
 }
 
 .donor-signup__control:has(.donor-signup__visibility-toggle) input {
-	padding-right: 44px;
+  padding-right: 44px;
 }
 
 .donor-signup__error {
-	margin-top: 4px;
-	color: #B91C1C;
-	font-size: 11px;
-	line-height: 1.4;
+  margin-top: 4px;
+  color: #b91c1c;
+  font-size: 11px;
+  line-height: 1.4;
 }
 
 .donor-signup__field-row {
-	display: grid;
-	grid-template-columns: repeat(2, minmax(0, 1fr));
-	gap: 12px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
 }
 
 .donor-signup__availability-row {
-	display: flex;
-	min-height: 32px;
-	align-items: center;
-	justify-content: space-between;
-	gap: 12px;
-	padding: 4px 0;
-	color: #0F172A;
-	font-size: 13px;
-	font-weight: 600;
+  display: flex;
+  min-height: 32px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 4px 0;
+  color: #0f172a;
+  font-size: 13px;
+  font-weight: 600;
 }
 
 .donor-signup__switch {
-	position: relative;
-	flex: 0 0 44px;
-	width: 44px;
-	height: 24px;
-	padding: 0;
-	border: 0;
-	border-radius: 999px;
-	background: #CBD5E1;
-	cursor: pointer;
-	transition: background-color 160ms ease;
+  position: relative;
+  flex: 0 0 44px;
+  width: 44px;
+  height: 24px;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: #cbd5e1;
+  cursor: pointer;
+  transition: background-color 160ms ease;
 }
 
 .donor-signup__switch--on {
-	background: #16A34A;
+  background: #16a34a;
 }
 
 .donor-signup__switch span {
-	position: absolute;
-	top: 3px;
-	left: 3px;
-	width: 18px;
-	height: 18px;
-	border-radius: 50%;
-	background: #FFFFFF;
-	transition: transform 160ms ease;
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #ffffff;
+  transition: transform 160ms ease;
 }
 
 .donor-signup__switch--on span {
-	transform: translateX(20px);
+  transform: translateX(20px);
 }
 
 .donor-signup__terms-field {
-	margin-top: 2px;
+  margin-top: 2px;
 }
 
 .donor-signup__terms-row {
-	display: flex;
-	align-items: flex-start;
-	gap: 10px;
-	color: #64748B;
-	font-size: 12px;
-	line-height: 1.5;
-	cursor: pointer;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  color: #64748b;
+  font-size: 12px;
+  line-height: 1.5;
+  cursor: pointer;
 }
 
 .donor-signup__terms-row input {
-	flex: 0 0 18px;
-	width: 18px;
-	height: 18px;
-	margin: 1px 0 0;
-	accent-color: #B91C1C;
+  flex: 0 0 18px;
+  width: 18px;
+  height: 18px;
+  margin: 1px 0 0;
+  accent-color: #b91c1c;
 }
 
 .donor-signup__terms-row a,
 .donor-signup__signin button {
-	color: #B91C1C;
-	font-weight: 700;
-	text-decoration: none;
+  color: #b91c1c;
+  font-weight: 700;
+  text-decoration: none;
 }
 
 .donor-signup__terms-row a:hover,
 .donor-signup__signin button:hover {
-	text-decoration: underline;
+  text-decoration: underline;
 }
 
 .donor-signup__feedback {
-	margin-top: -4px;
-	padding: 10px 12px;
-	border: 1px solid;
-	border-radius: 6px;
-	font-size: 12px;
-	line-height: 1.45;
+  margin-top: -4px;
+  padding: 10px 12px;
+  border: 1px solid;
+  border-radius: 6px;
+  font-size: 12px;
+  line-height: 1.45;
 }
 
 .donor-signup__feedback--success {
-	border-color: #BBF7D0;
-	background: #F0FDF4;
-	color: #15803D;
+  border-color: #bbf7d0;
+  background: #f0fdf4;
+  color: #15803d;
 }
 
 .donor-signup__feedback--error {
-	border-color: #FECACA;
-	background: #FEF2F2;
-	color: #B91C1C;
+  border-color: #fecaca;
+  background: #fef2f2;
+  color: #b91c1c;
 }
 
 .donor-signup__submit {
-	display: flex;
-	width: 100%;
-	min-height: 48px;
-	align-items: center;
-	justify-content: center;
-	gap: 9px;
-	margin-top: 8px;
-	border: 0;
-	border-radius: 6px;
-	background: #B91C1C;
-	color: #FFFFFF;
-	font-family: 'Outfit', sans-serif;
-	font-size: 15px;
-	font-weight: 600;
-	cursor: pointer;
-	transition: background-color 160ms ease;
+  display: flex;
+  width: 100%;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  margin-top: 8px;
+  border: 0;
+  border-radius: 6px;
+  background: #b91c1c;
+  color: #ffffff;
+  font-family: "Outfit", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 160ms ease;
 }
 
 .donor-signup__submit:hover:not(:disabled) {
-	background: #991B1B;
+  background: #991b1b;
 }
 
 .donor-signup__submit:disabled {
-	background: #FCA5A5;
-	cursor: wait;
+  background: #fca5a5;
+  cursor: wait;
 }
 
 .donor-signup__submit:focus-visible,
@@ -530,1872 +537,1895 @@
 .donor-signup__switch:focus-visible,
 .donor-signup__signin button:focus-visible,
 .donor-signup__terms-row a:focus-visible {
-	outline: 2px solid #B91C1C;
-	outline-offset: 2px;
+  outline: 2px solid #b91c1c;
+  outline-offset: 2px;
 }
 
 .donor-signup__spinner {
-	width: 16px;
-	height: 16px;
-	border: 2px solid rgba(255, 255, 255, 0.45);
-	border-top-color: #FFFFFF;
-	border-radius: 50%;
-	animation: donor-signup__spin 700ms linear infinite;
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.45);
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  animation: donor-signup__spin 700ms linear infinite;
 }
 
 @keyframes donor-signup__spin {
-	to { transform: rotate(360deg); }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .donor-signup__signin {
-	margin-top: 16px;
-	color: #64748B;
-	font-size: 12px;
-	text-align: center;
+  margin-top: 16px;
+  color: #64748b;
+  font-size: 12px;
+  text-align: center;
 }
 
 .donor-signup__signin button {
-	padding: 0;
-	border: 0;
-	background: transparent;
-	font-family: 'Outfit', sans-serif;
-	font-size: inherit;
-	cursor: pointer;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  font-family: "Outfit", sans-serif;
+  font-size: inherit;
+  cursor: pointer;
 }
 
 @media (min-width: 768px) {
-	.donor-signup {
-		padding-top: 48px;
-		background: #F1F5F9;
-	}
+  .donor-signup {
+    padding-top: 48px;
+    background: #f1f5f9;
+  }
 
-	.donor-signup__card {
-		padding: 32px;
-		border: 1px solid #E2E8F0;
-		border-radius: 12px;
-		background: #FFFFFF;
-		box-shadow: 0 4px 24px rgba(15, 23, 42, 0.05);
-	}
+  .donor-signup__card {
+    padding: 32px;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    background: #ffffff;
+    box-shadow: 0 4px 24px rgba(15, 23, 42, 0.05);
+  }
 }
 
 @media (max-width: 360px) {
-	.donor-signup {
-		padding-right: 16px;
-		padding-left: 16px;
-	}
+  .donor-signup {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
 
-	.donor-signup__field-row {
-		gap: 8px;
-	}
+  .donor-signup__field-row {
+    gap: 8px;
+  }
 }
 
 /* Hospital signup screen */
 .hospital-signup {
-	min-height: 100dvh;
-	padding: 16px 20px 32px;
-	background: #FFFFFF;
-	color: #0F172A;
-	font-family: 'Outfit', sans-serif;
+  min-height: 100dvh;
+  padding: 16px 20px 32px;
+  background: #ffffff;
+  color: #0f172a;
+  font-family: "Outfit", sans-serif;
 }
 
 .hospital-signup__card {
-	width: 100%;
-	max-width: 440px;
-	margin: 0 auto;
+  width: 100%;
+  max-width: 440px;
+  margin: 0 auto;
 }
 
 /* Hospital signup header */
 .hospital-signup__header {
-	display: flex;
-	height: 56px;
-	align-items: center;
-	gap: 12px;
+  display: flex;
+  height: 56px;
+  align-items: center;
+  gap: 12px;
 }
 
 .hospital-signup__back-button {
-	display: grid;
-	flex: 0 0 36px;
-	width: 36px;
-	height: 36px;
-	place-items: center;
-	border: 0;
-	border-radius: 8px;
-	background: transparent;
-	color: #0F172A;
-	cursor: pointer;
-	transition: background-color 160ms ease;
+  display: grid;
+  flex: 0 0 36px;
+  width: 36px;
+  height: 36px;
+  place-items: center;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: #0f172a;
+  cursor: pointer;
+  transition: background-color 160ms ease;
 }
 
 .hospital-signup__back-button:hover {
-	background: #F1F5F9;
+  background: #f1f5f9;
 }
 
 .hospital-signup__back-button svg {
-	width: 19px;
-	height: 19px;
+  width: 19px;
+  height: 19px;
 }
 
 .hospital-signup__header h1 {
-	color: #0F172A;
-	font-size: 18px;
-	font-weight: 700;
+  color: #0f172a;
+  font-size: 18px;
+  font-weight: 700;
 }
 
 /* Hospital signup fields */
 .hospital-signup__form {
-	display: flex;
-	flex-direction: column;
-	gap: 16px;
-	margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 16px;
 }
 
 .hospital-signup__field {
-	min-width: 0;
+  min-width: 0;
 }
 
 .hospital-signup__label {
-	display: block;
-	margin-bottom: 6px;
-	color: #0F172A;
-	font-size: 12px;
-	font-weight: 600;
+  display: block;
+  margin-bottom: 6px;
+  color: #0f172a;
+  font-size: 12px;
+  font-weight: 600;
 }
 
 .hospital-signup__control {
-	position: relative;
-	display: flex;
-	width: 100%;
-	height: 44px;
-	align-items: center;
-	border: 1px solid #E2E8F0;
-	border-radius: 6px;
-	background: #F1F5F9;
-	transition: border-color 160ms ease, background-color 160ms ease, box-shadow 160ms ease;
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 44px;
+  align-items: center;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  background: #f1f5f9;
+  transition:
+    border-color 160ms ease,
+    background-color 160ms ease,
+    box-shadow 160ms ease;
 }
 
 .hospital-signup__control:focus-within {
-	border-color: #B91C1C;
-	background: #FFFFFF;
-	box-shadow: 0 0 0 3px rgba(185, 28, 28, 0.12);
+  border-color: #b91c1c;
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(185, 28, 28, 0.12);
 }
 
 .hospital-signup__control--error {
-	border-color: #DC2626;
+  border-color: #dc2626;
 }
 
 .hospital-signup__control--error:focus-within {
-	border-color: #DC2626;
+  border-color: #dc2626;
 }
 
 .hospital-signup__control input,
 .hospital-signup__control select {
-	width: 100%;
-	height: 100%;
-	min-width: 0;
-	padding: 0 12px;
-	border: 0;
-	border-radius: 6px;
-	outline: 0;
-	background: transparent;
-	color: #0F172A;
-	font-family: 'Outfit', sans-serif;
-	font-size: 14px;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  padding: 0 12px;
+  border: 0;
+  border-radius: 6px;
+  outline: 0;
+  background: transparent;
+  color: #0f172a;
+  font-family: "Outfit", sans-serif;
+  font-size: 14px;
 }
 
 .hospital-signup__control input::placeholder {
-	color: #94A3B8;
-	opacity: 1;
+  color: #94a3b8;
+  opacity: 1;
 }
 
 .hospital-signup__control select {
-	appearance: none;
-	padding-right: 36px;
-	cursor: pointer;
+  appearance: none;
+  padding-right: 36px;
+  cursor: pointer;
 }
 
 .hospital-signup__select-icon {
-	position: absolute;
-	right: 10px;
-	width: 16px;
-	height: 16px;
-	color: #64748B;
-	pointer-events: none;
+  position: absolute;
+  right: 10px;
+  width: 16px;
+  height: 16px;
+  color: #64748b;
+  pointer-events: none;
 }
 
 .hospital-signup__visibility-toggle {
-	position: absolute;
-	right: 7px;
-	display: grid;
-	width: 32px;
-	height: 32px;
-	place-items: center;
-	border: 0;
-	border-radius: 5px;
-	background: transparent;
-	color: #64748B;
-	cursor: pointer;
+  position: absolute;
+  right: 7px;
+  display: grid;
+  width: 32px;
+  height: 32px;
+  place-items: center;
+  border: 0;
+  border-radius: 5px;
+  background: transparent;
+  color: #64748b;
+  cursor: pointer;
 }
 
 .hospital-signup__visibility-toggle:hover {
-	background: #E2E8F0;
-	color: #0F172A;
+  background: #e2e8f0;
+  color: #0f172a;
 }
 
 .hospital-signup__visibility-toggle svg {
-	width: 17px;
-	height: 17px;
+  width: 17px;
+  height: 17px;
 }
 
 .hospital-signup__control:has(.hospital-signup__visibility-toggle) input {
-	padding-right: 44px;
+  padding-right: 44px;
 }
 
 .hospital-signup__error {
-	margin-top: 4px;
-	color: #B91C1C;
-	font-size: 11px;
-	line-height: 1.4;
+  margin-top: 4px;
+  color: #b91c1c;
+  font-size: 11px;
+  line-height: 1.4;
 }
 
 .hospital-signup__password-row {
-	display: grid;
-	grid-template-columns: repeat(2, minmax(0, 1fr));
-	gap: 12px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
 }
 
 /* Organization verification notice */
 .hospital-signup__notice {
-	display: flex;
-	align-items: flex-start;
-	gap: 12px;
-	margin-top: 0;
-	padding: 12px;
-	border: 1px solid #E2E8F0;
-	border-radius: 8px;
-	background: #F8FAFC;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-top: 0;
+  padding: 12px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  background: #f8fafc;
 }
 
 .hospital-signup__notice-icon {
-	display: grid;
-	flex: 0 0 28px;
-	width: 28px;
-	height: 28px;
-	place-items: center;
-	border-radius: 50%;
-	background: #E2E8F0;
-	color: #64748B;
+  display: grid;
+  flex: 0 0 28px;
+  width: 28px;
+  height: 28px;
+  place-items: center;
+  border-radius: 50%;
+  background: #e2e8f0;
+  color: #64748b;
 }
 
 .hospital-signup__notice-icon svg {
-	width: 16px;
-	height: 16px;
+  width: 16px;
+  height: 16px;
 }
 
 .hospital-signup__notice p {
-	padding-top: 1px;
-	color: #64748B;
-	font-size: 12px;
-	line-height: 1.5;
+  padding-top: 1px;
+  color: #64748b;
+  font-size: 12px;
+  line-height: 1.5;
 }
 
 .hospital-signup__feedback {
-	margin-top: -4px;
-	padding: 10px 12px;
-	border: 1px solid;
-	border-radius: 6px;
-	font-size: 12px;
-	line-height: 1.45;
+  margin-top: -4px;
+  padding: 10px 12px;
+  border: 1px solid;
+  border-radius: 6px;
+  font-size: 12px;
+  line-height: 1.45;
 }
 
 .hospital-signup__feedback--success {
-	border-color: #BBF7D0;
-	background: #F0FDF4;
-	color: #15803D;
+  border-color: #bbf7d0;
+  background: #f0fdf4;
+  color: #15803d;
 }
 
 .hospital-signup__feedback--error {
-	border-color: #FECACA;
-	background: #FEF2F2;
-	color: #B91C1C;
+  border-color: #fecaca;
+  background: #fef2f2;
+  color: #b91c1c;
 }
 
 /* Hospital signup button and account link */
 .hospital-signup__submit {
-	display: flex;
-	width: 100%;
-	min-height: 48px;
-	align-items: center;
-	justify-content: center;
-	gap: 9px;
-	margin-top: 0;
-	border: 0;
-	border-radius: 6px;
-	background: #B91C1C;
-	color: #FFFFFF;
-	font-family: 'Outfit', sans-serif;
-	font-size: 15px;
-	font-weight: 600;
-	cursor: pointer;
-	transition: background-color 160ms ease;
+  display: flex;
+  width: 100%;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  margin-top: 0;
+  border: 0;
+  border-radius: 6px;
+  background: #b91c1c;
+  color: #ffffff;
+  font-family: "Outfit", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 160ms ease;
 }
 
 .hospital-signup__submit:hover:not(:disabled) {
-	background: #991B1B;
+  background: #991b1b;
 }
 
 .hospital-signup__submit:disabled {
-	background: #FCA5A5;
-	cursor: wait;
+  background: #fca5a5;
+  cursor: wait;
 }
 
 .hospital-signup__spinner {
-	width: 16px;
-	height: 16px;
-	border: 2px solid rgba(255, 255, 255, 0.45);
-	border-top-color: #FFFFFF;
-	border-radius: 50%;
-	animation: hospital-signup__spin 700ms linear infinite;
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.45);
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  animation: hospital-signup__spin 700ms linear infinite;
 }
 
 @keyframes hospital-signup__spin {
-	to { transform: rotate(360deg); }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .hospital-signup__signin {
-	margin-top: 16px;
-	color: #64748B;
-	font-size: 12px;
-	text-align: center;
+  margin-top: 16px;
+  color: #64748b;
+  font-size: 12px;
+  text-align: center;
 }
 
 .hospital-signup__signin button {
-	padding: 0;
-	border: 0;
-	background: transparent;
-	color: #B91C1C;
-	font-family: 'Outfit', sans-serif;
-	font-size: inherit;
-	font-weight: 700;
-	cursor: pointer;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #b91c1c;
+  font-family: "Outfit", sans-serif;
+  font-size: inherit;
+  font-weight: 700;
+  cursor: pointer;
 }
 
 .hospital-signup__signin button:hover {
-	text-decoration: underline;
+  text-decoration: underline;
 }
 
 .hospital-signup button:focus-visible {
-	outline: 2px solid #B91C1C;
-	outline-offset: 2px;
+  outline: 2px solid #b91c1c;
+  outline-offset: 2px;
 }
 
 /* Hospital signup responsive layout */
 @media (min-width: 768px) {
-	.hospital-signup {
-		padding-top: 48px;
-		background: #F1F5F9;
-	}
+  .hospital-signup {
+    padding-top: 48px;
+    background: #f1f5f9;
+  }
 
-	.hospital-signup__card {
-		padding: 32px;
-		border: 1px solid #E2E8F0;
-		border-radius: 12px;
-		background: #FFFFFF;
-		box-shadow: 0 4px 24px rgba(15, 23, 42, 0.05);
-	}
+  .hospital-signup__card {
+    padding: 32px;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    background: #ffffff;
+    box-shadow: 0 4px 24px rgba(15, 23, 42, 0.05);
+  }
 }
 
 @media (max-width: 340px) {
-	.hospital-signup {
-		padding-right: 16px;
-		padding-left: 16px;
-	}
+  .hospital-signup {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
 
-	.hospital-signup__password-row {
-		grid-template-columns: minmax(0, 1fr);
-	}
+  .hospital-signup__password-row {
+    grid-template-columns: minmax(0, 1fr);
+  }
 }
 
 .sign-in {
-	min-height: 100dvh;
-	padding: 32px 20px;
-	background: #FFFFFF;
-	color: #0F172A;
-	font-family: 'Outfit', sans-serif;
+  min-height: 100dvh;
+  padding: 32px 20px;
+  background: #ffffff;
+  color: #0f172a;
+  font-family: "Outfit", sans-serif;
 }
 
 .sign-in__card {
-	width: 100%;
-	max-width: 440px;
-	margin: 0 auto;
+  width: 100%;
+  max-width: 440px;
+  margin: 0 auto;
 }
 
 .sign-in__brand {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	gap: 8px;
-	margin-bottom: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 32px;
 }
 
 .sign-in__logo-mark {
-	display: grid;
-	flex: 0 0 32px;
-	width: 32px;
-	height: 32px;
-	place-items: center;
-	border-radius: 8px;
-	background: #B91C1C;
-	color: #FFFFFF;
+  display: grid;
+  flex: 0 0 32px;
+  width: 32px;
+  height: 32px;
+  place-items: center;
+  border-radius: 8px;
+  background: #b91c1c;
+  color: #ffffff;
 }
 
 .sign-in__logo-mark svg {
-	width: 21px;
-	height: 21px;
+  width: 21px;
+  height: 21px;
 }
 
 .sign-in__wordmark {
-	white-space: nowrap;
-	font-size: 22px;
-	line-height: 1;
+  white-space: nowrap;
+  font-size: 22px;
+  line-height: 1;
 }
 
 .sign-in__wordmark span:first-child {
-	color: #0F172A;
-	font-weight: 700;
+  color: #0f172a;
+  font-weight: 700;
 }
 
 .sign-in__wordmark span:last-child {
-	color: #B91C1C;
-	font-weight: 500;
+  color: #b91c1c;
+  font-weight: 500;
 }
 
 .sign-in__secured {
-	align-self: center;
-	margin-top: -8px;
-	padding: 1px 5px;
-	border: 1px solid #15803D;
-	border-radius: 3px;
-	color: #15803D;
-	font-size: 8px;
-	font-weight: 800;
-	line-height: 1.2;
+  align-self: center;
+  margin-top: -8px;
+  padding: 1px 5px;
+  border: 1px solid #15803d;
+  border-radius: 3px;
+  color: #15803d;
+  font-size: 8px;
+  font-weight: 800;
+  line-height: 1.2;
 }
 
 .sign-in__title {
-	margin-bottom: 20px;
-	color: #0F172A;
-	font-size: 24px;
-	font-weight: 700;
-	text-align: left;
+  margin-bottom: 20px;
+  color: #0f172a;
+  font-size: 24px;
+  font-weight: 700;
+  text-align: left;
 }
 
 .sign-in__form {
-	width: 100%;
+  width: 100%;
 }
 
 .sign-in__fields {
-	display: flex;
-	flex-direction: column;
-	gap: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
 .sign-in__field {
-	min-width: 0;
+  min-width: 0;
 }
 
 .sign-in__label {
-	display: block;
-	margin-bottom: 6px;
-	color: #0F172A;
-	font-size: 12px;
-	font-weight: 600;
+  display: block;
+  margin-bottom: 6px;
+  color: #0f172a;
+  font-size: 12px;
+  font-weight: 600;
 }
 
 .sign-in__control {
-	position: relative;
-	display: flex;
-	width: 100%;
-	height: 44px;
-	align-items: center;
-	border: 1px solid #E2E8F0;
-	border-radius: 6px;
-	background: #F1F5F9;
-	transition: border-color 160ms ease, background-color 160ms ease, box-shadow 160ms ease;
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 44px;
+  align-items: center;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  background: #f1f5f9;
+  transition:
+    border-color 160ms ease,
+    background-color 160ms ease,
+    box-shadow 160ms ease;
 }
 
 .sign-in__control:focus-within {
-	border-color: #B91C1C;
-	background: #FFFFFF;
-	box-shadow: 0 0 0 3px rgba(185, 28, 28, 0.12);
+  border-color: #b91c1c;
+  background: #ffffff;
+  box-shadow: 0 0 0 3px rgba(185, 28, 28, 0.12);
 }
 
 .sign-in__control--error {
-	border-color: #DC2626;
+  border-color: #dc2626;
 }
 
 .sign-in__control--error:focus-within {
-	border-color: #DC2626;
+  border-color: #dc2626;
 }
 
 .sign-in__control input {
-	width: 100%;
-	height: 100%;
-	min-width: 0;
-	padding: 0 12px;
-	border: 0;
-	border-radius: 6px;
-	outline: 0;
-	background: transparent;
-	color: #0F172A;
-	font-family: 'Outfit', sans-serif;
-	font-size: 14px;
+  width: 100%;
+  height: 100%;
+  min-width: 0;
+  padding: 0 12px;
+  border: 0;
+  border-radius: 6px;
+  outline: 0;
+  background: transparent;
+  color: #0f172a;
+  font-family: "Outfit", sans-serif;
+  font-size: 14px;
 }
 
 .sign-in__control input::placeholder {
-	color: #94A3B8;
-	opacity: 1;
+  color: #94a3b8;
+  opacity: 1;
 }
 
 .sign-in__control:has(.sign-in__password-toggle) input {
-	padding-right: 48px;
+  padding-right: 48px;
 }
 
 .sign-in__field-error {
-	margin-top: 4px;
-	color: #B91C1C;
-	font-size: 11px;
-	line-height: 1.4;
+  margin-top: 4px;
+  color: #b91c1c;
+  font-size: 11px;
+  line-height: 1.4;
 }
 
 .sign-in__password-toggle {
-	position: absolute;
-	top: 0;
-	right: 0;
-	display: grid;
-	width: 44px;
-	height: 42px;
-	place-items: center;
-	border: 0;
-	border-radius: 5px;
-	background: transparent;
-	color: #64748B;
-	cursor: pointer;
-	transition: color 160ms ease;
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: grid;
+  width: 44px;
+  height: 42px;
+  place-items: center;
+  border: 0;
+  border-radius: 5px;
+  background: transparent;
+  color: #64748b;
+  cursor: pointer;
+  transition: color 160ms ease;
 }
 
 .sign-in__password-toggle:hover {
-	color: #0F172A;
+  color: #0f172a;
 }
 
 .sign-in__password-toggle svg {
-	width: 18px;
-	height: 18px;
+  width: 18px;
+  height: 18px;
 }
 
 .sign-in__auth-error {
-	display: flex;
-	align-items: flex-start;
-	gap: 8px;
-	margin-bottom: 16px;
-	padding: 10px 12px;
-	border: 1px solid #FECACA;
-	border-radius: 8px;
-	background: #FEF2F2;
-	color: #B91C1C;
-	font-size: 12px;
-	line-height: 1.45;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin-bottom: 16px;
+  padding: 10px 12px;
+  border: 1px solid #fecaca;
+  border-radius: 8px;
+  background: #fef2f2;
+  color: #b91c1c;
+  font-size: 12px;
+  line-height: 1.45;
 }
 
 .sign-in__auth-error svg {
-	flex: 0 0 16px;
-	width: 16px;
-	height: 16px;
-	margin-top: 1px;
+  flex: 0 0 16px;
+  width: 16px;
+  height: 16px;
+  margin-top: 1px;
 }
 
 .sign-in__options-row {
-	display: flex;
-	min-height: 44px;
-	align-items: center;
-	justify-content: space-between;
-	gap: 12px;
-	margin: 4px 0;
+  display: flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 4px 0;
 }
 
 .sign-in__remember-label {
-	display: inline-flex;
-	min-height: 44px;
-	align-items: center;
-	gap: 8px;
-	color: #64748B;
-	font-size: 12px;
-	cursor: pointer;
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  gap: 8px;
+  color: #64748b;
+  font-size: 12px;
+  cursor: pointer;
 }
 
 .sign-in__remember-label input {
-	width: 18px;
-	height: 18px;
-	margin: 0;
-	accent-color: #B91C1C;
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  accent-color: #b91c1c;
 }
 
 .sign-in__forgot-link {
-	min-height: 44px;
-	padding: 0;
-	border: 0;
-	background: transparent;
-	color: #B91C1C;
-	font-family: 'Outfit', sans-serif;
-	font-size: 12px;
-	font-weight: 600;
-	text-decoration: none;
-	cursor: pointer;
+  min-height: 44px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #b91c1c;
+  font-family: "Outfit", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .sign-in__forgot-link:hover,
 .sign-in__create-account button:hover {
-	text-decoration: underline;
+  text-decoration: underline;
 }
 
 .sign-in__submit {
-	display: flex;
-	width: 100%;
-	min-height: 48px;
-	align-items: center;
-	justify-content: center;
-	gap: 8px;
-	margin-top: 8px;
-	border: 0;
-	border-radius: 6px;
-	background: #B91C1C;
-	color: #FFFFFF;
-	font-family: 'Outfit', sans-serif;
-	font-size: 15px;
-	font-weight: 600;
-	cursor: pointer;
-	transition: background-color 160ms ease;
+  display: flex;
+  width: 100%;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 8px;
+  border: 0;
+  border-radius: 6px;
+  background: #b91c1c;
+  color: #ffffff;
+  font-family: "Outfit", sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 160ms ease;
 }
 
 .sign-in__submit:hover:not(:disabled) {
-	background: #991B1B;
+  background: #991b1b;
 }
 
 .sign-in__submit:disabled {
-	background: #FCA5A5;
-	cursor: wait;
+  background: #fca5a5;
+  cursor: wait;
 }
 
 .sign-in__submit:focus-visible,
 .sign-in__password-toggle:focus-visible,
 .sign-in__forgot-link:focus-visible,
 .sign-in__create-account button:focus-visible {
-	outline: 2px solid #B91C1C;
-	outline-offset: 2px;
+  outline: 2px solid #b91c1c;
+  outline-offset: 2px;
 }
 
 .sign-in__loader {
-	width: 18px;
-	height: 18px;
-	animation: sign-in__spin 700ms linear infinite;
+  width: 18px;
+  height: 18px;
+  animation: sign-in__spin 700ms linear infinite;
 }
 
 @keyframes sign-in__spin {
-	to { transform: rotate(360deg); }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .sign-in__create-account {
-	margin-top: 24px;
-	color: #64748B;
-	font-size: 13px;
-	text-align: center;
+  margin-top: 24px;
+  color: #64748b;
+  font-size: 13px;
+  text-align: center;
 }
 
-.sign-in__create-account button {
-	padding: 0;
-	border: 0;
-	background: transparent;
-	color: #B91C1C;
-	font-family: 'Outfit', sans-serif;
-	font-size: inherit;
-	font-weight: 600;
-	text-decoration: none;
-	cursor: pointer;
+.sign-in__create-account a {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #b91c1c;
+  font-family: "Outfit", sans-serif;
+  font-size: inherit;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 @media (min-width: 768px) {
-	.sign-in {
-		padding-top: 64px;
-		background: #F1F5F9;
-	}
+  .sign-in {
+    padding-top: 64px;
+    background: #f1f5f9;
+  }
 
-	.sign-in__card {
-		padding: 32px;
-		border: 1px solid #E2E8F0;
-		border-radius: 12px;
-		background: #FFFFFF;
-		box-shadow: 0 4px 24px rgba(15, 23, 42, 0.05);
-	}
+  .sign-in__card {
+    padding: 32px;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    background: #ffffff;
+    box-shadow: 0 4px 24px rgba(15, 23, 42, 0.05);
+  }
 }
 
 @media (max-width: 340px) {
-	.sign-in {
-		padding-right: 16px;
-		padding-left: 16px;
-	}
+  .sign-in {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
 
-	.sign-in__options-row {
-		flex-wrap: wrap;
-	}
+  .sign-in__options-row {
+    flex-wrap: wrap;
+  }
 }
 
 .donor-registration {
-	min-height: 100vh;
-	display: flex;
-	flex-direction: column;
-	background: #F8FAFC;
-	color: #0F172A;
-	font-family: 'Outfit', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #f8fafc;
+  color: #0f172a;
+  font-family: "Outfit", sans-serif;
 }
 
 .donor-registration__header {
-	flex: 0 0 64px;
-	background: #FFFFFF;
-	border-bottom: 1px solid #E2E8F0;
+  flex: 0 0 64px;
+  background: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
 }
 
 .donor-registration__header-inner,
 .donor-registration__footer-inner {
-	display: flex;
-	min-height: 64px;
-	align-items: center;
-	justify-content: space-between;
-	gap: 16px;
+  display: flex;
+  min-height: 64px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
 }
 
 .donor-registration__brand,
 .donor-registration__footer-logo {
-	display: inline-flex;
-	align-items: center;
-	gap: 8px;
-	color: inherit;
-	text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: inherit;
+  text-decoration: none;
 }
 
 .donor-registration__brand-icon {
-	width: 32px;
-	height: 32px;
-	border-radius: 8px;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
 }
 
 .donor-registration__wordmark,
 .donor-registration__footer-logo > span {
-	white-space: nowrap;
-	font-size: 20px;
-	line-height: 1;
+  white-space: nowrap;
+  font-size: 20px;
+  line-height: 1;
 }
 
 .donor-registration__wordmark span:first-child,
 .donor-registration__footer-logo > span > span:first-child {
-	color: #0F172A;
-	font-weight: 700;
+  color: #0f172a;
+  font-weight: 700;
 }
 
 .donor-registration__wordmark span:last-child {
-	color: #B91C1C;
-	font-weight: 500;
+  color: #b91c1c;
+  font-weight: 500;
 }
 
 .donor-registration__secured {
-	align-self: center;
-	margin-top: -7px;
-	padding: 1px 5px;
-	border: 1px solid #15803D;
-	border-radius: 3px;
-	color: #15803D;
-	font-size: 8px;
-	font-weight: 800;
-	line-height: 1.2;
+  align-self: center;
+  margin-top: -7px;
+  padding: 1px 5px;
+  border: 1px solid #15803d;
+  border-radius: 3px;
+  color: #15803d;
+  font-size: 8px;
+  font-weight: 800;
+  line-height: 1.2;
 }
 
 .donor-registration__header-meta,
 .donor-registration__privacy {
-	display: flex;
-	align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .donor-registration__header-meta {
-	gap: 24px;
+  gap: 24px;
 }
 
 .donor-registration__privacy {
-	gap: 7px;
-	color: #64748B;
-	font-size: 12px;
+  gap: 7px;
+  color: #64748b;
+  font-size: 12px;
 }
 
 .donor-registration__privacy svg {
-	width: 16px;
-	height: 16px;
-	color: #15803D;
+  width: 16px;
+  height: 16px;
+  color: #15803d;
 }
 
 .donor-registration__help {
-	color: #0F172A;
-	font-size: 12px;
-	font-weight: 600;
-	text-decoration: none;
-	white-space: nowrap;
+  color: #0f172a;
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
 }
 
 .donor-registration__main {
-	flex: 1 0 auto;
+  flex: 1 0 auto;
 }
 
 .donor-registration__main-inner {
-	display: grid;
-	grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
-	align-items: start;
-	gap: 48px;
-	padding-top: 48px;
-	padding-bottom: 64px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+  align-items: start;
+  gap: 48px;
+  padding-top: 48px;
+  padding-bottom: 64px;
 }
 
 .donor-registration__intro {
-	padding-top: 4px;
+  padding-top: 4px;
 }
 
 .donor-registration__verified-badge {
-	display: inline-flex;
-	align-items: center;
-	gap: 6px;
-	padding: 4px 12px;
-	border: 1px solid #86EFAC;
-	border-radius: 999px;
-	background: #F0FDF4;
-	color: #15803D;
-	font-family: 'JetBrains Mono', monospace;
-	font-size: 10px;
-	font-weight: 600;
-	letter-spacing: 1px;
-	text-transform: uppercase;
-	white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border: 1px solid #86efac;
+  border-radius: 999px;
+  background: #f0fdf4;
+  color: #15803d;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  white-space: nowrap;
 }
 
 .donor-registration__verified-badge svg {
-	width: 14px;
-	height: 14px;
+  width: 14px;
+  height: 14px;
 }
 
 .donor-registration__headline {
-	margin-top: 16px;
-	color: #0F172A;
-	font-size: 32px;
-	font-weight: 700;
-	line-height: 1.15;
-	letter-spacing: -0.5px;
+  margin-top: 16px;
+  color: #0f172a;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.5px;
 }
 
 .donor-registration__intro-copy {
-	margin-top: 16px;
-	color: #64748B;
-	font-size: 14px;
-	line-height: 1.6;
+  margin-top: 16px;
+  color: #64748b;
+  font-size: 14px;
+  line-height: 1.6;
 }
 
 .donor-registration__intro-list {
-	display: flex;
-	flex-direction: column;
-	gap: 16px;
-	margin-top: 24px;
-	padding: 0;
-	list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 24px;
+  padding: 0;
+  list-style: none;
 }
 
 .donor-registration__intro-item {
-	display: flex;
-	align-items: flex-start;
-	gap: 12px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
 }
 
 .donor-registration__intro-icon,
 .donor-registration__section-icon {
-	display: grid;
-	flex: 0 0 28px;
-	width: 28px;
-	height: 28px;
-	place-items: center;
-	border-radius: 6px;
-	background: #FEF2F2;
-	color: #DC2626;
+  display: grid;
+  flex: 0 0 28px;
+  width: 28px;
+  height: 28px;
+  place-items: center;
+  border-radius: 6px;
+  background: #fef2f2;
+  color: #dc2626;
 }
 
 .donor-registration__intro-icon svg,
 .donor-registration__section-icon svg {
-	width: 16px;
-	height: 16px;
+  width: 16px;
+  height: 16px;
 }
 
 .donor-registration__intro-item-copy {
-	display: flex;
-	flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .donor-registration__intro-title {
-	color: #0F172A;
-	font-size: 13px;
-	font-weight: 600;
+  color: #0f172a;
+  font-size: 13px;
+  font-weight: 600;
 }
 
 .donor-registration__intro-description {
-	margin-top: 2px;
-	color: #64748B;
-	font-size: 12px;
-	line-height: 1.5;
+  margin-top: 2px;
+  color: #64748b;
+  font-size: 12px;
+  line-height: 1.5;
 }
 
 .donor-registration__eligibility {
-	margin-top: 24px;
-	padding: 16px;
-	border: 1px solid #E2E8F0;
-	border-radius: 8px;
-	background: #FFFFFF;
+  margin-top: 24px;
+  padding: 16px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  background: #ffffff;
 }
 
 .donor-registration__eligibility-title {
-	display: flex;
-	align-items: center;
-	gap: 7px;
-	color: #0F172A;
-	font-size: 13px;
-	font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #0f172a;
+  font-size: 13px;
+  font-weight: 600;
 }
 
 .donor-registration__eligibility-title svg {
-	width: 16px;
-	height: 16px;
-	color: #DC2626;
+  width: 16px;
+  height: 16px;
+  color: #dc2626;
 }
 
 .donor-registration__eligibility p {
-	margin-top: 8px;
-	color: #64748B;
-	font-size: 12px;
-	line-height: 1.6;
+  margin-top: 8px;
+  color: #64748b;
+  font-size: 12px;
+  line-height: 1.6;
 }
 
 .donor-registration__card {
-	padding: 32px;
-	border: 1px solid #E5E7EB;
-	border-radius: 10px;
-	background: #FFFFFF;
-	box-shadow: 0 4px 24px rgba(15, 23, 42, 0.05);
+  padding: 32px;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  background: #ffffff;
+  box-shadow: 0 4px 24px rgba(15, 23, 42, 0.05);
 }
 
 .donor-registration__stepper {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	gap: 8px;
-	margin: 0;
-	padding: 0;
-	list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 .donor-registration__step {
-	display: flex;
-	min-width: 0;
-	align-items: center;
-	gap: 7px;
-	color: #64748B;
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 7px;
+  color: #64748b;
 }
 
 .donor-registration__step-number {
-	display: grid;
-	flex: 0 0 24px;
-	width: 24px;
-	height: 24px;
-	place-items: center;
-	border: 1px solid #CBD5E1;
-	border-radius: 50%;
-	color: #64748B;
-	font-size: 11px;
-	font-weight: 600;
+  display: grid;
+  flex: 0 0 24px;
+  width: 24px;
+  height: 24px;
+  place-items: center;
+  border: 1px solid #cbd5e1;
+  border-radius: 50%;
+  color: #64748b;
+  font-size: 11px;
+  font-weight: 600;
 }
 
 .donor-registration__step-label {
-	font-size: 12px;
-	white-space: nowrap;
+  font-size: 12px;
+  white-space: nowrap;
 }
 
 .donor-registration__step--active {
-	color: #0F172A;
+  color: #0f172a;
 }
 
 .donor-registration__step--active .donor-registration__step-number {
-	border-color: #B91C1C;
-	background: #B91C1C;
-	color: #FFFFFF;
+  border-color: #b91c1c;
+  background: #b91c1c;
+  color: #ffffff;
 }
 
 .donor-registration__step--active .donor-registration__step-label {
-	font-weight: 600;
+  font-weight: 600;
 }
 
 .donor-registration__form-heading {
-	margin: 24px 0;
+  margin: 24px 0;
 }
 
 .donor-registration__form-heading h2 {
-	color: #0F172A;
-	font-size: 20px;
-	font-weight: 700;
+  color: #0f172a;
+  font-size: 20px;
+  font-weight: 700;
 }
 
 .donor-registration__form-heading p {
-	margin-top: 4px;
-	color: #64748B;
-	font-size: 12px;
-	line-height: 1.5;
+  margin-top: 4px;
+  color: #64748b;
+  font-size: 12px;
+  line-height: 1.5;
 }
 
 .donor-registration__form-section + .donor-registration__form-section {
-	margin-top: 24px;
-	padding-top: 24px;
-	border-top: 1px solid #E2E8F0;
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1px solid #e2e8f0;
 }
 
 .donor-registration__section-heading {
-	display: flex;
-	align-items: center;
-	gap: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .donor-registration__section-heading h3 {
-	color: #0F172A;
-	font-size: 14px;
-	font-weight: 700;
+  color: #0f172a;
+  font-size: 14px;
+  font-weight: 700;
 }
 
 .donor-registration__section-heading p {
-	margin-top: 2px;
-	color: #64748B;
-	font-size: 12px;
+  margin-top: 2px;
+  color: #64748b;
+  font-size: 12px;
 }
 
 .donor-registration__field-grid {
-	display: grid;
-	grid-template-columns: repeat(2, minmax(0, 1fr));
-	gap: 16px;
-	margin-top: 16px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 16px;
 }
 
 .donor-registration__field {
-	min-width: 0;
+  min-width: 0;
 }
 
 .donor-registration__label {
-	display: block;
-	margin-bottom: 6px;
-	color: #0F172A;
-	font-size: 12px;
-	font-weight: 600;
+  display: block;
+  margin-bottom: 6px;
+  color: #0f172a;
+  font-size: 12px;
+  font-weight: 600;
 }
 
 .donor-registration__required {
-	color: #B91C1C;
+  color: #b91c1c;
 }
 
 .donor-registration__control {
-	position: relative;
-	display: flex;
-	width: 100%;
-	height: 40px;
-	align-items: center;
-	border: 1px solid #D1D5DB;
-	border-radius: 6px;
-	background: #FFFFFF;
-	transition: border-color 160ms ease, box-shadow 160ms ease;
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 40px;
+  align-items: center;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  background: #ffffff;
+  transition:
+    border-color 160ms ease,
+    box-shadow 160ms ease;
 }
 
 .donor-registration__control:focus-within {
-	border-color: #B91C1C;
-	box-shadow: 0 0 0 3px rgba(185, 28, 28, 0.12);
+  border-color: #b91c1c;
+  box-shadow: 0 0 0 3px rgba(185, 28, 28, 0.12);
 }
 
 .donor-registration__control--error {
-	border-color: #DC2626;
+  border-color: #dc2626;
 }
 
 .donor-registration__control--error:focus-within {
-	border-color: #DC2626;
+  border-color: #dc2626;
 }
 
 .donor-registration__control-icon {
-	position: absolute;
-	left: 12px;
-	width: 16px;
-	height: 16px;
-	color: #94A3B8;
-	pointer-events: none;
+  position: absolute;
+  left: 12px;
+  width: 16px;
+  height: 16px;
+  color: #94a3b8;
+  pointer-events: none;
 }
 
 .donor-registration__control input,
 .donor-registration__control select {
-	width: 100%;
-	height: 100%;
-	padding: 0 36px;
-	border: 0;
-	border-radius: 6px;
-	outline: 0;
-	background: transparent;
-	color: #0F172A;
-	font-family: 'Outfit', sans-serif;
-	font-size: 14px;
+  width: 100%;
+  height: 100%;
+  padding: 0 36px;
+  border: 0;
+  border-radius: 6px;
+  outline: 0;
+  background: transparent;
+  color: #0f172a;
+  font-family: "Outfit", sans-serif;
+  font-size: 14px;
 }
 
 .donor-registration__control input::placeholder {
-	color: #94A3B8;
-	opacity: 1;
+  color: #94a3b8;
+  opacity: 1;
 }
 
 .donor-registration__control select {
-	appearance: none;
-	padding-right: 32px;
-	cursor: pointer;
+  appearance: none;
+  padding-right: 32px;
+  cursor: pointer;
 }
 
 .donor-registration__control select:invalid {
-	color: #94A3B8;
+  color: #94a3b8;
 }
 
 .donor-registration__select-chevron {
-	position: absolute;
-	right: 12px;
-	width: 16px;
-	height: 16px;
-	color: #94A3B8;
-	pointer-events: none;
+  position: absolute;
+  right: 12px;
+  width: 16px;
+  height: 16px;
+  color: #94a3b8;
+  pointer-events: none;
 }
 
 .donor-registration__error {
-	margin-top: 4px;
-	color: #B91C1C;
-	font-size: 11px;
+  margin-top: 4px;
+  color: #b91c1c;
+  font-size: 11px;
 }
 
 .donor-registration__health-row {
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	gap: 16px;
-	margin-top: 16px;
-	padding: 12px 16px;
-	border: 1px solid #E2E8F0;
-	border-radius: 8px;
-	background: #F8FAFC;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 16px;
+  padding: 12px 16px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  background: #f8fafc;
 }
 
 .donor-registration__health-copy {
-	display: flex;
-	flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .donor-registration__health-copy span:first-child {
-	color: #0F172A;
-	font-size: 12px;
-	font-weight: 600;
+  color: #0f172a;
+  font-size: 12px;
+  font-weight: 600;
 }
 
 .donor-registration__health-copy span:last-child {
-	margin-top: 2px;
-	color: #64748B;
-	font-size: 11px;
+  margin-top: 2px;
+  color: #64748b;
+  font-size: 11px;
 }
 
 .donor-registration__health-toggle {
-	display: flex;
-	flex: 0 0 auto;
-	gap: 4px;
+  display: flex;
+  flex: 0 0 auto;
+  gap: 4px;
 }
 
 .donor-registration__health-option {
-	min-width: 52px;
-	height: 32px;
-	padding: 0 12px;
-	border: 1px solid #E2E8F0;
-	border-radius: 4px;
-	background: #FFFFFF;
-	color: #0F172A;
-	font-family: 'Outfit', sans-serif;
-	font-size: 12px;
-	cursor: pointer;
+  min-width: 52px;
+  height: 32px;
+  padding: 0 12px;
+  border: 1px solid #e2e8f0;
+  border-radius: 4px;
+  background: #ffffff;
+  color: #0f172a;
+  font-family: "Outfit", sans-serif;
+  font-size: 12px;
+  cursor: pointer;
 }
 
 .donor-registration__health-option--selected {
-	border-color: #B91C1C;
-	background: #B91C1C;
-	color: #FFFFFF;
+  border-color: #b91c1c;
+  background: #b91c1c;
+  color: #ffffff;
 }
 
 .donor-registration__health-option:focus-visible,
 .donor-registration__submit:focus-visible {
-	outline: 2px solid #B91C1C;
-	outline-offset: 2px;
+  outline: 2px solid #b91c1c;
+  outline-offset: 2px;
 }
 
 .donor-registration__consent-block {
-	margin-top: 20px;
+  margin-top: 20px;
 }
 
 .donor-registration__consent-label {
-	display: flex;
-	align-items: flex-start;
-	gap: 9px;
-	color: #64748B;
-	font-size: 12px;
-	line-height: 1.6;
-	cursor: pointer;
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  color: #64748b;
+  font-size: 12px;
+  line-height: 1.6;
+  cursor: pointer;
 }
 
 .donor-registration__consent-label input {
-	flex: 0 0 16px;
-	width: 16px;
-	height: 16px;
-	margin-top: 2px;
-	accent-color: #B91C1C;
+  flex: 0 0 16px;
+  width: 16px;
+  height: 16px;
+  margin-top: 2px;
+  accent-color: #b91c1c;
 }
 
 .donor-registration__consent-label a {
-	color: #B91C1C;
-	font-weight: 600;
-	text-decoration: none;
+  color: #b91c1c;
+  font-weight: 600;
+  text-decoration: none;
 }
 
 .donor-registration__consent-label a:hover {
-	text-decoration: underline;
+  text-decoration: underline;
 }
 
 .donor-registration__submit {
-	display: flex;
-	width: 100%;
-	height: 48px;
-	align-items: center;
-	justify-content: center;
-	gap: 8px;
-	margin-top: 16px;
-	border: 0;
-	border-radius: 6px;
-	background: #B91C1C;
-	color: #FFFFFF;
-	font-family: 'Outfit', sans-serif;
-	font-size: 14px;
-	font-weight: 600;
-	cursor: pointer;
-	transition: background-color 160ms ease;
+  display: flex;
+  width: 100%;
+  height: 48px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 16px;
+  border: 0;
+  border-radius: 6px;
+  background: #b91c1c;
+  color: #ffffff;
+  font-family: "Outfit", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 160ms ease;
 }
 
 .donor-registration__submit:hover {
-	background: #991B1B;
+  background: #991b1b;
 }
 
 .donor-registration__submit svg {
-	width: 16px;
-	height: 16px;
+  width: 16px;
+  height: 16px;
 }
 
 .donor-registration__security-note {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	gap: 5px;
-	margin-top: 12px;
-	color: #64748B;
-	font-size: 11px;
-	text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  margin-top: 12px;
+  color: #64748b;
+  font-size: 11px;
+  text-align: center;
 }
 
 .donor-registration__security-note svg {
-	width: 12px;
-	height: 12px;
-	color: #15803D;
+  width: 12px;
+  height: 12px;
+  color: #15803d;
 }
 
 .donor-registration__footer {
-	padding: 24px 0;
-	background: #0F172A;
+  padding: 24px 0;
+  background: #0f172a;
 }
 
 .donor-registration__footer-inner {
-	min-height: 0;
+  min-height: 0;
 }
 
 .donor-registration__footer-brand,
 .donor-registration__footer-meta {
-	display: flex;
-	align-items: center;
-	gap: 16px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
 }
 
 .donor-registration__footer-logo {
-	gap: 6px;
+  gap: 6px;
 }
 
 .donor-registration__footer-logo img {
-	width: 24px;
-	height: 24px;
-	border-radius: 6px;
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
 }
 
 .donor-registration__footer-logo > span {
-	font-size: 16px;
+  font-size: 16px;
 }
 
 .donor-registration__footer-logo > span > span:first-child {
-	color: #FFFFFF;
+  color: #ffffff;
 }
 
 .donor-registration__footer-logo > span > span:last-child {
-	color: #DC2626;
-	font-weight: 500;
+  color: #dc2626;
+  font-weight: 500;
 }
 
 .donor-registration__copyright {
-	color: #64748B;
-	font-size: 11px;
+  color: #64748b;
+  font-size: 11px;
 }
 
 .donor-registration__footer-meta a {
-	color: #94A3B8;
-	font-size: 11px;
-	text-decoration: none;
-	white-space: nowrap;
+  color: #94a3b8;
+  font-size: 11px;
+  text-decoration: none;
+  white-space: nowrap;
 }
 
 .donor-registration__footer-meta a:hover {
-	color: #FFFFFF;
+  color: #ffffff;
 }
 
 .donor-registration__ssl-badge {
-	padding: 3px 8px;
-	border: 1px solid rgba(34, 197, 94, 0.3);
-	border-radius: 3px;
-	background: rgba(34, 197, 94, 0.1);
-	color: #4ADE80;
-	font-family: 'JetBrains Mono', monospace;
-	font-size: 9px;
-	letter-spacing: 0.5px;
-	white-space: nowrap;
+  padding: 3px 8px;
+  border: 1px solid rgba(34, 197, 94, 0.3);
+  border-radius: 3px;
+  background: rgba(34, 197, 94, 0.1);
+  color: #4ade80;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 9px;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
 }
 
 @media (max-width: 900px) {
-	.donor-registration__main-inner {
-		grid-template-columns: minmax(0, 1fr);
-		gap: 32px;
-	}
+  .donor-registration__main-inner {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 32px;
+  }
 
-	.donor-registration__card {
-		padding: 24px;
-	}
+  .donor-registration__card {
+    padding: 24px;
+  }
 }
 
 @media (max-width: 700px) {
-	.donor-registration__privacy {
-		display: none;
-	}
+  .donor-registration__privacy {
+    display: none;
+  }
 }
 
 @media (max-width: 560px) {
-	.donor-registration__header-inner {
-		gap: 8px;
-	}
+  .donor-registration__header-inner {
+    gap: 8px;
+  }
 
-	.donor-registration__brand {
-		gap: 5px;
-	}
+  .donor-registration__brand {
+    gap: 5px;
+  }
 
-	.donor-registration__wordmark {
-		font-size: 18px;
-	}
+  .donor-registration__wordmark {
+    font-size: 18px;
+  }
 
-	.donor-registration__secured {
-		font-size: 7px;
-		padding-right: 3px;
-		padding-left: 3px;
-	}
+  .donor-registration__secured {
+    font-size: 7px;
+    padding-right: 3px;
+    padding-left: 3px;
+  }
 
-	.donor-registration__header-meta {
-		gap: 0;
-	}
+  .donor-registration__header-meta {
+    gap: 0;
+  }
 
-	.donor-registration__help {
-		font-size: 10px;
-	}
+  .donor-registration__help {
+    font-size: 10px;
+  }
 
-	.donor-registration__main-inner {
-		padding-top: 32px;
-		padding-bottom: 40px;
-	}
+  .donor-registration__main-inner {
+    padding-top: 32px;
+    padding-bottom: 40px;
+  }
 
-	.donor-registration__headline {
-		font-size: 28px;
-	}
+  .donor-registration__headline {
+    font-size: 28px;
+  }
 
-	.donor-registration__card {
-		padding: 20px 16px;
-	}
+  .donor-registration__card {
+    padding: 20px 16px;
+  }
 
-	.donor-registration__stepper {
-		gap: 4px;
-	}
+  .donor-registration__stepper {
+    gap: 4px;
+  }
 
-	.donor-registration__step {
-		gap: 5px;
-	}
+  .donor-registration__step {
+    gap: 5px;
+  }
 
-	.donor-registration__step-label {
-		display: none;
-	}
+  .donor-registration__step-label {
+    display: none;
+  }
 
-	.donor-registration__step--active .donor-registration__step-label {
-		display: inline;
-		font-size: 11px;
-	}
+  .donor-registration__step--active .donor-registration__step-label {
+    display: inline;
+    font-size: 11px;
+  }
 
-	.donor-registration__field-grid {
-		grid-template-columns: minmax(0, 1fr);
-		gap: 12px;
-	}
+  .donor-registration__field-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
+  }
 
-	.donor-registration__health-row {
-		align-items: stretch;
-		flex-direction: column;
-		gap: 10px;
-	}
+  .donor-registration__health-row {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 10px;
+  }
 
-	.donor-registration__health-toggle {
-		align-self: flex-start;
-	}
+  .donor-registration__health-toggle {
+    align-self: flex-start;
+  }
 
-	.donor-registration__footer-inner,
-	.donor-registration__footer-brand,
-	.donor-registration__footer-meta {
-		align-items: center;
-		flex-direction: column;
-		justify-content: center;
-		text-align: center;
-	}
+  .donor-registration__footer-inner,
+  .donor-registration__footer-brand,
+  .donor-registration__footer-meta {
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
 
-	.donor-registration__footer-brand,
-	.donor-registration__footer-meta {
-		gap: 12px;
-	}
+  .donor-registration__footer-brand,
+  .donor-registration__footer-meta {
+    gap: 12px;
+  }
 
-	.donor-registration__footer-meta {
-		flex-direction: row;
-		flex-wrap: wrap;
-	}
+  .donor-registration__footer-meta {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
 }
 
 .donor-registration__field-full {
-	grid-column: 1 / -1;
+  grid-column: 1 / -1;
 }
 
 .donor-registration__field-helper {
-	margin-top: 5px;
-	color: #64748B;
-	font-size: 11px;
-	line-height: 1.45;
+  margin-top: 5px;
+  color: #64748b;
+  font-size: 11px;
+  line-height: 1.45;
 }
 
 .donor-registration__control-prefix {
-	position: absolute;
-	left: 12px;
-	color: #64748B;
-	font-size: 14px;
-	font-weight: 600;
+  position: absolute;
+  left: 12px;
+  color: #64748b;
+  font-size: 14px;
+  font-weight: 600;
 }
 
 .donor-registration__control:has(.donor-registration__control-prefix) input {
-	padding-left: 52px;
+  padding-left: 52px;
 }
 
 .donor-registration__control:has(.donor-registration__password-toggle) input {
-	padding-right: 48px;
+  padding-right: 48px;
 }
 
 .donor-registration__password-toggle {
-	position: absolute;
-	right: 4px;
-	display: grid;
-	width: 34px;
-	height: 34px;
-	place-items: center;
-	border: 0;
-	border-radius: 5px;
-	background: transparent;
-	color: #64748B;
-	cursor: pointer;
+  position: absolute;
+  right: 4px;
+  display: grid;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  border: 0;
+  border-radius: 5px;
+  background: transparent;
+  color: #64748b;
+  cursor: pointer;
 }
 
 .donor-registration__password-toggle:hover {
-	color: #0F172A;
+  color: #0f172a;
 }
 
 .donor-registration__password-toggle svg {
-	width: 17px;
-	height: 17px;
+  width: 17px;
+  height: 17px;
 }
 
 .donor-registration__dob-notice {
-	margin-top: 5px;
-	color: #C2410C;
-	font-size: 11px;
-	line-height: 1.4;
+  margin-top: 5px;
+  color: #c2410c;
+  font-size: 11px;
+  line-height: 1.4;
 }
 
 .donor-registration__location-button {
-	display: inline-flex;
-	min-height: 36px;
-	align-items: center;
-	gap: 6px;
-	margin-top: 4px;
-	padding: 0;
-	border: 0;
-	background: transparent;
-	color: #B91C1C;
-	font-family: 'Outfit', sans-serif;
-	font-size: 12px;
-	font-weight: 600;
-	cursor: pointer;
+  display: inline-flex;
+  min-height: 36px;
+  align-items: center;
+  gap: 6px;
+  margin-top: 4px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #b91c1c;
+  font-family: "Outfit", sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
 }
 
 .donor-registration__location-button svg {
-	width: 14px;
-	height: 14px;
+  width: 14px;
+  height: 14px;
 }
 
 .donor-registration__location-feedback {
-	display: flex;
-	align-items: center;
-	gap: 5px;
-	margin-top: 2px;
-	font-size: 11px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-top: 2px;
+  font-size: 11px;
 }
 
 .donor-registration__location-feedback svg {
-	width: 13px;
-	height: 13px;
+  width: 13px;
+  height: 13px;
 }
 
 .donor-registration__location-feedback--success {
-	color: #15803D;
+  color: #15803d;
 }
 
 .donor-registration__location-feedback--neutral {
-	color: #64748B;
+  color: #64748b;
 }
 
 .donor-registration__health-row--error {
-	border-color: #DC2626;
+  border-color: #dc2626;
 }
 
 .donor-registration__health-note {
-	margin-top: 10px;
-	padding: 10px 12px;
-	border: 1px solid #FED7AA;
-	border-radius: 8px;
-	background: #FFF7ED;
-	color: #9A3412;
-	font-size: 12px;
-	line-height: 1.5;
+  margin-top: 10px;
+  padding: 10px 12px;
+  border: 1px solid #fed7aa;
+  border-radius: 8px;
+  background: #fff7ed;
+  color: #9a3412;
+  font-size: 12px;
+  line-height: 1.5;
 }
 
 .donor-registration__optional-field {
-	margin-top: 16px;
+  margin-top: 16px;
 }
 
 .donor-registration__collapsible-heading {
-	display: flex;
-	width: 100%;
-	align-items: center;
-	gap: 10px;
-	padding: 0;
-	border: 0;
-	background: transparent;
-	color: inherit;
-	text-align: left;
-	font-family: 'Outfit', sans-serif;
-	cursor: pointer;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  gap: 10px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  text-align: left;
+  font-family: "Outfit", sans-serif;
+  cursor: pointer;
 }
 
 .donor-registration__collapsible-copy {
-	display: flex;
-	min-width: 0;
-	flex: 1;
-	flex-direction: column;
+  display: flex;
+  min-width: 0;
+  flex: 1;
+  flex-direction: column;
 }
 
 .donor-registration__collapsible-title-row {
-	display: flex;
-	align-items: center;
-	gap: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .donor-registration__collapsible-title-row strong {
-	font-size: 14px;
-	font-weight: 700;
+  font-size: 14px;
+  font-weight: 700;
 }
 
 .donor-registration__optional-pill {
-	padding: 2px 7px;
-	border-radius: 999px;
-	background: #F1F5F9;
-	color: #64748B;
-	font-size: 10px;
-	font-weight: 500;
+  padding: 2px 7px;
+  border-radius: 999px;
+  background: #f1f5f9;
+  color: #64748b;
+  font-size: 10px;
+  font-weight: 500;
 }
 
 .donor-registration__section-subtitle {
-	margin-top: 2px;
-	color: #64748B;
-	font-size: 12px;
-	line-height: 1.4;
+  margin-top: 2px;
+  color: #64748b;
+  font-size: 12px;
+  line-height: 1.4;
 }
 
 .donor-registration__collapse-chevron {
-	flex: 0 0 18px;
-	width: 18px;
-	height: 18px;
-	color: #64748B;
-	transition: transform 200ms ease;
+  flex: 0 0 18px;
+  width: 18px;
+  height: 18px;
+  color: #64748b;
+  transition: transform 200ms ease;
 }
 
 .donor-registration__collapse-chevron--open {
-	transform: rotate(180deg);
+  transform: rotate(180deg);
 }
 
 .donor-registration__collapsible-body {
-	display: grid;
-	grid-template-rows: 0fr;
-	margin-top: 0;
-	opacity: 0;
-	transition: grid-template-rows 200ms ease, opacity 200ms ease, margin-top 200ms ease;
+  display: grid;
+  grid-template-rows: 0fr;
+  margin-top: 0;
+  opacity: 0;
+  transition:
+    grid-template-rows 200ms ease,
+    opacity 200ms ease,
+    margin-top 200ms ease;
 }
 
 .donor-registration__collapsible-body--open {
-	grid-template-rows: 1fr;
-	margin-top: 16px;
-	opacity: 1;
+  grid-template-rows: 1fr;
+  margin-top: 16px;
+  opacity: 1;
 }
 
 .donor-registration__collapsible-inner {
-	min-height: 0;
-	overflow: hidden;
+  min-height: 0;
+  overflow: hidden;
 }
 
 .donor-registration__preference-field + .donor-registration__preference-field {
-	margin-top: 16px;
+  margin-top: 16px;
 }
 
 .donor-registration__preference-label {
-	display: block;
-	margin-bottom: 8px;
-	color: #0F172A;
-	font-size: 12px;
-	font-weight: 600;
+  display: block;
+  margin-bottom: 8px;
+  color: #0f172a;
+  font-size: 12px;
+  font-weight: 600;
 }
 
 .donor-registration__chip-row {
-	display: flex;
-	flex-wrap: wrap;
-	gap: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
 }
 
 .donor-registration__choice-chip {
-	min-height: 32px;
-	padding: 0 12px;
-	border: 1px solid #D1D5DB;
-	border-radius: 999px;
-	background: #FFFFFF;
-	color: #334155;
-	font-family: 'Outfit', sans-serif;
-	font-size: 13px;
-	cursor: pointer;
-	transition: background-color 160ms ease, border-color 160ms ease, color 160ms ease;
+  min-height: 32px;
+  padding: 0 12px;
+  border: 1px solid #d1d5db;
+  border-radius: 999px;
+  background: #ffffff;
+  color: #334155;
+  font-family: "Outfit", sans-serif;
+  font-size: 13px;
+  cursor: pointer;
+  transition:
+    background-color 160ms ease,
+    border-color 160ms ease,
+    color 160ms ease;
 }
 
 .donor-registration__choice-chip--selected {
-	border-color: #B91C1C;
-	background: #FEF2F2;
-	color: #B91C1C;
+  border-color: #b91c1c;
+  background: #fef2f2;
+  color: #b91c1c;
 }
 
 .donor-registration__radio-fieldset {
-	min-width: 0;
-	padding: 0;
-	border: 0;
+  min-width: 0;
+  padding: 0;
+  border: 0;
 }
 
 .donor-registration__request-levels {
-	display: grid;
-	grid-template-columns: repeat(2, minmax(0, 1fr));
-	gap: 10px;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
 }
 
 .donor-registration__request-level {
-	position: relative;
-	display: flex;
-	min-height: 60px;
-	flex-direction: column;
-	justify-content: center;
-	gap: 3px;
-	padding: 10px 12px 10px 36px;
-	border: 1px solid #D1D5DB;
-	border-radius: 8px;
-	background: #FFFFFF;
-	color: #334155;
-	cursor: pointer;
+  position: relative;
+  display: flex;
+  min-height: 60px;
+  flex-direction: column;
+  justify-content: center;
+  gap: 3px;
+  padding: 10px 12px 10px 36px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #334155;
+  cursor: pointer;
 }
 
 .donor-registration__request-level input {
-	position: absolute;
-	left: 12px;
-	width: 15px;
-	height: 15px;
-	accent-color: #B91C1C;
+  position: absolute;
+  left: 12px;
+  width: 15px;
+  height: 15px;
+  accent-color: #b91c1c;
 }
 
 .donor-registration__request-level span {
-	font-size: 12px;
-	font-weight: 600;
+  font-size: 12px;
+  font-weight: 600;
 }
 
 .donor-registration__request-level small {
-	color: #64748B;
-	font-size: 10px;
+  color: #64748b;
+  font-size: 10px;
 }
 
 .donor-registration__request-level--selected {
-	border-color: #B91C1C;
-	background: #FEF2F2;
-	color: #B91C1C;
+  border-color: #b91c1c;
+  background: #fef2f2;
+  color: #b91c1c;
 }
 
 .donor-registration__request-level:has(input:focus-visible) {
-	outline: 2px solid #B91C1C;
-	outline-offset: 2px;
+  outline: 2px solid #b91c1c;
+  outline-offset: 2px;
 }
 
 .donor-registration__quiet-hours {
-	display: grid;
-	grid-template-columns: 1fr auto;
-	align-items: center;
-	gap: 10px 16px;
-	margin-top: 16px;
-	padding-top: 14px;
-	border-top: 1px solid #F1F5F9;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 10px 16px;
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid #f1f5f9;
 }
 
 .donor-registration__quiet-toggle-label {
-	color: #0F172A;
-	font-size: 12px;
-	font-weight: 600;
+  color: #0f172a;
+  font-size: 12px;
+  font-weight: 600;
 }
 
 .donor-registration__switch {
-	position: relative;
-	width: 40px;
-	height: 22px;
-	padding: 0;
-	border: 0;
-	border-radius: 999px;
-	background: #CBD5E1;
-	cursor: pointer;
-	transition: background-color 160ms ease;
+  position: relative;
+  width: 40px;
+  height: 22px;
+  padding: 0;
+  border: 0;
+  border-radius: 999px;
+  background: #cbd5e1;
+  cursor: pointer;
+  transition: background-color 160ms ease;
 }
 
 .donor-registration__switch--on {
-	background: #16A34A;
+  background: #16a34a;
 }
 
 .donor-registration__switch span {
-	position: absolute;
-	top: 3px;
-	left: 3px;
-	width: 16px;
-	height: 16px;
-	border-radius: 50%;
-	background: #FFFFFF;
-	transition: transform 160ms ease;
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #ffffff;
+  transition: transform 160ms ease;
 }
 
 .donor-registration__switch--on span {
-	transform: translateX(18px);
+  transform: translateX(18px);
 }
 
 .donor-registration__quiet-details {
-	display: grid;
-	grid-column: 1 / -1;
-	grid-template-columns: repeat(2, minmax(0, 1fr));
-	gap: 12px;
+  display: grid;
+  grid-column: 1 / -1;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
 }
 
-.donor-registration__quiet-details > label:not(.donor-registration__critical-checkbox) {
-	display: flex;
-	flex-direction: column;
-	gap: 5px;
-	color: #64748B;
-	font-size: 11px;
+.donor-registration__quiet-details
+  > label:not(.donor-registration__critical-checkbox) {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  color: #64748b;
+  font-size: 11px;
 }
 
-.donor-registration__quiet-details input[type='time'] {
-	min-height: 40px;
-	padding: 0 10px;
-	border: 1px solid #D1D5DB;
-	border-radius: 6px;
-	background: #FFFFFF;
-	color: #0F172A;
-	font: 13px 'Outfit', sans-serif;
+.donor-registration__quiet-details input[type="time"] {
+  min-height: 40px;
+  padding: 0 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  background: #ffffff;
+  color: #0f172a;
+  font:
+    13px "Outfit",
+    sans-serif;
 }
 
 .donor-registration__critical-checkbox {
-	display: flex;
-	grid-column: 1 / -1;
-	align-items: flex-start;
-	gap: 8px;
-	color: #64748B;
-	font-size: 11px;
-	line-height: 1.45;
+  display: flex;
+  grid-column: 1 / -1;
+  align-items: flex-start;
+  gap: 8px;
+  color: #64748b;
+  font-size: 11px;
+  line-height: 1.45;
 }
 
 .donor-registration__critical-checkbox input {
-	flex: 0 0 16px;
-	width: 16px;
-	height: 16px;
-	margin: 1px 0 0;
-	accent-color: #B91C1C;
+  flex: 0 0 16px;
+  width: 16px;
+  height: 16px;
+  margin: 1px 0 0;
+  accent-color: #b91c1c;
 }
 
 .donor-registration__consent-list {
-	display: flex;
-	flex-direction: column;
-	gap: 12px;
-	margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 16px;
 }
 
 .donor-registration__consent-item {
-	min-width: 0;
+  min-width: 0;
 }
 
 .donor-registration__consent-label input {
-	flex: 0 0 16px;
-	width: 16px;
-	height: 16px;
-	margin-top: 2px;
+  flex: 0 0 16px;
+  width: 16px;
+  height: 16px;
+  margin-top: 2px;
 }
 
 .donor-registration__consent-label a {
-	font-weight: 700;
+  font-weight: 700;
 }
 
 .donor-registration__collapsible-heading:focus-visible,
@@ -2403,37 +2433,37 @@
 .donor-registration__choice-chip:focus-visible,
 .donor-registration__password-toggle:focus-visible,
 .donor-registration__switch:focus-visible {
-	outline: 2px solid #B91C1C;
-	outline-offset: 2px;
+  outline: 2px solid #b91c1c;
+  outline-offset: 2px;
 }
 
 @media (max-width: 560px) {
-	.donor-registration__chip-row {
-		row-gap: 8px;
-	}
+  .donor-registration__chip-row {
+    row-gap: 8px;
+  }
 
-	.donor-registration__request-levels {
-		grid-template-columns: minmax(0, 1fr);
-	}
+  .donor-registration__request-levels {
+    grid-template-columns: minmax(0, 1fr);
+  }
 
-	.donor-registration__quiet-details {
-		grid-template-columns: repeat(2, minmax(0, 1fr));
-	}
+  .donor-registration__quiet-details {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 
-	.donor-registration__location-button {
-		justify-content: center;
-		width: 100%;
-		min-height: 40px;
-		border: 1px solid #FECACA;
-		border-radius: 6px;
-	}
+  .donor-registration__location-button {
+    justify-content: center;
+    width: 100%;
+    min-height: 40px;
+    border: 1px solid #fecaca;
+    border-radius: 6px;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
-	.donor-registration__collapsible-body,
-	.donor-registration__collapse-chevron,
-	.donor-registration__switch,
-	.donor-registration__switch span {
-		transition: none;
-	}
+  .donor-registration__collapsible-body,
+  .donor-registration__collapse-chevron,
+  .donor-registration__switch,
+  .donor-registration__switch span {
+    transition: none;
+  }
 }
