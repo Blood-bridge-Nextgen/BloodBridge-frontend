@@ -4,15 +4,14 @@ import "./App.css";
 import { Toaster } from "react-hot-toast";
 import { BrowserRouter } from "react-router-dom";
 import App from "./App.jsx";
-import { QueryProvider } from "./Components/ReactQuery/QueryProvider.jsx";
 
 createRoot(document.getElementById("root")).render(
-  <StrictMode>
-    <BrowserRouter>
-      <QueryProvider>
-        <Toaster position="top-right" />
-        <App />
-      </QueryProvider>
-    </BrowserRouter>
-  </StrictMode>,
+	<StrictMode>
+		<BrowserRouter>
+			{/* <QueryProvider> */}
+			<Toaster position="top-right" />
+			<App />
+			{/* </QueryProvider> */}
+		</BrowserRouter>
+	</StrictMode>,
 );
