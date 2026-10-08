@@ -1,0 +1,424 @@
+.request-blood-modal__backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  background: rgba(15, 23, 42, 0.52);
+  backdrop-filter: blur(1px);
+  animation: request-blood-modal__fade-in 0.2s ease-out;
+}
+
+.request-blood-modal {
+  position: relative;
+  width: min(100%, 560px);
+  max-height: min(92vh, 760px);
+  overflow: auto;
+  border: 1px solid #E2E8F0;
+  border-radius: 10px;
+  background: #FFFFFF;
+  box-shadow: 0 10px 28px rgba(15, 23, 42, 0.1);
+  animation: request-blood-modal__scale-in 0.22s ease-out;
+}
+
+.request-blood-modal__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 22px 22px 14px;
+}
+
+.request-blood-modal__header h2 {
+  margin: 0;
+  color: #0F172A;
+  font: 700 24px/1.3 'Poppins', 'Outfit', sans-serif;
+}
+
+.request-blood-modal__header p {
+  margin: 5px 0 0;
+  color: #64748B;
+  font-size: 13px;
+}
+
+.request-blood-modal__close {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  flex: 0 0 auto;
+  border: 1px solid #E2E8F0;
+  border-radius: 6px;
+  background: #F8FAFC;
+  color: #475569;
+  cursor: pointer;
+}
+
+.request-blood-modal__close:hover:not(:disabled) {
+  background: #F1F5F9;
+}
+
+.request-blood-modal__close:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.request-blood-modal__close svg {
+  width: 16px;
+  height: 16px;
+}
+
+.request-blood-modal__hospital-strip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 0 22px;
+  padding: 11px 14px;
+  border: 1px solid #E2E8F0;
+  border-radius: 6px;
+  background: #F8FAFC;
+  color: #334155;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.request-blood-modal__verified {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: #15803D;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.request-blood-modal__verified svg {
+  width: 12px;
+  height: 12px;
+}
+
+.request-blood-modal__form {
+  padding: 18px 22px 22px;
+}
+
+.request-blood-modal__field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin-bottom: 14px;
+}
+
+.request-blood-modal__field--half {
+  width: calc(50% - 7px);
+}
+
+.request-blood-modal__field--full {
+  width: 100%;
+}
+
+.request-blood-modal__field:nth-of-type(1),
+.request-blood-modal__field:nth-of-type(2) {
+  display: inline-flex;
+}
+
+.request-blood-modal__field:nth-of-type(1) {
+  margin-right: 14px;
+}
+
+.request-blood-modal__field label,
+.request-blood-modal__label {
+  color: #334155;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.request-blood-modal__field input,
+.request-blood-modal__field select,
+.request-blood-modal__field textarea {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #CBD5E1;
+  border-radius: 6px;
+  background: #FFFFFF;
+  color: #0F172A;
+  font: 400 13px/1.4 'Poppins', 'Outfit', sans-serif;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.request-blood-modal__field input,
+.request-blood-modal__field select {
+  height: 40px;
+  padding: 0 11px;
+}
+
+.request-blood-modal__field textarea {
+  min-height: 74px;
+  padding: 10px 11px;
+  resize: vertical;
+}
+
+.request-blood-modal__field input:focus,
+.request-blood-modal__field select:focus,
+.request-blood-modal__field textarea:focus {
+  border-color: #D32F2F;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(211, 47, 47, 0.08);
+}
+
+.request-blood-modal__field input[aria-invalid='true'],
+.request-blood-modal__field select[aria-invalid='true'],
+.request-blood-modal__field textarea[aria-invalid='true'] {
+  border-color: #DC2626;
+}
+
+.request-blood-modal__urgency-options {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.request-blood-modal__urgency-option {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 44px;
+  padding: 9px 10px;
+  border: 1px solid #E2E8F0;
+  border-radius: 6px;
+  background: #FFFFFF;
+  color: #334155;
+  font: 500 12px 'Poppins', 'Outfit', sans-serif;
+  cursor: pointer;
+  transition: border-color 0.2s ease, background 0.2s ease, color 0.2s ease;
+}
+
+.request-blood-modal__urgency-option--normal.request-blood-modal__urgency-option--selected {
+  border-color: #CBD5E1;
+  background: #F8FAFC;
+  color: #0F172A;
+}
+
+.request-blood-modal__urgency-option--high.request-blood-modal__urgency-option--selected {
+  border-color: #FDBA74;
+  background: #FFF7ED;
+  color: #C2410C;
+}
+
+.request-blood-modal__urgency-option--critical.request-blood-modal__urgency-option--selected {
+  border-color: #FCA5A5;
+  background: #FEF2F2;
+  color: #B91C1C;
+}
+
+.request-blood-modal__radio {
+  position: relative;
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  flex: 0 0 auto;
+  border: 1.5px solid currentColor;
+  border-radius: 50%;
+}
+
+.request-blood-modal__urgency-option--selected .request-blood-modal__radio::after {
+  content: '';
+  position: absolute;
+  inset: 3px;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.request-blood-modal__warning {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin: 8px 0 0;
+  color: #B91C1C;
+  font-size: 11px;
+}
+
+.request-blood-modal__warning svg {
+  width: 13px;
+  height: 13px;
+}
+
+.request-blood-modal__error {
+  color: #B91C1C;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.request-blood-modal__field small {
+  color: #64748B;
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+.request-blood-modal__location-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.request-blood-modal__location-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 10px;
+  border: 1px solid #FCA5A5;
+  border-radius: 6px;
+  background: #FEF2F2;
+  color: #B91C1C;
+  font: 600 11px 'Poppins', 'Outfit', sans-serif;
+  cursor: pointer;
+}
+
+.request-blood-modal__location-button svg {
+  width: 13px;
+  height: 13px;
+}
+
+.request-blood-modal__location-button:disabled {
+  cursor: wait;
+  opacity: 0.65;
+}
+
+.request-blood-modal__location-value,
+.request-blood-modal__location-hint {
+  margin: 0;
+  color: #475569;
+  font-size: 12px;
+}
+
+.request-blood-modal__location-value {
+  color: #0F172A;
+  font-weight: 600;
+}
+
+.request-blood-modal__footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  margin-top: 8px;
+  padding-top: 18px;
+  border-top: 1px solid #E2E8F0;
+}
+
+.request-blood-modal__footer p {
+  max-width: 265px;
+  margin: 0;
+  color: #64748B;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.request-blood-modal__actions {
+  display: flex;
+  gap: 10px;
+}
+
+.request-blood-modal__cancel,
+.request-blood-modal__submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 38px;
+  padding: 0 16px;
+  border-radius: 6px;
+  font: 600 13px 'Poppins', 'Outfit', sans-serif;
+  cursor: pointer;
+}
+
+.request-blood-modal__cancel {
+  border: 1px solid #E2E8F0;
+  background: #FFFFFF;
+  color: #334155;
+}
+
+.request-blood-modal__submit {
+  border: 0;
+  background: #D32F2F;
+  color: #FFFFFF;
+}
+
+.request-blood-modal__submit:disabled,
+.request-blood-modal__cancel:disabled {
+  cursor: wait;
+  opacity: 0.68;
+}
+
+.request-blood-modal__submit svg {
+  width: 14px;
+  height: 14px;
+  margin-right: 6px;
+}
+
+@keyframes request-blood-modal__fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes request-blood-modal__scale-in {
+  from { opacity: 0; transform: scale(0.97); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@media (max-width: 576px) {
+  .request-blood-modal__backdrop {
+    padding: 14px;
+  }
+
+  .request-blood-modal {
+    width: min(100%, 95vw);
+    max-height: 94vh;
+  }
+
+  .request-blood-modal__header,
+  .request-blood-modal__form,
+  .request-blood-modal__hospital-strip {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .request-blood-modal__header {
+    padding-top: 18px;
+  }
+
+  .request-blood-modal__header h2 {
+    font-size: 20px;
+  }
+
+  .request-blood-modal__field--half {
+    width: 100%;
+  }
+
+  .request-blood-modal__field:nth-of-type(1) {
+    margin-right: 0;
+  }
+
+  .request-blood-modal__field:nth-of-type(1),
+  .request-blood-modal__field:nth-of-type(2) {
+    display: flex;
+  }
+
+  .request-blood-modal__footer {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .request-blood-modal__footer p {
+    max-width: none;
+  }
+
+  .request-blood-modal__actions {
+    width: 100%;
+  }
+
+  .request-blood-modal__cancel,
+  .request-blood-modal__submit {
+    flex: 1;
+  }
+}

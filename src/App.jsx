@@ -1,4 +1,4 @@
-import { Routes, Route, useNavigate } from 'react-router-dom'
+import { Routes, Route, useLocation, useNavigate } from 'react-router-dom'
 import useRevealOnScroll from './hooks/useRevealOnScroll'
 import HeroSection from './Components/HeroSection'
 import StatisticSection from './Components/Statistic-section'
@@ -8,18 +8,45 @@ import Trust from './Components/Trust'
 import Footer from './Components/Footer'
 import CreateDonorAccount from './Components/Auth/CreateDonorProfile'
 import CreateHospitalAccount from './Components/Auth/CreatHospitalAccount'
-import OnboardingScreen from './Components/Auth/OnboardingScreen' 
-import DonorDashboard from './Components/Dashboards/DonorDashboard'
-import DonorProfile from './Components/Dashboards/DonorProfile'
+import OnboardingScreen from './Components/Auth/OnboardingScreen'
+import DonorDashboard from './Components/Daashboards/DonorDashboard/DonorDashboard'
+import DonorProfile from './Components/Daashboards/DonorDashboard/DonorProfile'
 import DonorSignup from './Components/Auth/DonorSignup'
 import HospitalSignup from './Components/Auth/HospitalSignup'
-import SignIn from './Components/Auth/SignIn'
+import { SignInRoute } from './Components/Auth/SignIn'
+import ResetPassword from './Components/Auth/ResetPassword'
+import VerifyResetOtp from './Components/Auth/VerifyResetOtp'
+import HospitalDashboard from './Components/Daashboards/HospitalDashboard/HospitalDashboard'
 import Contact from './Components/Contact'
+import { sendPasswordReset } from './api/authApi'
 
-const SignInRoute = () => {
+const ResetPasswordRoute = () => {
   const navigate = useNavigate()
 
-  return <SignIn onCreateAccount={() => navigate('/DonorDashboard')} />
+  return (
+    <ResetPassword
+      onBackToSignIn={() => navigate('/SignIn')}
+      onSubmit={async (email) => {
+        await sendPasswordReset(email)
+        navigate('/VerifyResetOtp', { state: { email } })
+      }}
+    />
+  )
+}
+
+const VerifyResetOtpRoute = () => {
+  const navigate = useNavigate()
+  const { state } = useLocation()
+
+  return (
+    <VerifyResetOtp
+      email={state?.email}
+      onBack={() => navigate('/ResetPassword')}
+      onChangeEmail={() => navigate('/ResetPassword')}
+      onBackToSignIn={() => navigate('/SignIn')}
+      onVerified={(data) => navigate('/SetNewPassword', { state: data })}
+    />
+  )
 }
 
 function App() {
@@ -49,6 +76,9 @@ function App() {
       <Route path="/DonorSignup" element={<DonorSignup />} />
       <Route path="/HospitalSignup" element={<HospitalSignup />} />
       <Route path="/SignIn" element={<SignInRoute />} />
+      <Route path="/ResetPassword" element={<ResetPasswordRoute />} />
+      <Route path="/VerifyResetOtp" element={<VerifyResetOtpRoute />} />
+      <Route path="/HospitalDashboard" element={<HospitalDashboard />} />
     </Routes>
   )
 }

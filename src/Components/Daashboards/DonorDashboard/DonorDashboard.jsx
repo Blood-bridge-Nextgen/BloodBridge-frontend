@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import {
   AlertTriangle,
   ArrowRight,
@@ -341,6 +342,8 @@ const DonorDashboard = ({
     setAvailable((current) => !current)
     onUpdateAvailability()
   }
+
+  const navigate = useNavigate()
 
   return (
     <div className="donor-dashboard">

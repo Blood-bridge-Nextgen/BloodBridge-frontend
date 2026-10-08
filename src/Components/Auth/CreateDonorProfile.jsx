@@ -193,6 +193,7 @@ const CreateDonorAccount = ({ onContinue = noop, requirePassword = true }) => {
       return nextErrors
     })
   }
+  
 
   const updateAlertPreference = (name, value) => {
     setFormData((current) => ({

@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { ArrowLeft, ChevronDown, Eye, EyeOff } from 'lucide-react'
 import './AuthStyle.css'
 import { useNavigate } from 'react-router-dom'
@@ -102,7 +102,9 @@ const Field = ({
 const DonorSignup = ({ onBack = () => window.history.back(), onSignIn = noop, onCreateAccount = createDonorAccount }) => {
 	const navigate = useNavigate()
     const [formData, setFormData] = useState({
-		fullName: '',
+		firstName: '',
+		lastName: '',
+        otherName: '',
 		email: '',
 		phone: '',
 		dateOfBirth: '',
@@ -116,7 +118,12 @@ const DonorSignup = ({ onBack = () => window.history.back(), onSignIn = noop, on
 	const [errors, setErrors] = useState({})
 	const [isSubmitting, setIsSubmitting] = useState(false)
 	const [feedback, setFeedback] = useState(null)
+	const [shouldNavigate, setShouldNavigate] = useState(false)
 	const fieldRefs = useRef({})
+
+	useEffect(() => {
+		if (shouldNavigate) navigate('/CreateDonorProfile')
+	}, [navigate, shouldNavigate])
 
 	const updateField = (name, value) => {
 		setFormData((current) => ({ ...current, [name]: value }))
@@ -148,10 +155,14 @@ const DonorSignup = ({ onBack = () => window.history.back(), onSignIn = noop, on
 		if (isSubmitting) return
 
 		const nextErrors = {}
-		const nameParts = formData.fullName.trim().split(/\s+/).filter(Boolean)
-		if (nameParts.length < 2 || formData.fullName.trim().length < 2) {
-			nextErrors.fullName = 'Enter your first and last name.'
-		}
+	if (formData.firstName.trim().length < 1) {
+  nextErrors.firstName = 'Please enter your first name.'
+}
+
+if (formData.lastName.trim().length < 1) {
+  nextErrors.lastName = 'Please enter your last name.'
+}
+
 		if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email.trim())) nextErrors.email = 'Enter a valid email address.'
 		if (formData.phone.replace(/\D/g, '').length < 10) nextErrors.phone = 'Enter a phone number with at least 10 digits.'
 		if (!formData.dateOfBirth || Number.isNaN(Date.parse(formData.dateOfBirth)) || formData.dateOfBirth > new Date().toISOString().slice(0, 10)) {
@@ -175,12 +186,11 @@ const DonorSignup = ({ onBack = () => window.history.back(), onSignIn = noop, on
 		setIsSubmitting(true)
 		setFeedback(null)
 		try {
-			const firstName = nameParts[0]
-			const lastName = nameParts[nameParts.length - 1]
+			const otherNames = formData.otherName.trim() || 'N/A'
 			const payload = {
-				firstName,
-				lastName,
-				otherNames: nameParts.slice(1, -1).join(' '),
+				firstName: formData.firstName.trim(),
+				lastName: formData.lastName.trim(),
+				otherNames,
 				email: formData.email.trim(),
 				phone: formData.phone.trim(),
 				address: formData.location.trim(),
@@ -190,11 +200,13 @@ const DonorSignup = ({ onBack = () => window.history.back(), onSignIn = noop, on
 				bloodGroup: formData.bloodGroup,
 				status: formData.available ? 'available' : 'unavailable',
 			}
-             await onCreateAccount(payload)
-            navigate('/CreateDonorProfile')
+			await onCreateAccount(payload)
+			setShouldNavigate(true)
 		} catch (error) {
-			setFeedback({ type: 'error', message: error.message || 'Unable to create your account. Please try again.' })
-		} finally {
+            console.log("FULL ERROR:", error);
+            console.log("STATUS:", error.response?.status);
+            console.log("DATA:", error.response?.data);
+        } finally {
 			setIsSubmitting(false)
 		}
 	}
@@ -210,7 +222,9 @@ const DonorSignup = ({ onBack = () => window.history.back(), onSignIn = noop, on
 				</header>
 
 				<form className="donor-signup__form" noValidate onSubmit={handleSubmit}>
-					{renderField('fullName', 'Full Name', { placeholder: 'John Doe', autoComplete: 'name' })}
+					{renderField('firstName', 'First Name', { placeholder: 'John', autoComplete: 'given-name' })}
+					{renderField('lastName', 'Last Name', { placeholder: 'Doe', autoComplete: 'family-name' })}
+					{renderField('otherName', 'Other Name', { placeholder: 'Additional names', autoComplete: 'additional-name' })}
 					{renderField('email', 'Email Address', { type: 'email', placeholder: 'john@example.com', autoComplete: 'email' })}
 					{renderField('phone', 'Phone Number', { type: 'tel', placeholder: '+1 (555) 019-9234', autoComplete: 'tel', inputMode: 'tel' })}
 					{renderField('dateOfBirth', 'Date of Birth', { type: 'date', autoComplete: 'bday' })}

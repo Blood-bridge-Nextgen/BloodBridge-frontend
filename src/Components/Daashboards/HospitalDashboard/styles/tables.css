@@ -1,0 +1,55 @@
+.hospital-dashboard__table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 700px;
+}
+
+.hospital-dashboard__table th,
+.hospital-dashboard__table td {
+  padding: 13px 12px;
+  border-bottom: 1px solid #F1F5F9;
+  text-align: left;
+}
+
+.hospital-dashboard__table th {
+  color: #64748B;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.hospital-dashboard__table td {
+  color: #0F172A;
+  font-size: 13px;
+}
+
+.hospital-dashboard__table td strong {
+  font-weight: 600;
+}
+
+.hospital-dashboard__table-actions {
+  display: flex;
+  gap: 6px;
+}
+
+.hospital-dashboard__table-actions button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  height: 32px;
+  padding: 0 10px;
+  border: 1px solid #E2E8F0;
+  border-radius: 6px;
+  background: #FFFFFF;
+  color: #475569;
+  font-family: 'Outfit', sans-serif;
+  font-size: 11px;
+  cursor: pointer;
+}
+
+.hospital-dashboard__table-actions button svg {
+  width: 13px;
+  height: 13px;
+}

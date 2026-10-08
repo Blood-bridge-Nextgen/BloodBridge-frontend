@@ -1,0 +1,165 @@
+.hospital-dashboard__header {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 24px;
+  height: 76px;
+  padding: 0 32px;
+  border-bottom: 1px solid #E2E8F0;
+  background: #FFFFFF;
+}
+
+.hospital-dashboard__brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.hospital-dashboard__brand-mark {
+  display: grid;
+  width: 32px;
+  height: 32px;
+  place-items: center;
+  border-radius: 8px;
+  background: #D32F2F;
+  color: #FFFFFF;
+}
+
+.hospital-dashboard__brand-mark svg {
+  width: 19px;
+  height: 19px;
+}
+
+.hospital-dashboard__brand-copy {
+  color: #0F172A;
+  font-size: 19px;
+  line-height: 1;
+}
+
+.hospital-dashboard__brand-blood {
+  font-weight: 700;
+}
+
+.hospital-dashboard__brand-bridge {
+  color: #D32F2F;
+  font-weight: 500;
+}
+
+.hospital-dashboard__title {
+  margin-left: 10px;
+  color: #475569;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.hospital-dashboard__nav {
+  display: flex;
+  justify-content: center;
+  gap: 22px;
+  min-width: 0;
+}
+
+.hospital-dashboard__nav-item {
+  border: 0;
+  background: transparent;
+  color: #64748B;
+  font-family: 'Outfit', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.hospital-dashboard__nav-item--active {
+  color: #D32F2F;
+  font-weight: 700;
+}
+
+.hospital-dashboard__header-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.hospital-dashboard__icon-button,
+.hospital-dashboard__user-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  background: transparent;
+  color: #475569;
+  cursor: pointer;
+}
+
+.hospital-dashboard__icon-button {
+  position: relative;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+}
+
+.hospital-dashboard__icon-button:hover,
+.hospital-dashboard__user-button:hover,
+.hospital-dashboard__request-button:hover {
+  background: #F8FAFC;
+}
+
+.hospital-dashboard__icon-button svg {
+  width: 18px;
+  height: 18px;
+}
+
+.hospital-dashboard__notification-dot {
+  position: absolute;
+  top: 8px;
+  right: 9px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #D32F2F;
+}
+
+.hospital-dashboard__request-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 38px;
+  padding: 0 14px;
+  border: 0;
+  border-radius: 6px;
+  background: #D32F2F;
+  color: #FFFFFF;
+  font-family: 'Outfit', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.hospital-dashboard__user-button {
+  gap: 8px;
+  padding: 5px 8px 5px 5px;
+  border-radius: 8px;
+}
+
+.hospital-dashboard__avatar {
+  display: grid;
+  width: 30px;
+  height: 30px;
+  place-items: center;
+  border-radius: 50%;
+  background: #FEE2E2;
+  color: #B91C1C;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.hospital-dashboard__user-name {
+  color: #0F172A;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.hospital-dashboard__user-button svg {
+  width: 14px;
+  height: 14px;
+}

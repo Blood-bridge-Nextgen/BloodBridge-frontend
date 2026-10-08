@@ -1,7 +1,8 @@
 import { useState } from 'react'
 import { Bell, LogOut, Menu, X } from 'lucide-react'
-import logoSymbol from '../../assets/logo-symbol.png'
+import logoSymbol from '../../../assets/logo-symbol.png'
 import './Dashboard.css'
+import { useNavigate } from 'react-router-dom'
 
 const navLinks = [
   { id: 'requests', label: 'Emergency Requests', href: '/DonorDashboard' },
@@ -9,10 +10,15 @@ const navLinks = [
   { id: 'profile', label: 'Profile', href: '/DonorDashboard/profile' },
 ]
 
-const DonorNavbar = ({ activeLink = 'requests', onLogout = () => {}, onNotifications = () => {} }) => {
-  const [menuOpen, setMenuOpen] = useState(false)
+const Logout = () => {
+    navigate('/SignIn')
+}
 
+const DonorNavbar = ({ activeLink = 'requests', onLogout = {Logout}, onNotifications = () => {} }) => {
+  const [menuOpen, setMenuOpen] = useState(false)
+  const navigate = useNavigate()
   const closeMenu = () => setMenuOpen(false)
+
 
   return (
     <header className="donor-navbar">
@@ -41,7 +47,7 @@ const DonorNavbar = ({ activeLink = 'requests', onLogout = () => {}, onNotificat
             <Bell aria-hidden="true" />
             <span className="donor-navbar__notification-dot" aria-hidden="true" />
           </button>
-          <button className="donor-navbar__logout" type="button" onClick={onLogout}>
+          <button className="donor-navbar__logout" type="button" onClick={() => {navigate('/SignIn')}}>
             <LogOut aria-hidden="true" />
             <span>Logout</span>
           </button>

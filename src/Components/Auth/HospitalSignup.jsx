@@ -154,7 +154,7 @@ const HospitalSignup = ({ onBack = () => window.history.back(), onSignIn = noop,
 		if (!/^[A-Z0-9-]{6,}$/i.test(formData.licenseNumber.trim())) {
 			nextErrors.licenseNumber = 'Use at least 6 letters, numbers, or hyphens.'
 		}
-		if (formData.password.length < 8 || !/[A-Za-z]/.test(formData.password) || !/\d/.test(formData.password)) {
+		if (formData.password.length < 8 ) {
 			nextErrors.password = 'Use at least 8 characters with a letter and a number.'
 		}
 		if (!formData.confirmPassword || formData.confirmPassword !== formData.password) {

@@ -1,0 +1,129 @@
+@media (max-width: 1200px) {
+  .hospital-dashboard__stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 992px) {
+  .hospital-dashboard__main-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hospital-dashboard__sidebar {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .hospital-dashboard__header {
+    grid-template-columns: 1fr;
+    height: auto;
+    padding: 16px 20px;
+  }
+
+  .hospital-dashboard__nav {
+    justify-content: flex-start;
+    overflow-x: auto;
+    padding-bottom: 4px;
+  }
+
+  .hospital-dashboard__header-actions {
+    justify-content: space-between;
+  }
+
+  .hospital-dashboard__title {
+    display: none;
+  }
+
+  .hospital-dashboard__content {
+    width: min(100% - 24px, 1480px);
+    padding-top: 20px;
+  }
+
+  .hospital-dashboard__stats {
+    grid-template-columns: 1fr;
+  }
+
+  .hospital-dashboard__request-form-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .hospital-dashboard__primary-button {
+    grid-column: 1 / -1;
+  }
+
+  .hospital-dashboard__sidebar {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 576px) {
+  .hospital-dashboard__header {
+    gap: 14px;
+  }
+
+  .hospital-dashboard__brand-copy {
+    font-size: 17px;
+  }
+
+  .hospital-dashboard__nav {
+    gap: 14px;
+  }
+
+  .hospital-dashboard__nav-item {
+    white-space: nowrap;
+  }
+
+  .hospital-dashboard__header-actions {
+    gap: 8px;
+  }
+
+  .hospital-dashboard__user-name {
+    display: none;
+  }
+
+  .hospital-dashboard__request-button {
+    padding: 0 10px;
+    font-size: 11px;
+  }
+
+  .hospital-dashboard__panel,
+  .hospital-dashboard__stat-card {
+    border-radius: 8px;
+  }
+
+  .hospital-dashboard__panel-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .hospital-dashboard__toolbar {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .hospital-dashboard__request-form-grid,
+  .hospital-dashboard__donor-filters {
+    grid-template-columns: 1fr;
+    display: grid;
+  }
+
+  .hospital-dashboard__donor-filters select,
+  .hospital-dashboard__distance-filter {
+    min-width: 0;
+    width: 100%;
+  }
+
+  .hospital-dashboard__request-actions {
+    flex-direction: column;
+  }
+
+  .hospital-dashboard__button {
+    width: 100%;
+  }
+
+  .hospital-dashboard__modal {
+    padding: 20px;
+  }
+}
