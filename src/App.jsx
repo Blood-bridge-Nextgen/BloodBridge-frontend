@@ -17,7 +17,7 @@ import { SignInRoute } from "./Components/Auth/SignIn";
 import ResetPassword from "./Components/Auth/ResetPassword";
 import VerifyResetOtp from "./Components/Auth/VerifyResetOtp";
 import HospitalDashboard from "./Components/Daashboards/HospitalDashboard/HospitalDashboard";
-import Contact from "./Components/Contact";
+import ContactUs from "./Components/ContactUs";
 import { sendPasswordReset } from "./api/authApi";
 import OtpVerification from "./Components/Auth/OtpVerification";
 
@@ -76,7 +76,7 @@ function App() {
       <Route path="/OnboardingScreen" element={<OnboardingScreen />} />
       <Route path="/DonorDashboard" element={<DonorDashboard />} />
       <Route path="/DonorDashboard/profile" element={<DonorProfile />} />
-      <Route path="/Contact" element={<Contact />} />
+      <Route path="/Contact" element={<ContactUs />} />
       <Route path="/DonorSignup" element={<DonorSignup />} />
       <Route path="/HospitalSignup" element={<HospitalSignup />} />
       <Route path="/SignIn" element={<SignInRoute />} />

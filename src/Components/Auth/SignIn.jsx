@@ -8,6 +8,7 @@ import Cookies from "js-cookie";
 import { useForm } from "react-hook-form";
 import { toast } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
+import logoSymbol from "../../assets/logo-symbol.png";
 import { signInUser } from "../../helpers/auth";
 import { errorParser } from "../../lib/utils";
 import { SignInSchema } from "../../schema/auth";
@@ -33,7 +34,7 @@ const Field = ({ id, label, error, children }) => (
 );
 
 const SignIn = ({
-  onSubmit = noop,
+  // onSubmit = noop,
   onForgotPassword = noop,
   onCreateAccount = noop,
 }) => {
@@ -84,18 +85,7 @@ const SignIn = ({
       <section className="sign-in__card" aria-label="Sign in to BloodBridge">
         <div className="sign-in__brand" aria-label="BloodBridge secured">
           <span className="sign-in__logo-mark" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none">
-              <path
-                d="M12 3.5 5.5 10a6.5 6.5 0 1 0 13 0L12 3.5Z"
-                fill="currentColor"
-              />
-              <path
-                d="M8.5 12.5c.7 1.1 1.8 1.7 3.5 1.7s2.8-.6 3.5-1.7"
-                stroke="#B91C1C"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-              />
-            </svg>
+            <img src={logoSymbol} alt="" />
           </span>
           <span className="sign-in__wordmark">
             <span>Blood</span>

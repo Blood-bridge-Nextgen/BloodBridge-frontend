@@ -819,19 +819,16 @@ body {
 }
 
 .editorial-footer-icon {
-  display: grid;
+  display: block;
   width: 32px;
   height: 32px;
   flex: none;
-  place-items: center;
-  color: #FFFFFF;
-  background: #DC2626;
-  border-radius: 8px;
 }
 
-.editorial-footer-icon svg {
-  width: 20px;
-  height: 20px;
+.editorial-footer-icon img {
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
 .editorial-footer-heading {

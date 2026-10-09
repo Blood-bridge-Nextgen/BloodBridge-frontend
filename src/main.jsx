@@ -1,7 +1,7 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./App.css";
-import { WatchupProvider } from "@watchupltd/react";
+import {WatchupProvider} from "@watchupltd/react";
 import { Toaster } from "react-hot-toast";
 import { BrowserRouter } from "react-router-dom";
 import App from "./App.jsx";

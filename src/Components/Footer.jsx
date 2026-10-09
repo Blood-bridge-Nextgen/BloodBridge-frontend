@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import logoSymbol from "../assets/logo-symbol.png";
 
 const companyLinks = [
   "How It Works",
@@ -49,25 +50,7 @@ function Footer() {
                 aria-label="BloodBridge home"
               >
                 <span className="editorial-footer-icon" aria-hidden="true">
-                  <svg
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M12 21s-8-4.6-8-11a4.5 4.5 0 0 1 8-2.8A4.5 4.5 0 0 1 20 10c0 6.4-8 11-8 11Z"
-                      stroke="currentColor"
-                      strokeWidth="1.7"
-                      strokeLinejoin="round"
-                    />
-                    <path
-                      d="M8.5 12h2l1-2 1.5 4 1-2h1.5"
-                      stroke="currentColor"
-                      strokeWidth="1.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
+                  <img src={logoSymbol} alt="" />
                 </span>
                 <span>
                   Blood<span>Bridge</span>

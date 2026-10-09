@@ -16,18 +16,15 @@
 }
 
 .hospital-dashboard__brand-mark {
-  display: grid;
+  display: block;
   width: 32px;
   height: 32px;
-  place-items: center;
-  border-radius: 8px;
-  background: #D32F2F;
-  color: #FFFFFF;
 }
 
-.hospital-dashboard__brand-mark svg {
-  width: 19px;
-  height: 19px;
+.hospital-dashboard__brand-mark img {
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
 .hospital-dashboard__brand-copy {

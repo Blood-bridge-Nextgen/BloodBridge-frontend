@@ -21,19 +21,16 @@
 }
 
 .onboarding-screen__logo-mark {
-  display: grid;
+  display: block;
   flex: 0 0 32px;
   width: 32px;
   height: 32px;
-  place-items: center;
-  border-radius: 8px;
-  background: #b91c1c;
-  color: #ffffff;
 }
 
-.onboarding-screen__logo-mark svg {
-  width: 21px;
-  height: 21px;
+.onboarding-screen__logo-mark img {
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
 .onboarding-screen__wordmark {
@@ -952,19 +949,16 @@
 }
 
 .sign-in__logo-mark {
-  display: grid;
+  display: block;
   flex: 0 0 32px;
   width: 32px;
   height: 32px;
-  place-items: center;
-  border-radius: 8px;
-  background: #b91c1c;
-  color: #ffffff;
 }
 
-.sign-in__logo-mark svg {
-  width: 21px;
-  height: 21px;
+.sign-in__logo-mark img {
+  display: block;
+  width: 100%;
+  height: 100%;
 }
 
 .sign-in__wordmark {
