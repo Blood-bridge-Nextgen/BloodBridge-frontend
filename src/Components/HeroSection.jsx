@@ -23,10 +23,18 @@ const HeroSection = () => {
             </p>
           </div>
           <div className="button">
-            <Link className="primary" to="/DonorSignup">
+            <Link
+              className="primary"
+              to="https://bloodbridge-dashboard.pxxl.pro/sign-up/donor"
+              target="_blank"
+            >
               Become a Donor
             </Link>
-            <Link className="secondary" to="/HospitalSignup">
+            <Link
+              target="_blank"
+              className="secondary"
+              to="https://bloodbridge-dashboard.pxxl.pro/sign-up/facility"
+            >
               Request Blood
             </Link>
           </div>

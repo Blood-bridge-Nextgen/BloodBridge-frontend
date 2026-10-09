@@ -1,37 +1,29 @@
-import { useEffect, useMemo, useRef, useState } from 'react'
-import {
-  AlertCircle,
-  ArrowLeft,
-  Loader2,
-  MailCheck,
-} from 'lucide-react'
-import {
-  sendPasswordReset,
-  verifyPasswordResetOtp,
-} from '../api/auth'
-import { useCountdown } from '../hooks/useCountdown'
-import './OtpVerification.css'
+import { useEffect, useMemo, useRef, useState } from "react";
+import { AlertCircle, ArrowLeft, Loader2, MailCheck } from "lucide-react";
+import { sendPasswordReset, verifyPasswordResetOtp } from "../../api/authApi";
+// import { useCountdown } from "../../hooks/useCountdown";
+import "./OtpVerification.css";
+import { useAuth } from "../../hooks/auth";
 
-const DEFAULT_CODE_LENGTH = 6
-const DEFAULT_EXPIRES_IN_MINUTES = 10
-const RESEND_COOLDOWN_SECONDS = 60
+const DEFAULT_CODE_LENGTH = 6;
+const DEFAULT_EXPIRES_IN_MINUTES = 10;
+const RESEND_COOLDOWN_SECONDS = 60;
 
-const getInitialCode = (length) => Array.from({ length }, () => '')
+const getInitialCode = (length) => Array.from({ length }, () => "");
 
 const getMaskedEmail = (email) => {
-  const [name, domain] = email.split('@')
+  const [name, domain] = email.split("@");
 
   if (!name || !domain) {
-    return email
+    return email;
   }
 
-  return `${name.charAt(0)}***@${domain}`
-}
+  return `${name.charAt(0)}***@${domain}`;
+};
 
-const isDigit = (value) => /^\d$/.test(value)
+const isDigit = (value) => /^\d$/.test(value);
 
 export default function OtpVerification({
-  email,
   onVerified,
   onBack = () => window.history.back(),
   onChangeEmail,
@@ -39,174 +31,173 @@ export default function OtpVerification({
   codeLength = DEFAULT_CODE_LENGTH,
   expiresInMinutes = DEFAULT_EXPIRES_IN_MINUTES,
 }) {
-  const [code, setCode] = useState(() => getInitialCode(codeLength))
-  const [errorMessage, setErrorMessage] = useState('')
-  const [resendError, setResendError] = useState('')
-  const [statusMessage, setStatusMessage] = useState('')
-  const [isVerifying, setIsVerifying] = useState(false)
-  const [isResending, setIsResending] = useState(false)
+  const user = useAuth();
+  const email = user.data?.email;
+  const [code, setCode] = useState(() => getInitialCode(codeLength));
+  const [errorMessage, setErrorMessage] = useState("");
+  const [resendError, setResendError] = useState("");
+  const [statusMessage, setStatusMessage] = useState("");
+  const [isVerifying, setIsVerifying] = useState(false);
+  const [isResending, setIsResending] = useState(false);
 
-  const inputRefs = useRef([])
-  const submittedCodeRef = useRef('')
+  const inputRefs = useRef([]);
+  const submittedCodeRef = useRef("");
 
-  const { secondsLeft, restart } = useCountdown(RESEND_COOLDOWN_SECONDS)
+  // const { secondsLeft, restart } = useCountdown(RESEND_COOLDOWN_SECONDS);
 
-  const maskedEmail = useMemo(
-    () => getMaskedEmail(email),
-    [email],
-  )
+  const maskedEmail = useMemo(() => getMaskedEmail(email), [email]);
 
-  const enteredCode = code.join('')
-  const isCodeComplete = code.every((digit) => digit !== '')
+  const enteredCode = code.join("");
+  const isCodeComplete = code.every((digit) => digit !== "");
 
   useEffect(() => {
-    if (!email && typeof onChangeEmail === 'function') {
-      onChangeEmail()
+    if (!email && typeof onChangeEmail === "function") {
+      onChangeEmail();
     }
-  }, [email, onChangeEmail])
+  }, [email, onChangeEmail]);
 
   useEffect(() => {
-    if (!email) return
+    if (!email) return;
 
     const timer = window.setTimeout(() => {
-      inputRefs.current[0]?.focus()
-    }, 0)
+      inputRefs.current[0]?.focus();
+    }, 0);
 
-    return () => window.clearTimeout(timer)
-  }, [email])
+    return () => window.clearTimeout(timer);
+  }, [email]);
 
   useEffect(() => {
     if (!isCodeComplete || isVerifying || !email) {
-      return
+      return;
     }
 
     if (submittedCodeRef.current === enteredCode) {
-      return
+      return;
     }
 
-    handleVerify(enteredCode)
-  }, [enteredCode, isCodeComplete, isVerifying, email])
+    handleVerify(enteredCode);
+  }, [enteredCode, isCodeComplete, isVerifying, email]);
 
   if (!email) {
-    return null
+    return null;
   }
 
   const focusInput = (index) => {
-    const input = inputRefs.current[index]
+    const input = inputRefs.current[index];
 
-    if (!input) return
+    if (!input) return;
 
-    input.focus()
-    input.select()
-  }
+    input.focus();
+    input.select();
+  };
 
   const clearMessages = () => {
-    setErrorMessage('')
-    setResendError('')
-    setStatusMessage('')
-  }
+    setErrorMessage("");
+    setResendError("");
+    setStatusMessage("");
+  };
 
   const updateCode = (nextCode) => {
-    setCode(nextCode)
-    setErrorMessage('')
-    setResendError('')
-  }
+    setCode(nextCode);
+    setErrorMessage("");
+    setResendError("");
+  };
 
   const fillCode = (value) => {
-    const digits = value.replace(/\D/g, '').slice(0, codeLength)
+    const digits = value.replace(/\D/g, "").slice(0, codeLength);
 
     if (!digits) {
-      return
+      return;
     }
 
-    const nextCode = getInitialCode(codeLength)
+    const nextCode = getInitialCode(codeLength);
 
-    digits.split('').forEach((digit, index) => {
-      nextCode[index] = digit
-    })
+    digits.split("").forEach((digit, index) => {
+      nextCode[index] = digit;
+    });
 
-    submittedCodeRef.current = ''
-    updateCode(nextCode)
+    submittedCodeRef.current = "";
+    updateCode(nextCode);
 
-    const lastIndex = Math.min(digits.length, codeLength) - 1
+    const lastIndex = Math.min(digits.length, codeLength) - 1;
 
     window.setTimeout(() => {
-      focusInput(lastIndex)
-    }, 0)
-  }
+      focusInput(lastIndex);
+    }, 0);
+  };
 
   const handleChange = (index, value) => {
-    clearMessages()
+    clearMessages();
 
-    const digits = value.replace(/\D/g, '')
+    const digits = value.replace(/\D/g, "");
 
     if (digits.length > 1) {
-      fillCode(digits)
-      return
+      fillCode(digits);
+      return;
     }
 
-    const nextCode = [...code]
-    nextCode[index] = digits
+    const nextCode = [...code];
+    nextCode[index] = digits;
 
-    submittedCodeRef.current = ''
-    updateCode(nextCode)
+    submittedCodeRef.current = "";
+    updateCode(nextCode);
 
     if (digits && index < codeLength - 1) {
-      focusInput(index + 1)
+      focusInput(index + 1);
     }
-  }
+  };
 
   const handleKeyDown = (event, index) => {
-    if (event.key === 'ArrowLeft') {
-      event.preventDefault()
+    if (event.key === "ArrowLeft") {
+      event.preventDefault();
 
       if (index > 0) {
-        focusInput(index - 1)
+        focusInput(index - 1);
       }
 
-      return
+      return;
     }
 
-    if (event.key === 'ArrowRight') {
-      event.preventDefault()
+    if (event.key === "ArrowRight") {
+      event.preventDefault();
 
       if (index < codeLength - 1) {
-        focusInput(index + 1)
+        focusInput(index + 1);
       }
 
-      return
+      return;
     }
 
-    if (event.key === 'Home') {
-      event.preventDefault()
-      focusInput(0)
-      return
+    if (event.key === "Home") {
+      event.preventDefault();
+      focusInput(0);
+      return;
     }
 
-    if (event.key === 'End') {
-      event.preventDefault()
-      focusInput(codeLength - 1)
-      return
+    if (event.key === "End") {
+      event.preventDefault();
+      focusInput(codeLength - 1);
+      return;
     }
 
-    if (event.key === 'Backspace' && code[index] === '' && index > 0) {
-      event.preventDefault()
+    if (event.key === "Backspace" && code[index] === "" && index > 0) {
+      event.preventDefault();
 
-      const nextCode = [...code]
-      nextCode[index - 1] = ''
+      const nextCode = [...code];
+      nextCode[index - 1] = "";
 
-      submittedCodeRef.current = ''
-      updateCode(nextCode)
-      focusInput(index - 1)
+      submittedCodeRef.current = "";
+      updateCode(nextCode);
+      focusInput(index - 1);
     }
-  }
+  };
 
   const handlePaste = (event) => {
-    event.preventDefault()
+    event.preventDefault();
 
-    const pastedValue = event.clipboardData?.getData('text') || ''
-    fillCode(pastedValue)
-  }
+    const pastedValue = event.clipboardData?.getData("text") || "";
+    fillCode(pastedValue);
+  };
 
   async function handleVerify(codeToVerify = enteredCode) {
     if (
@@ -215,109 +206,107 @@ export default function OtpVerification({
       codeToVerify.length !== codeLength ||
       !/^\d+$/.test(codeToVerify)
     ) {
-      return
+      return;
     }
 
     if (submittedCodeRef.current === codeToVerify) {
-      return
+      return;
     }
 
-    submittedCodeRef.current = codeToVerify
-    setIsVerifying(true)
-    setErrorMessage('')
-    setResendError('')
-    setStatusMessage('')
+    submittedCodeRef.current = codeToVerify;
+    setIsVerifying(true);
+    setErrorMessage("");
+    setResendError("");
+    setStatusMessage("");
 
     try {
-      const resetToken = await verifyPasswordResetOtp(
-        email,
-        codeToVerify,
-      )
+      const resetToken = await verifyPasswordResetOtp(email, codeToVerify);
 
       if (!resetToken) {
-        throw new Error('That code is incorrect or has expired.')
+        throw new Error("That code is incorrect or has expired.");
       }
 
-      onVerified(resetToken)
+      onVerified(resetToken);
     } catch (error) {
       setErrorMessage(
         error instanceof Error && error.message
           ? error.message
-          : 'That code is incorrect or has expired.',
-      )
+          : "That code is incorrect or has expired.",
+      );
 
-      const clearedCode = getInitialCode(codeLength)
-      setCode(clearedCode)
+      const clearedCode = getInitialCode(codeLength);
+      setCode(clearedCode);
 
       window.setTimeout(() => {
-        focusInput(0)
-      }, 0)
+        focusInput(0);
+      }, 0);
     } finally {
-      setIsVerifying(false)
+      setIsVerifying(false);
     }
   }
 
   const handleSubmit = (event) => {
-    event.preventDefault()
+    event.preventDefault();
 
     if (!isCodeComplete || isVerifying) {
-      return
+      return;
     }
 
-    handleVerify(enteredCode)
-  }
-
+    handleVerify(enteredCode);
+  };
   const handleResend = async () => {
-    if (secondsLeft > 0 || isResending || isVerifying) {
-      return
-    }
+    //   const { secondsLeft, restart } = useCountdown(RESEND_COOLDOWN_SECONDS);
 
-    setIsResending(true)
-    setErrorMessage('')
-    setResendError('')
-    setStatusMessage('')
+    //   if (secondsLeft > 0 || isResending || isVerifying) {
+    //     return;
+    //   }
+
+    //   setIsResending(true);
+    //   setErrorMessage("");
+    setResendError("");
+    setStatusMessage("");
 
     try {
-      await sendPasswordReset(email)
+      await sendPasswordReset(email);
 
-      submittedCodeRef.current = ''
-      setCode(getInitialCode(codeLength))
-      restart(RESEND_COOLDOWN_SECONDS)
+      submittedCodeRef.current = "";
+      setCode(getInitialCode(codeLength));
+      // restart(RESEND_COOLDOWN_SECONDS);
 
-      setStatusMessage('A new code has been sent.')
+      setStatusMessage("A new code has been sent.");
 
       window.setTimeout(() => {
-        focusInput(0)
-      }, 0)
+        focusInput(0);
+      }, 0);
     } catch (error) {
       setResendError(
         error instanceof Error && error.message
           ? error.message
-          : 'Unable to resend the code. Please try again.',
-      )
+          : "Unable to resend the code. Please try again.",
+      );
     } finally {
-      setIsResending(false)
+      setIsResending(false);
     }
-  }
+  };
 
   const handleDifferentEmail = () => {
-    if (typeof onChangeEmail === 'function') {
-      onChangeEmail()
+    if (typeof onChangeEmail === "function") {
+      onChangeEmail();
     }
-  }
+  };
 
   const handleBackToSignIn = () => {
-    if (typeof onBackToSignIn === 'function') {
-      onBackToSignIn()
+    if (typeof onBackToSignIn === "function") {
+      onBackToSignIn();
     }
-  }
+  };
 
   const formatCountdown = (seconds) => {
-    const minutes = Math.floor(seconds / 60)
-    const remainingSeconds = seconds % 60
+    const minutes = Math.floor(seconds / 60);
+    const remainingSeconds = seconds % 60;
 
-    return `${minutes}:${String(remainingSeconds).padStart(2, '0')}`
-  }
+    return `${minutes}:${String(remainingSeconds).padStart(2, "0")}`;
+  };
 
   return (
     <main className="otp-verification">
@@ -333,16 +322,14 @@ export default function OtpVerification({
             <ArrowLeft size={18} aria-hidden="true" />
           </button>
 
-          <h1 className="otp-verification__title">
-            Verify Code
-          </h1>
+          <h1 className="otp-verification__title">Verify Code</h1>
         </header>
 
         <div className="otp-verification__intro">
           <p>
-            We sent a {codeLength}-digit code to{' '}
-            <strong>{maskedEmail}</strong>. Enter it below to continue.
-            The code expires in {expiresInMinutes} minutes.
+            We sent a {codeLength}-digit code to <strong>{maskedEmail}</strong>.
+            Enter it below to continue. The code expires in {expiresInMinutes}{" "}
+            minutes.
           </p>
         </div>
 
@@ -352,13 +339,11 @@ export default function OtpVerification({
           noValidate
         >
           <div className="otp-verification__field">
-            <label className="otp-verification__label">
-              Verification Code
-            </label>
+            <label className="otp-verification__label">Verification Code</label>
 
             <div
               className={`otp-verification__code-group${
-                errorMessage ? ' otp-verification__code-group--error' : ''
+                errorMessage ? " otp-verification__code-group--error" : ""
               }`}
               role="group"
               aria-label={`${codeLength}-digit verification code`}
@@ -367,31 +352,21 @@ export default function OtpVerification({
                 <input
                   key={index}
                   ref={(element) => {
-                    inputRefs.current[index] = element
+                    inputRefs.current[index] = element;
                   }}
                   className={`otp-verification__code-input${
-                    errorMessage
-                      ? ' otp-verification__code-input--error'
-                      : ''
+                    errorMessage ? " otp-verification__code-input--error" : ""
                   }`}
                   type="text"
                   inputMode="numeric"
                   pattern="[0-9]*"
                   maxLength={1}
-                  autoComplete={
-                    index === 0
-                      ? 'one-time-code'
-                      : 'off'
-                  }
+                  autoComplete={index === 0 ? "one-time-code" : "off"}
                   value={digit}
                   aria-label={`Digit ${index + 1} of ${codeLength}`}
                   aria-invalid={Boolean(errorMessage)}
-                  onChange={(event) =>
-                    handleChange(index, event.target.value)
-                  }
-                  onKeyDown={(event) =>
-                    handleKeyDown(event, index)
-                  }
+                  onChange={(event) => handleChange(index, event.target.value)}
+                  onKeyDown={(event) => handleKeyDown(event, index)}
                   onPaste={handlePaste}
                   onFocus={(event) => event.target.select()}
                   disabled={isVerifying || isResending}
@@ -405,10 +380,7 @@ export default function OtpVerification({
                 role="alert"
                 aria-live="assertive"
               >
-                <AlertCircle
-                  size={14}
-                  aria-hidden="true"
-                />
+                <AlertCircle size={14} aria-hidden="true" />
                 <span>{errorMessage}</span>
               </div>
             )}
@@ -417,11 +389,7 @@ export default function OtpVerification({
           <button
             type="submit"
             className="otp-verification__submit-button"
-            disabled={
-              !isCodeComplete ||
-              isVerifying ||
-              isResending
-            }
+            disabled={!isCodeComplete || isVerifying || isResending}
           >
             {isVerifying ? (
               <>
@@ -433,29 +401,29 @@ export default function OtpVerification({
                 <span>Verifying...</span>
               </>
             ) : (
-              'Verify Code'
+              "Verify Code"
             )}
           </button>
         </form>
 
         <div className="otp-verification__resend">
-          {secondsLeft > 0 ? (
+          {/* {secondsLeft > 0 ? (
             <p className="otp-verification__resend-text otp-verification__resend-text--cooldown">
               Resend code in {formatCountdown(secondsLeft)}
             </p>
-          ) : (
-            <p className="otp-verification__resend-text">
-              Didn't get the code?{' '}
-              <button
-                type="button"
-                className="otp-verification__resend-button"
-                onClick={handleResend}
-                disabled={isResending || isVerifying}
-              >
-                {isResending ? 'Sending...' : 'Resend'}
-              </button>
-            </p>
-          )}
+          ) : ( */}
+          <p className="otp-verification__resend-text">
+            Didn't get the code?{" "}
+            <button
+              type="button"
+              className="otp-verification__resend-button"
+              onClick={handleResend}
+              disabled={isResending || isVerifying}
+            >
+              {isResending ? "Sending..." : "Resend"}
+            </button>
+          </p>
+          {/* )} */}
 
           {statusMessage && (
             <div
@@ -463,10 +431,7 @@ export default function OtpVerification({
               role="status"
               aria-live="polite"
             >
-              <MailCheck
-                size={14}
-                aria-hidden="true"
-              />
+              <MailCheck size={14} aria-hidden="true" />
               <span>{statusMessage}</span>
             </div>
           )}
@@ -477,10 +442,7 @@ export default function OtpVerification({
               role="alert"
               aria-live="assertive"
             >
-              <AlertCircle
-                size={14}
-                aria-hidden="true"
-              />
+              <AlertCircle size={14} aria-hidden="true" />
               <span>{resendError}</span>
             </div>
           )}
@@ -507,5 +469,5 @@ export default function OtpVerification({
         </nav>
       </section>
     </main>
-  )
+  );
 }

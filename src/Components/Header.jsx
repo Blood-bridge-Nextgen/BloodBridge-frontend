@@ -35,7 +35,11 @@ const Header = () => {
         </Link>
       </nav>
       <div className={`button navigation-cta${menuOpen ? " is-open" : ""}`}>
-        <Link className="button-link" to="/OnboardingScreen">
+        <Link
+          target="_blank"
+          className="button-link"
+          to="https://bloodbridge-dashboard.pxxl.pro/sign-up"
+        >
           Create Account
         </Link>
       </div>

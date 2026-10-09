@@ -1,7 +1,7 @@
 import axios, { AxiosError } from "axios";
 import Cookies from "js-cookie";
 
-const token = Cookies.get("auth_token");
+const token = Cookies.get("authToken");
 
 export const axiosInstance = axios.create({
   baseURL:
